@@ -1,0 +1,26 @@
+[
+  {
+    "maDM": 1,
+    "maDMCha": 1,
+    "tenDM": "Nón Cap",
+    "banner": null
+  },
+  {
+    "maDM": 2,
+    "maDMCha": 1,
+    "tenDM": "Nón Bucket",
+    "banner": null
+  },
+  {
+    "maDM": 3,
+    "maDMCha": 2,
+    "tenDM": "Balo",
+    "banner": null
+  },
+  {
+    "maDM": 4,
+    "maDMCha": 2,
+    "tenDM": "Túi Tote / Messenger",
+    "banner": null
+  }
+]

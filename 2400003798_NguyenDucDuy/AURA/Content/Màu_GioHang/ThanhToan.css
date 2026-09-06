@@ -1,0 +1,110 @@
+﻿/* ============================= */
+/*  TRANG THANH TOÁN - AURA      */
+/* ============================= */
+
+.thanhtoan-container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.thanhtoan-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #457b9d;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ============================= */
+/* FORM THÔNG TIN KHÁCH HÀNG */
+/* ============================= */
+
+.thanhtoan-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+    .thanhtoan-form label {
+        font-weight: 600;
+    }
+
+    .thanhtoan-form input,
+    .thanhtoan-form textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        outline: none;
+        margin-top: 6px;
+    }
+
+        .thanhtoan-form input:focus,
+        .thanhtoan-form textarea:focus {
+            border-color: #457b9d;
+        }
+
+    .thanhtoan-form textarea {
+        grid-column: 1 / 3;
+        height: 100px;
+    }
+
+/* ============================= */
+/* BẢNG SẢN PHẨM */
+/* ============================= */
+
+.thanhtoan-table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+    .thanhtoan-table th {
+        background: #457b9d;
+        color: white;
+        padding: 14px;
+        text-align: center;
+    }
+
+    .thanhtoan-table td {
+        padding: 14px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+
+.tt-total {
+    margin-top: 25px;
+    font-size: 22px;
+    font-weight: 800;
+    color: red;
+    text-align: right;
+}
+
+/* ============================= */
+/* NÚT XÁC NHẬN */
+/* ============================= */
+
+.tt-btn {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+    .tt-btn button {
+        padding: 14px 36px;
+        background: linear-gradient(135deg, #457b9d, #1d3557);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        .tt-btn button:hover {
+            opacity: 0.9;
+        }

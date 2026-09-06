@@ -1,0 +1,99 @@
+﻿@model AURA.Models.DonHangViewModel
+
+@{
+    ViewBag.Title = "ThanhToan";
+    Layout = "~/Views/Shared/_AURALayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Màu_GioHang/ThanhToan.css" />
+
+<div class="thanhtoan-container">
+
+    <div class="thanhtoan-title">📝 THÔNG TIN THANH TOÁN</div>
+
+    @if (Model == null || Model.GioHang == null || !Model.GioHang.Any())
+    {
+        <h3 style="text-align:center; color:red;">❌ Giỏ hàng trống</h3>
+        <div style="text-align:center;">
+            <a href="@Url.Action("Index","TrangChu")">⬅️ Quay về mua hàng</a>
+        </div>
+    }
+    else
+    {
+        <form action="@Url.Action("ThanhToan", "GioHang")" method="post" autocomplete="off">
+            @Html.AntiForgeryToken()
+
+            <div class="thanhtoan-form">
+
+                <div>
+                    <label>Họ tên</label>
+                    <input type="text"
+                           name="HoTen"
+                           autocomplete="off"
+                           value="@(Model?.HoTen ?? "")"
+                           placeholder="Nhập họ tên"
+                           required />
+                </div>
+
+                <div>
+                    <label>Số điện thoại</label>
+                    <input type="text"
+                           name="DienThoai"
+                           autocomplete="off"
+                           value="@(Model?.DienThoai ?? "")"
+                           placeholder="Nhập số điện thoại"
+                           required />
+                </div>
+
+                <div>
+                    <label>Địa chỉ</label>
+                    <input type="text"
+                           name="DiaChi"
+                           autocomplete="off"
+                           value="@(Model?.DiaChi ?? "")"
+                           placeholder="Nhập địa chỉ"
+                           required />
+                </div>
+
+                <div>
+                    <label>Ghi chú</label>
+                    <textarea name="GhiChu"
+                              placeholder="Nhập ghi chú (nếu có)">@(Model?.GhiChu ?? "")</textarea>
+                </div>
+
+            </div>
+
+            <table class="thanhtoan-table">
+                <tr>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                </tr>
+
+                @foreach (var item in Model.GioHang)
+                {
+                    <tr>
+                        <td>@item.TenSP</td>
+                        <td>@item.SoLuong</td>
+                        <td>@String.Format("{0:N0} đ", item.ThanhTien)</td>
+                    </tr>
+                }
+            </table>
+
+            <div class="tt-total">
+                Tổng tiền:
+                <strong>
+                    @String.Format("{0:N0} đ", Model.GioHang.Sum(x => x.ThanhTien))
+                </strong>
+            </div>
+
+            <div class="tt-btn">
+                <button type="submit">
+                    ✅ XÁC NHẬN ĐẶT HÀNG
+                </button>
+            </div>
+
+        </form>
+    }
+
+</div>

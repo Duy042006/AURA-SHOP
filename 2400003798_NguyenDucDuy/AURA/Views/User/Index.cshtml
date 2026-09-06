@@ -1,0 +1,109 @@
+﻿@model AURA.Models.User
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AURALayout.cshtml";
+}
+
+<link rel="stylesheet" href="/Content/Màu_User/User.css" />
+
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="profile">
+            <div class="avatar">👤</div>
+            <h2>@Model.FullName</h2>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="active"><span>Thông tin tài khoản</span></li>
+
+            <li>
+                <a href="@Url.Action("Index", "Order")" style="text-decoration:none; color:inherit;">
+                    <span>Quản lý đơn hàng</span>
+            </li>
+
+            @if (Session["Role"]?.ToString() == "Admin")
+            {
+                <li>
+                    <a href="@Url.Action("Index", "ProductAdmin")" style="text-decoration:none; color:inherit;">
+                        <span>Thêm / Xóa sản phẩm</span>
+                    </a>
+                </li>
+            }
+
+            <li>
+                <a href="@Url.Action("Logout","Login")" style="text-decoration:none;color:inherit;">
+                    Đăng xuất
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+
+    <!-- CONTENT -->
+    <section class="content">
+        <h1>Thông tin tài khoản</h1>
+
+        <form class="form" method="post" action="@Url.Action("Update","User")">
+
+            <label>Họ Tên</label>
+            <input type="text" name="FullName" value="@Model.FullName" />
+
+            <label>Giới tính</label>
+            <div class="gender">
+                <label>
+                    <input type="radio" name="Gender" value="Nam"
+                           @(Model.Gender == "Nam" ? "checked" : "") /> Nam
+                </label>
+
+                <label>
+                    <input type="radio" name="Gender" value="Nữ"
+                           @(Model.Gender == "Nữ" ? "checked" : "") /> Nữ
+                </label>
+            </div>
+
+            <label>Số điện thoại</label>
+            <input type="text" name="Phone" value="@Model.Phone" />
+
+            <label>Email</label>
+            <input type="text" name="Email" value="@Model.Email" />
+
+            <label>Ngày sinh</label>
+            <div class="birthday">
+                <select name="Day">
+                    <option value="">Ngày</option>
+                    @for (int d = 1; d <= 31; d++)
+                    {
+                        <option value="@d" @(Model.Day == d ? "selected" : "")>@d</option>
+                    }
+                </select>
+
+
+                <select name="Month">
+                    <option value="">Tháng</option>
+                    @for (int m = 1; m <= 12; m++)
+                    {
+                        <option value="@m" @(Model.Month == m ? "selected" : "")>@m</option>
+                    }
+                </select>
+
+
+                <select name="Year">
+                    <option value="">Năm</option>
+                    @for (int y = 1950; y <= DateTime.Now.Year; y++)
+                    {
+                        <option value="@y" @(Model.Year == y ? "selected" : "")>@y</option>
+                    }
+                </select>
+
+            </div>
+
+            <button class="save-btn">LƯU THAY ĐỔI</button>
+
+        </form>
+    </section>
+
+</div>

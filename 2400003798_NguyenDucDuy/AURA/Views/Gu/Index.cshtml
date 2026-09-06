@@ -1,0 +1,139 @@
+﻿@model AURA.Models.ViewModelGuIndex
+
+
+@{
+    ViewBag.Title = "Gu – Tổng Hợp";
+    Layout = "~/Views/Shared/_AURALayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Màu_GU/Gu.css" />
+
+<div class="ao-page">
+    <div class="container">
+
+        <h1 class="page-title">
+            Khám Phá Gu Thời Trang Của Bạn
+        </h1>
+
+        <!-- 3 GU -->
+        <div class="brand-container">
+
+            <div class="brand-box">
+                <a href="@Url.Action("Tram", "Gu", new { id = 1 })">
+                    <img src="~/Content/images/_MENU/Gu/61_dbf61f14-fe1b-4d14-b77c-de3db07c899a.webp"
+                         alt="Gu Đơn Giản" />
+                </a>
+            </div>
+
+            <div class="brand-box">
+                <a href="@Url.Action("Tram", "Gu", new { id = 2 })">
+                    <img src="~/Content/images/_MENU/Gu/62_550ef10b-a089-4269-bfd1-88e81729ba19.webp"
+                         alt="Gu Thiết Kế" />
+                </a>
+            </div>
+
+            <div class="brand-box">
+                <a href="@Url.Action("Tram", "Gu", new { id = 3 })">
+                    <img src="~/Content/images/_MENU/Gu/63_ef3f71c1-f0e5-4c7d-a73d-3501a6ac7bd2.webp"
+                         alt="Gu Thể Thao" />
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- Bộ lọc -->
+        <div class="filter-container">
+            <span class="label">Bộ lọc:</span>
+
+            <div class="filter-box">
+                <button class="filter-trigger">Giá ▾</button>
+                <ul class="filter-menu price-filter">
+                    <li data-price="100">Dưới 100K</li>
+                    <li data-price="200">100K - 200K</li>
+                    <li data-price="300">200K - 300K</li>
+                    <li data-price="400">Trên 300K</li>
+                </ul>
+            </div>
+
+            <div class="filter-box">
+                <button class="filter-trigger">Màu ▾</button>
+                <ul class="filter-menu color-filter">
+                    <li data-color="đen"><span class="color-dot black"></span> Đen</li>
+                    <li data-color="trắng"><span class="color-dot white"></span> Trắng</li>
+                    <li data-color="xám"><span class="color-dot gray"></span> Xám</li>
+                    <li data-color="xanh"><span class="color-dot blue"></span> Xanh</li>
+                    <li data-color="nâu"><span class="color-dot"></span> Nâu</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- DANH SÁCH SẢN PHẨM -->
+        <div class="product-list">
+
+            @foreach (var sp in Model.DanhSachSanPham)
+            {
+                <div class="product"
+                     data-color="@sp.MauSac.ToLower()"
+                     data-gia="@sp.Gia">
+
+                    <div class="img-box">
+                        <a href="@Url.Action("Index", "ChiTietSanPhamGU", new { id = sp.MaDM })">
+                            <img src="@sp.HinhAnh" alt="@sp.TenSP" />
+
+                            <div class="overlay"></div>
+                            <span class="tag">Miễn Phí Ship</span>
+
+                            <p class="name">@sp.TenSP</p>
+
+                            <p class="old-price">@String.Format("{0:N0}", sp.GiaGoc) VND</p>
+                            <p class="price">@String.Format("{0:N0}", sp.Gia) VND</p>
+                        </a>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+
+    </div>
+</div>
+
+<div class="pagination">
+    <ul>
+
+        @if (Model.CurrentPage > 1)
+        {
+            <li><a href="@Url.Action("AoMenu", new { page = Model.CurrentPage - 1 })">‹ Prev</a></li>
+        }
+        else
+        {
+            <li class="disabled">‹ Prev</li>
+        }
+
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            if (i == Model.CurrentPage)
+            {
+                <li class="active">@i</li>
+            }
+            else
+            {
+                <li><a href="@Url.Action("Index", "Gu", new { page = i })">@i</a></li>
+            }
+        }
+
+        @if (Model.CurrentPage < Model.TotalPages)
+        {
+            <li><a href="@Url.Action("Index", "Gu", new { page = Model.CurrentPage + 1 })">Next ›</a></li>
+        }
+        else
+        {
+            <li class="disabled">Next ›</li>
+        }
+
+    </ul>
+</div>
+
+<script src="~/Scripts/Menu-Gu/Gu.js"></script>

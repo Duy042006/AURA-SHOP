@@ -1,0 +1,867 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* ====== THANH NAVBAR ====== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 80px;
+    background: #457b9d;
+    border: none;
+    box-shadow: none;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+
+/* ====== LOGO ====== */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100px);
+}
+
+    .logo img {
+        width: 60px;
+        height: auto;
+    }
+
+    .logo span {
+        font-family: "Brush Script MT", cursive;
+        font-size: 22px;
+        color: black;
+    }
+
+/* ====== MENU ====== */
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    font-size: 22px;
+    padding: 0;
+    transform: none;
+    /* ❌ bỏ dịch chuyển */
+}
+
+    .menu li a {
+        text-decoration: none;
+        color: #000;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+        .menu li a:hover {
+            color: #b2ebf2;
+        }
+
+/* ====== ICONS (TÌM KIẾM / USER / GIỎ HÀNG) ====== */
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    transform: translateX(-100px);
+}
+
+    .icons i {
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .icons i:hover {
+            color: #b2ebf2;
+        }
+
+
+/* ====== SEARCH BOX ====== */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#search-icon {
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    #search-icon:hover {
+        color: #b2ebf2;
+    }
+
+.search-box {
+    position: fixed;
+    top: -26px;
+    left: -1255px;
+    width: 100vw;
+    height: 76px;
+    background-color: white;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+    .search-box.active {
+        display: flex;
+        animation: fadeIn 0.3s ease forwards;
+    }
+
+    .search-box input {
+        width: 80%;
+        max-width: 800px;
+        height: 40px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        border-bottom: 2px solid #ccc;
+    }
+
+#close-icon {
+    font-size: 22px;
+    color: #555;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+    #close-icon:hover {
+        color: #000;
+    }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.menu {
+    font-size: 20px;
+    list-style: none;
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+}
+
+    .menu > li {
+        position: relative;
+    }
+
+        .menu > li > a {
+            display: block;
+            padding: 15px 10px;
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+            .menu > li > a:hover {
+                color: #b2ebf2;
+            }
+
+.dropdown:hover > .submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* --- Cấp 2: submenu trong GU (sửa lại cho dính sát) --- */
+.submenu {
+    font-size: 20px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -360%;
+    background: #457b9d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    min-width: 200px;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    transform: translateY(10px);
+}
+
+    /* Khi thêm class .show thì submenu trượt xuống */
+    .submenu.show {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .submenu li a {
+        display: flex;
+        padding: 13px 15px;
+        color: #000;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+.sub-dropdown > a:hover img {
+    filter: brightness(0) saturate(100%) invert(86%) sepia(6%) saturate(1505%) hue-rotate(138deg) brightness(103%) contrast(97%) !important;
+}
+
+.sub-dropdown img {
+    width: 15%;
+    height: auto;
+    padding: 0 2px;
+    transform: translateY(-2px);
+}
+
+
+/* --- Cấp 3: Mega menu --- */
+.sub-dropdown:hover .mega-box {
+    display: block;
+}
+
+.mega-box {
+    font-size: 18px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #457b9d;
+    width: 66vw;
+    height: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+    .mega-box .content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .mega-box .row {
+        width: 32%;
+    }
+
+    .mega-box h3 {
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #000;
+        border-bottom: 1px solid #b2ebf2;
+        padding-bottom: 6px;
+        letter-spacing: 0.5px;
+        width: 140%;
+    }
+
+    .mega-box ul {
+        list-style: none;
+    }
+
+        .mega-box ul li a {
+            display: block;
+            padding: 5px 0;
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .mega-box ul li {
+            padding-left: 16px;
+        }
+
+            .mega-box ul li a:hover {
+                color: #b2ebf2;
+                padding-left: 4px;
+            }
+
+    .mega-box .row h3:hover {
+        color: #b2ebf2;
+    }
+
+/* Khi thêm class .show thì submenu hoặc mega-box hiển thị */
+.show {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* Ngăn nhảy trang khi click vào nút menu chính */
+.dropdown > a,
+.dropdown > button {
+    cursor: pointer;
+}
+
+/* Nếu bạn đổi <a> thành <button>, thêm style này */
+.dropdown > button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #000;
+    font-weight: 500;
+}
+
+    .dropdown > button:hover {
+        color: #b2ebf2;
+    }
+
+.mega-box .row a {
+    transform: translateY(-20px);
+}
+
+.mega-box .row ul li {
+    transform: translateY(-20px);
+}
+
+
+
+
+/*------- Menu SALE -------- */
+.sale-submenu {
+    position: absolute;
+    left: -130px;
+    top: 100%;
+    background: #457b9d;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    width: 80vw;
+    z-index: 10;
+    display: none;
+}
+
+/* --- Khi hover vào SALE thì submenu xổ xuống --- */
+.menu > li.dropdown:hover > .sale-submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+.sale-submenu li {
+    padding: 8px 0px;
+    transform: translateX(30px);
+}
+
+    .sale-submenu li a {
+        color: #111;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .sale-submenu li:hover {
+        padding-left: 4px;
+    }
+
+
+/* Nhãn đỏ (HOT / Outlet / RẺ) */
+.badge {
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-left: 6px;
+}
+
+    /* Màu từng loại nhãn */
+    .badge.hot {
+        background-color: #e63946;
+        /* đỏ tươi */
+    }
+
+    .badge.outlet {
+        background-color: #c1121f;
+        /* đỏ sậm */
+    }
+
+    .badge.re {
+        background-color: #d00000;
+        /* đỏ đậm */
+    }
+
+
+
+/* --- MENU ÁO --- */
+.ao-mega {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -370px;
+    background: #457b9d;
+    width: 80vw;
+    height: 350px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1 !important;
+}
+
+.dropdown:hover .ao-mega {
+    display: block;
+}
+
+/* Bố cục 3 cột */
+.ao-mega .content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ao-mega .row {
+    width: 32%;
+}
+
+    /* Gạch icon + chữ cùng lúc */
+    .ao-mega .row > a {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        text-decoration: none;
+        color: #000;
+        padding-bottom: 6px;
+    }
+
+        /* Gạch ngang */
+        .ao-mega .row > a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 180%;
+            height: 0.5px;
+            background-color: #b2ebf2;
+        }
+
+/* Tiêu đề */
+.ao-mega h3 {
+    font-weight: 600;
+    font-size: 17px;
+    color: #000;
+    padding: 0 5px;
+    transform: translateY(4px);
+}
+
+
+/* Hover chữ tiêu đề */
+.ao-mega a h3:hover {
+    color: #b2ebf2;
+    padding-left: 4px;
+}
+
+/* Danh sách con */
+.ao-mega ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+    .ao-mega ul li a {
+        display: block;
+        margin: 5px;
+        color: #000;
+        padding: 5px 0;
+        text-decoration: none;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
+        .ao-mega ul li a:hover {
+            color: #b2ebf2;
+            padding-left: 4px;
+        }
+
+.ao-mega .row > a:hover img {
+    filter: brightness(0) saturate(100%) invert(86%) sepia(6%) saturate(1505%) hue-rotate(138deg) brightness(103%) contrast(97%) !important;
+}
+
+
+
+/*------Menu Quần--------*/
+.quan-mega {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -470px;
+    background: #457b9d;
+    width: 80vw;
+    height: 350px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.dropdown:hover .quan-mega {
+    display: block;
+}
+
+/* Bố cục 3 cột */
+.quan-mega .content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quan-mega .row {
+    width: 32%;
+}
+
+    /* Gạch icon + chữ cùng lúc */
+    .quan-mega .row > a {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        text-decoration: none;
+        color: #000;
+        padding-bottom: 6px;
+    }
+
+        /* Gạch ngang */
+        .quan-mega .row > a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 140%;
+            height: 0.5px;
+            background-color: #b2ebf2;
+        }
+
+    .quan-mega .row > a {
+        width: 180px;
+        /* mỗi ô có cùng kích thước */
+        text-align: center;
+    }
+
+/* Tiêu đề */
+.quan-mega h3 {
+    font-weight: 600;
+    font-size: 17px;
+    color: #000;
+    padding: 0 5px;
+    transform: translateY(4px);
+}
+
+.quan-mega img {
+    width: 15%;
+    height: auto;
+    transform: translateY(2px);
+}
+
+.quan-mega .row > a:hover img {
+    filter: brightness(0) saturate(100%) invert(86%) sepia(6%) saturate(1505%) hue-rotate(138deg) brightness(103%) contrast(97%) !important;
+}
+
+/* Hover chữ tiêu đề */
+.quan-mega a h3:hover {
+    color: #b2ebf2;
+    padding-left: 4px;
+}
+
+/* Danh sách con */
+.quan-mega ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+    .quan-mega ul li a {
+        display: block;
+        margin: 5px;
+        color: #000;
+        padding: 5px 0;
+        text-decoration: none;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
+        .quan-mega ul li a:hover {
+            color: #b2ebf2;
+            padding-left: 4px;
+        }
+
+
+/*-----Menu Phụ Kiện-------*/
+.mega-menu {
+    display: none;
+    position: absolute;
+    left: -580px;
+    top: 100%;
+    width: 80vw;
+    background: #457b9d;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px 50px;
+    z-index: 999;
+}
+
+/* Hiện menu khi hover */
+.dropdown:hover .mega-menu {
+    display: block;
+}
+
+/* Bố cục lưới */
+.mega-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 40px;
+}
+
+/* Mỗi cột */
+.column {
+    width: 20%;
+    min-width: 180px;
+}
+
+    /* Tiêu đề */
+    .column h3 {
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+/* --- Tiêu đề có icon + gạch ngang --- */
+.mega-menu .column > a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    justify-content: flex-start;
+    /* 🔹 canh icon và chữ sang trái */
+    padding-left: 0;
+    /* 🔹 bỏ padding trái nếu có */
+}
+
+    /* Đường gạch kéo dài từ icon tới chữ */
+    .mega-menu .column > a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0.5px;
+        background-color: #b2ebf2;
+    }
+
+    /* Icon */
+    .mega-menu .column > a i,
+    .mega-menu .column > a img {
+        font-size: 18px;
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+
+    /* Tiêu đề chữ */
+    .mega-menu .column > a h3 {
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        color: #000;
+    }
+
+    /* Hover đổi màu đường gạch + chữ */
+    .mega-menu .column > a:hover h3 {
+        color: #b2ebf2;
+    }
+
+    .mega-menu .column > a:hover::after {
+        background-color: #fff;
+    }
+
+
+/* Danh sách con */
+.column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .column ul li a {
+        color: #000;
+        text-decoration: none;
+        display: block;
+        padding: 4px 0;
+        transition: 0.3s;
+    }
+
+        .column ul li a:hover {
+            color: #b2ebf2;
+            padding-left: 4px;
+        }
+
+.mega-menu a:hover h3 {
+    color: #b2ebf2;
+}
+
+.mega-menu img {
+    width: 20%;
+    filter: brightness(0);
+}
+
+.mega-menu a:hover img {
+    filter: brightness(0) saturate(100%) invert(86%) sepia(6%) saturate(1505%) hue-rotate(138deg) brightness(103%) contrast(97%) !important;
+}
+
+/* ----- Thêm cuộn dọc cho Mega Menu ----- */
+.mega-menu {
+    max-height: 460px;
+    /* 🔹 Giới hạn chiều cao tối đa */
+    overflow-y: auto;
+    /* 🔹 Bật cuộn dọc */
+    overflow-x: hidden;
+    /* 🔹 Ẩn cuộn ngang */
+    scrollbar-width: thin;
+    /* 🔹 Thanh cuộn nhỏ (Firefox) */
+    scrollbar-color: #b2ebf2 #457b9d;
+}
+
+    /* 🔹 Thanh cuộn đẹp cho Chrome / Edge / Safari */
+    .mega-menu::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .mega-menu::-webkit-scrollbar-track {
+        background: #457b9d;
+        /* màu nền thanh cuộn */
+    }
+
+    .mega-menu::-webkit-scrollbar-thumb {
+        background-color: #b2ebf2;
+        /* màu thanh trượt */
+        border-radius: 1px;
+    }
+
+
+/*------Cuối Trang-----*/
+.footer {
+    background-color: #457b9d;
+    color: #000;
+    font-family: Arial, sans-serif;
+    padding: 40px 80px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    border-bottom: 1px solid #b2ebf2;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .footer-item i {
+        font-size: 24px;
+        color: #000;
+    }
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .footer-column ul li {
+        margin-bottom: 8px;
+    }
+
+.footer-column a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+    .footer-column a:hover {
+        color: #b2ebf2;
+        padding-left: 4px;
+    }
+
+.footer-column h5:hover {
+    color: #b2ebf2;
+    padding-left: 4px;
+}
+
+.subscribe {
+    display: flex;
+    align-items: center;
+    border: 1px solid none;
+    /* viền giống ô số lượng */
+    border-radius: 10px;
+    /* bo tròn nhẹ */
+    overflow: hidden;
+    /* tránh tràn góc */
+    background-color: #fff;
+    /* nền trắng */
+    width: 100%;
+    /* full chiều rộng cột */
+    max-width: 300px;
+    /* giới hạn nếu muốn */
+}
+
+    .subscribe input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+    }
+
+    .subscribe button {
+        background-color: #b2ebf2;
+        border: none;
+        border-left: 1px solid none;
+        /* chia cách với input */
+        padding: 10px 16px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+
+.social-icons i {
+    margin-right: 16px;
+    margin-top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+    .social-icons i:hover {
+        color: #b2ebf2;
+    }

@@ -1,0 +1,50 @@
+﻿@model AURA.Models.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="~/Content/Màu_Sign_up/Sign_up.css" />
+</head>
+<body>
+    <div class="wrapper">
+        @using (Html.BeginForm("Index", "Sign_up", FormMethod.Post))
+        {
+            <h1>Sign Up</h1>
+
+            <div class="input-box">
+                @Html.TextBoxFor(m => m.FullName, new { placeholder = "Full name" })
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="input-box">
+                @Html.TextBoxFor(m => m.Email, new { placeholder = "Email" })
+                <i class='bx bxs-envelope'></i>
+            </div>
+
+            <div class="input-box">
+                @Html.TextBoxFor(m => m.Username, new { placeholder = "Username" })
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="input-box">
+                @Html.PasswordFor(m => m.Password, new { placeholder = "Password" })
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <button type="submit" class="btn">Sign Up</button>
+
+            <div class="register-link">
+                <p>
+                    Bạn đã có tài khoản?
+                    <a href="@Url.Action("Index", "Login")">Login</a>
+                </p>
+            </div>
+        }
+    </div>
+</body>
+</html>

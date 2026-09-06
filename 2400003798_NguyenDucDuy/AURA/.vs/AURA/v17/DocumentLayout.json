@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\VSSTUDIO\\web_Programming\\AURA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{45C16883-B19E-48AF-B61B-10869F5E0AC0}|AURA.csproj|d:\\vsstudio\\web_programming\\aura\\views\\giohang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45C16883-B19E-48AF-B61B-10869F5E0AC0}|AURA.csproj|solutionrelative:views\\giohang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45C16883-B19E-48AF-B61B-10869F5E0AC0}|AURA.csproj|D:\\VSSTUDIO\\web_Programming\\AURA\\views\\trangchu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45C16883-B19E-48AF-B61B-10869F5E0AC0}|AURA.csproj|solutionrelative:views\\trangchu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45C16883-B19E-48AF-B61B-10869F5E0AC0}|AURA.csproj|D:\\VSSTUDIO\\web_Programming\\AURA\\controllers\\gi\u1ECF h\u00E0ng\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45C16883-B19E-48AF-B61B-10869F5E0AC0}|AURA.csproj|solutionrelative:controllers\\gi\u1ECF h\u00E0ng\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45C16883-B19E-48AF-B61B-10869F5E0AC0}|AURA.csproj|D:\\VSSTUDIO\\web_Programming\\AURA\\views\\giohang\\thanhtoan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45C16883-B19E-48AF-B61B-10869F5E0AC0}|AURA.csproj|solutionrelative:views\\giohang\\thanhtoan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ThanhToan.cshtml",
+              "DocumentMoniker": "D:\\VSSTUDIO\\web_Programming\\AURA\\Views\\GioHang\\ThanhToan.cshtml",
+              "RelativeDocumentMoniker": "Views\\GioHang\\ThanhToan.cshtml",
+              "ToolTip": "D:\\VSSTUDIO\\web_Programming\\AURA\\Views\\GioHang\\ThanhToan.cshtml",
+              "RelativeToolTip": "Views\\GioHang\\ThanhToan.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-17T04:12:57.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\VSSTUDIO\\web_Programming\\AURA\\Views\\GioHang\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\GioHang\\Index.cshtml",
+              "ToolTip": "D:\\VSSTUDIO\\web_Programming\\AURA\\Views\\GioHang\\Index.cshtml",
+              "RelativeToolTip": "Views\\GioHang\\Index.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAF4AAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-17T04:06:01.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GioHangController.cs",
+              "DocumentMoniker": "D:\\VSSTUDIO\\web_Programming\\AURA\\Controllers\\Gi\u1ECF H\u00E0ng\\GioHangController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Gi\u1ECF H\u00E0ng\\GioHangController.cs",
+              "ToolTip": "D:\\VSSTUDIO\\web_Programming\\AURA\\Controllers\\Gi\u1ECF H\u00E0ng\\GioHangController.cs",
+              "RelativeToolTip": "Controllers\\Gi\u1ECF H\u00E0ng\\GioHangController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAzwB4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T03:54:58.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\VSSTUDIO\\web_Programming\\AURA\\Views\\Trangchu\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Trangchu\\Index.cshtml",
+              "ToolTip": "D:\\VSSTUDIO\\web_Programming\\AURA\\Views\\Trangchu\\Index.cshtml",
+              "RelativeToolTip": "Views\\Trangchu\\Index.cshtml",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T10:17:00.92Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

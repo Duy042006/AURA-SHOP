@@ -1,0 +1,38 @@
+[
+  {
+    "maDM": 1,
+    "maDMCha": 1,
+    "tenDM": "Jeans Slimfit",
+    "banner": null
+  },
+  {
+    "maDM": 2,
+    "maDMCha": 1,
+    "tenDM": "Jeans Loose",
+    "banner": null
+  },
+  {
+    "maDM": 3,
+    "maDMCha": 2,
+    "tenDM": "Quần Tây Casual",
+    "banner": null
+  },
+  {
+    "maDM": 4,
+    "maDMCha": 2,
+    "tenDM": "Quần Tây Công Sở",
+    "banner": null
+  },
+  {
+    "maDM": 5,
+    "maDMCha": 3,
+    "tenDM": "Short Thun",
+    "banner": null
+  },
+  {
+    "maDM": 6,
+    "maDMCha": 3,
+    "tenDM": "Short Kaki",
+    "banner": null
+  }
+]

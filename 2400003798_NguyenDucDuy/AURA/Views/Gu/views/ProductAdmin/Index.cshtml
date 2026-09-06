@@ -1,0 +1,92 @@
+﻿@model IEnumerable<AURA.Models.SanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AURALayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Màu_User/Thêm-Xóa.css" />
+
+<div class="order-wrapper">
+
+    <aside class="sidebar">
+        <div class="profile">
+            <div class="avatar">👤</div>
+            <h2>@ViewBag.FullName</h2>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li>
+                <a href="@Url.Action("Index", "User")" style="text-decoration:none; color:inherit;">
+                    <span>Thông tin tài khoản</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="@Url.Action("Index", "Order")" style="text-decoration:none; color:inherit;">
+                    <span>Quản lý đơn hàng</span>
+                </a>
+            </li>
+
+            <li class="active"><span>Thêm/Xóa đơn hàng</span></li>
+
+            <li>
+                <a href="@Url.Action("Logout","Login")" style="text-decoration:none;color:inherit;">
+                    Đăng xuất
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <div class="order-container">
+
+        <h2 class="order-title">Danh sách sản phẩm</h2>
+
+        <p>
+            <a href="@Url.Action("Create", "ProductAdmin")" class="btn btn-primary add-product-btn">
+                + Thêm sản phẩm
+            </a>
+        </p>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Màu sắc</th>
+                        <th>Hình ảnh</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.MaSP</td>
+                            <td>@Html.DisplayFor(m => item.TenSP)</td>
+                            <td>@String.Format("{0:N0} đ", item.Gia)</td>
+                            <td>@item.MauSac</td>
+                            <td>
+                                <img src="@Url.Content(item.HinhAnh)"
+                                     width="60" height="60"
+                                     style="object-fit:cover;border-radius:5px;" />
+                            </td>
+
+                            <td>
+                                <a href="@Url.Action("Delete", "ProductAdmin", new { id = item.MaSP })"
+                                   class="btn-delete"
+                                   onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?');">
+                                    Xóa
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

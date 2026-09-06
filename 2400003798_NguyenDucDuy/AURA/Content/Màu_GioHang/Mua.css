@@ -1,0 +1,65 @@
+﻿.order-success-wrapper {
+    max-width: 1000px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.order-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.order-success-text {
+    color: green;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.total-money {
+    font-size: 22px;
+    font-weight: bold;
+    color: #e63946;
+    margin-bottom: 25px;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+    .order-table th {
+        background-color: #457b9d;
+        color: white;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .order-table td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+        font-size: 15px;
+    }
+
+.order-empty {
+    color: red;
+    margin-top: 20px;
+}
+
+.back-home-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #457b9d;
+    color: white;
+    transition: 0.2s;
+}
+
+    .back-home-btn:hover {
+        background-color: #35607a;
+    }

@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "TimKiem";
+    Layout = "~/Views/Shared/_AURALayout.cshtml";
+}
+
+@model List<AURA.Models.View_SanPhamTong>
+
+@{
+    ViewBag.Title = "Kết quả tìm kiếm";
+    Layout = "~/Views/Shared/_AURALayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Màu_GU/Gu.css" />
+
+<div class="ao-page">
+    <div class="container">
+
+        <h1 class="page-title">
+            Kết quả tìm kiếm: "@ViewBag.TuKhoa"
+        </h1>
+
+        @if (!Model.Any())
+        {
+            <h3>❌ Không tìm thấy sản phẩm phù hợp</h3>
+        }
+        else
+        {
+            <div class="product-list">
+                @foreach (var sp in Model)
+                {
+                    string controllerChiTiet = "ChiTietSanPhamTrangChu";
+
+                    switch (sp.LoaiSP)
+                    {
+                        case "Ao": controllerChiTiet = "ChiTietSanPhamAo"; break;
+                        case "Quan": controllerChiTiet = "ChiTietSanPhamQuan"; break;
+                        case "PhuKien": controllerChiTiet = "ChiTietSanPhamPhuKien"; break;
+                        case "GU": controllerChiTiet = "ChiTietSanPhamGU"; break;
+                    }
+
+                    <div class="product">
+                        <div class="img-box">
+                            <a href="@Url.Action("Index", controllerChiTiet, new { id = sp.MaSP })">
+                                <img src="@sp.HinhAnh" alt="@sp.TenSP" />
+
+                                <div class="overlay"></div>
+                                <span class="tag">Miễn Phí Ship</span>
+
+                                <p class="name">@sp.TenSP</p>
+                                <p class="old-price">@String.Format("{0:N0}", sp.GiaGoc) VND</p>
+                                <p class="price">@String.Format("{0:N0}", sp.Gia) VND</p>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+    </div>
+</div>
+

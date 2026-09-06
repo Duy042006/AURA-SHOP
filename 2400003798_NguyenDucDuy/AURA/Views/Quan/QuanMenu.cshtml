@@ -1,0 +1,132 @@
+﻿@model AURA.Models.ViewModelQuan
+
+@{
+    ViewBag.Title = "QuanMenu";
+    Layout = "~/Views/Shared/_AURALayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Màu_GU/Gu.css" />
+
+<div class="ao-page">
+    <div class="container">
+
+        <h1 class="page-title">
+            Khám Phá Quần Thời Trang Của Bạn
+        </h1>
+
+        <!-- 3 LOẠI QUẦN CẤP 1 -->
+        <div class="brand-container">
+
+            <div class="brand-box">
+                <a href="@Url.Action("DanhMucQuan", "Quan", new { id = 1 })">
+                    <img src="~/Content/images/_MENU/Quan/18_3355de3e-8e09-480f-bc96-c4b8b14c50cf.webp" />
+                </a>
+            </div>
+
+            <div class="brand-box">
+                <a href="@Url.Action("DanhMucQuan", "Quan", new { id = 2 })">
+                    <img src="~/Content/images/_MENU/Quan/19_76862af0-2489-4410-ba14-8c8f25aa2c0f.webp" />
+                </a>
+            </div>
+
+            <div class="brand-box">
+                <a href="@Url.Action("DanhMucQuan", "Quan", new { id = 3 })">
+                    <img src="~/Content/images/_MENU/Quan/20_4b2fadf3-f826-4c87-bbb6-f4f7db534a88.webp" />
+                </a>
+            </div>
+
+            <div class="brand-box">
+                <a href="@Url.Action("DanhMucQuan", "Quan", new { id = 4 })">
+                    <img src="~/Content/images/_MENU/Quan/21_21b303aa-b346-4912-8f20-7e878f72dc94.webp" />
+                </a>
+            </div>
+
+        </div>
+
+        <!-- BỘ LỌC -->
+        <div class="filter-container">
+            <span class="label">Bộ lọc:</span>
+
+            <!-- LỌC GIÁ -->
+            <div class="filter-box">
+                <button class="filter-trigger">Giá ▾</button>
+                <ul class="filter-menu price-filter">
+                    <li data-price="100">Dưới 100K</li>
+                    <li data-price="200">100K - 200K</li>
+                    <li data-price="300">200K - 300K</li>
+                    <li data-price="400">Trên 300K</li>
+                </ul>
+            </div>
+
+            <!-- LỌC MÀU -->
+            <div class="filter-box">
+                <button class="filter-trigger">Màu ▾</button>
+                <ul class="filter-menu color-filter">
+                    <li data-color="đen"><span class="color-dot black"></span> Đen</li>
+                    <li data-color="trắng"><span class="color-dot white"></span> Trắng</li>
+                    <li data-color="xám"><span class="color-dot gray"></span> Xám</li>
+                    <li data-color="xanh"><span class="color-dot blue"></span> Xanh</li>
+                    <li data-color="nâu"><span class="color-dot" style="background:brown"></span> Nâu</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- DANH SÁCH -->
+        <div class="product-list">
+            @foreach (var sp in Model.DSSanPham)
+            {
+                <div class="product"
+                     data-color="@sp.MauSac.ToLower()"
+                     data-gia="@sp.Gia">
+
+                    <div class="img-box">
+                        <a href="@Url.Action("Index", "ChiTietSanPhamQuan", new { id = sp.MaSP })">
+                            <img src="@sp.HinhAnh" alt="@sp.TenSP" />
+                            <p class="name">@sp.TenSP</p>
+                            <p class="old-price">@String.Format("{0:N0}", sp.GiaGoc) VND</p>
+                            <p class="price">@String.Format("{0:N0}", sp.Gia) VND</p>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+
+<div class="pagination">
+    <ul>
+        @if (Model.CurrentPage > 1)
+        {
+            <li><a href="@Url.Action("QuanMenu", new { page = Model.CurrentPage - 1 })">‹ Prev</a></li>
+        }
+        else
+        {
+            <li class="disabled">‹ Prev</li>
+        }
+
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            if (i == Model.CurrentPage)
+            {
+                <li class="active">@i</li>
+            }
+            else
+            {
+                <li><a href="@Url.Action("QuanMenu", new { page = i })">@i</a></li>
+            }
+        }
+
+        @if (Model.CurrentPage < Model.TotalPages)
+        {
+            <li><a href="@Url.Action("QuanMenu", new { page = Model.CurrentPage + 1 })">Next ›</a></li>
+        }
+        else
+        {
+            <li class="disabled">Next ›</li>
+        }
+    </ul>
+</div>
+
+

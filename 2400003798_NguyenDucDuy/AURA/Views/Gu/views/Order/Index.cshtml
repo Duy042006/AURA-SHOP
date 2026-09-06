@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AURALayout.cshtml";
+}
+
+@model IEnumerable<AURA.Models.Order>
+
+<link rel="stylesheet" href="~/Content/Màu_User/Order.css" />
+<div class="order-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="profile">
+            <div class="avatar">👤</div>
+            <h2>@ViewBag.FullName</h2>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li>
+                <a href="@Url.Action("Index", "User")" style="text-decoration:none; color:inherit;">
+                    <span>Thông tin tài khoản</span>
+            </li>
+
+            <li class="active"><span>Quản lý đơn hàng</span></li>
+
+
+            @if (Session["Role"]?.ToString() == "Admin")
+            {
+                <li>
+                    <a href="@Url.Action("Index", "ProductAdmin")"  style="text-decoration:none; color:inherit;">
+                        <span>Thêm / Xóa sản phẩm</span>
+                    </a>
+                </li>
+            }
+
+            <li>
+                <a href="@Url.Action("Logout","Login")" style="text-decoration:none;color:inherit;">
+                    Đăng xuất
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <div class="order-container">
+
+        <h2 class="order-title">Đơn hàng của tôi</h2>
+
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>Mã đơn</th>
+                    <th>Ngày đặt</th>
+                    <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td>#@order.OrderID</td>
+
+                        <td>
+                            @(order.OrderDate.HasValue
+                ? order.OrderDate.Value.ToString("dd/MM/yyyy")
+                : "")
+                        </td>
+
+                        <td>@String.Format("{0:N0} đ", order.TotalAmount)</td>
+
+                        <td>
+                            @if (order.Status == "Canceled")
+                            {
+                                <span class="status canceled">Đã hủy</span>
+                            }
+                            else if (order.Status == "Completed")
+                            {
+                                <span class="status done">Hoàn tất</span>
+                            }
+                            else
+                            {
+                                <span class="status pending">Đang xử lý</span>
+                            }
+                        </td>
+
+                        <td>
+                            <a class="btn-view"
+                               href="@Url.Action("Detail", "Order", new { id = order.OrderID })">
+                                Xem
+                            </a>
+
+                            @if (order.Status != "Canceled")
+                            {
+                                <a class="btn-cancel"
+                                   href="@Url.Action("Cancel", "Order", new { id = order.OrderID })"
+                                   onclick="return confirm('Bạn chắc chắn muốn hủy đơn này?');">
+                                    Hủy
+                                </a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+    
+
+    
+

@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "fullName": "Admin AURA",
+    "email": "admin@aura.vn",
+    "username": "admin",
+    "password": "$2a$10$wz4vUN.6RoGB0a9u50.BLeJdk7LT1ahyY4rXfZX7ISfoi8/r/wDVK",
+    "phone": "0900000000",
+    "gender": "Nam",
+    "day": null,
+    "month": null,
+    "year": null,
+    "role": "Admin"
+  },
+  {
+    "id": 2,
+    "fullName": "Duy",
+    "email": "duy@gmail.com",
+    "username": "khach1",
+    "password": "$2a$10$srpwewApZBAVtNwBRsfTBuHtPJTgiOyZSKCf8jgvHEpFZPL0XHnsi",
+    "phone": "0123456789",
+    "gender": "Nam",
+    "day": null,
+    "month": null,
+    "year": null,
+    "address": "TP HCM",
+    "role": "User"
+  },
+  {
+    "id": 3,
+    "fullName": "ndd",
+    "email": "duy123@gmail.com",
+    "username": "khach2",
+    "password": "$2a$10$Z8xR85MFIO928.27uoumy.VlauT5bjCUtLv4r8mmzpkKWYgM1E2Qi",
+    "phone": "0123456789",
+    "gender": "Nam",
+    "day": null,
+    "month": null,
+    "year": null,
+    "address": "SaiGon",
+    "role": "User"
+  }
+]

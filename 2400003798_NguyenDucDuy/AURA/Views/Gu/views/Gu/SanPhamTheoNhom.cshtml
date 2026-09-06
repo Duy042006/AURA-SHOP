@@ -1,0 +1,88 @@
+﻿@model AURA.Models.ViewModelSanPhamTheoNhom
+@{
+    ViewBag.Title = Model.TenNhom;
+    Layout = "~/Views/Shared/_AURALayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Màu_GU/_Gu.css" />
+
+<div class="ao-page">
+    <div class="container">
+
+        <!-- TITLE -->
+        <h1 class="page-title">
+            @Model.TieuDe
+        </h1>
+
+        <!-- BANNER -->
+        <section class="banner">
+            <div class="banner-left">
+                <img src="@Url.Content(Model.Banner)" alt="@Model.TenNhom" />
+            </div>
+
+            <div class="banner-right">
+                <p>@Model.NoiDung</p>
+            </div>
+        </section>
+
+
+        <!-- FILTER -->
+        <div class="filter-container">
+            <span class="label">Bộ lọc:</span>
+
+            <div class="filter-box">
+                <button class="filter-trigger">Giá ▾</button>
+                <ul class="filter-menu price-filter">
+                    <li data-price="100">Dưới 100K</li>
+                    <li data-price="200">100K - 200K</li>
+                    <li data-price="300">200K - 300K</li>
+                    <li data-price="400">Trên 300K</li>
+                </ul>
+            </div>
+
+            <div class="filter-box">
+                <button class="filter-trigger" id="colorFilterBtn">Màu ▾</button>
+                <ul class="filter-menu color-filter">
+                    <li data-color="đen"><span class="color-dot black"></span> Đen</li>
+                    <li data-color="trắng"><span class="color-dot white"></span> Trắng</li>
+                    <li data-color="xám"><span class="color-dot gray"></span> Xám</li>
+                    <li data-color="xanh"><span class="color-dot blue"></span> Xanh</li>
+                    <li data-color="đỏ"><span class="color-dot red"></span> Đỏ</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- PRODUCT LIST -->
+        <div class="product-list">
+
+            @foreach (var sp in Model.DanhSachSanPham)
+            {
+                <div class="product"
+                     data-color="@sp.MauSac.ToLower()"
+                     data-gia="@sp.Gia">
+
+                    <div class="img-box">
+                        <a href="@Url.Action("Index", "ChiTietSanPhamGU", new { id = sp.MaDM })">
+                            <img src="@Url.Content(sp.HinhAnh)" alt="@sp.TenSP" />
+
+                            <div class="overlay"></div>
+                            <span class="tag">Miễn Phí Ship</span>
+
+                            <p class="name">@sp.TenSP</p>
+                            <p class="old-price">@String.Format("{0:N0}", sp.GiaGoc) VND</p>
+                            <p class="price">@String.Format("{0:N0}", sp.Gia) VND</p>
+                        </a>
+                    </div>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/Menu-Gu/Gu.js"></script>

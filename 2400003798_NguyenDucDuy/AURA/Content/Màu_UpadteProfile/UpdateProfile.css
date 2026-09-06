@@ -1,0 +1,54 @@
+﻿/* Form chỉnh sửa */
+.update-box {
+    width: 450px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+    .update-box h2 {
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+
+    /* Label */
+    .update-box label {
+        font-weight: 600;
+        margin-bottom: 6px;
+        display: block;
+    }
+
+    /* Input */
+    .update-box .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        margin-bottom: 18px;
+        font-size: 16px;
+    }
+
+        .update-box .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0,123,255,0.4);
+        }
+
+/* Nút lưu */
+.btn-save {
+    background: #007bff;
+    color: white;
+    padding: 12px 26px;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    transition: 0.2s;
+}
+
+    .btn-save:hover {
+        background: #0056cc;
+        transform: translateY(-2px);
+    }

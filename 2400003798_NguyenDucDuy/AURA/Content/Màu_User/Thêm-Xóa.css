@@ -1,0 +1,138 @@
+﻿/* ====== KHUNG 2 CỘT ====== */
+.order-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 25px;
+}
+
+/* ====== SIDEBAR ====== */
+/* SIDEBAR */
+.sidebar {
+    width: 280px;
+    background: #fff;
+    padding: 20px 25px;
+    border-right: 1px solid #ddd;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background: #eee;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin: 0 auto 10px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+    .sidebar-menu li {
+        padding: 12px 8px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #555;
+    }
+
+        .sidebar-menu li.active,
+        .sidebar-menu li:hover {
+            color: #457b9d;
+            font-weight: bold;
+        }
+
+/* KHUNG 2 CỘT (Sidebar + Nội dung) */
+.order-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 20px;
+}
+
+
+/* Avatar */
+.avatar {
+    width: 80px;
+    height: 80px;
+    background: #e3e8f0;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+}
+
+/* ====== NỘI DUNG SẢN PHẨM ====== */
+h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Nút thêm sản phẩm */
+.btn-primary {
+    background: #2563eb !important;
+    border: none !important;
+    padding: 8px 15px;
+    border-radius: 6px;
+    color: white !important; /* Đổi màu chữ */
+    text-decoration: none !important; /* Xóa gạch chân */
+    display: inline-block;
+}
+
+    .btn-primary:hover {
+        background: #1d4ed8 !important;
+        text-decoration: none !important;
+    }
+
+.add-product-btn {
+    margin-bottom: 20px; /* tạo khoảng cách */
+    display: inline-block;
+}
+
+
+/* Bảng sản phẩm */
+.table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .table th {
+        background: #e3eefc !important;
+        font-weight: bold;
+        color: #1e3a8a;
+    }
+
+    .table td {
+        vertical-align: middle;
+    }
+
+/* Nút xóa */
+.btn-delete {
+    background: #ef4444; /* đỏ đẹp */
+    color: white !important;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    text-decoration: none !important;
+    display: inline-block;
+    transition: 0.2s ease;
+}
+
+    .btn-delete:hover {
+        background: #dc2626;
+        transform: translateY(-1px);
+    }
+

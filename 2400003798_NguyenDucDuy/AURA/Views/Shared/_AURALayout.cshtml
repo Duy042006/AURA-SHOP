@@ -1,0 +1,535 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/Màu_AURA/Style_chung.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="@Url.Action("Index", "Trangchu")">
+                    <img src="/Content/images/Menu/Logo.png" />
+                </a>
+            </div>
+
+            <nav class="nav-menu">
+                <ul class="menu">
+
+                    <!-- Mục GU -->
+                    <li class="dropdown">
+                        <a href="@Url.Action("Index", "Gu")" class="gu-btn">GU ▾</a>
+                        <ul class="submenu">
+
+                            <!--Gu đơn giản-->
+
+                            <li class="sub-dropdown">
+                                <a href="@Url.Action("Tram","Gu", new { id = 1 })"><img src="/Content/images/Menu/shirt_ (1).png">GU ĐƠN GIẢN ▸</a>
+                                <div class="mega-box">
+                                    <div class="content">
+                                        <div class="row">
+                                            <a href="@Url.Action("Nhom", "Gu", new { id = 1 })">
+                                                <h3>Trạm Thiết Yếu</h3>
+                                            </a>
+                                            <ul>
+                                                <li><a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 1 })">Non Branded (Bền, đơn giản)</a></li>
+                                                <li><a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 2 })">Seventy Seven (Không lỗi mốt)</a></li>
+                                                <li><a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 3 })">The Worker</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="row">
+                                            <a href="@Url.Action("Nhom", "Gu", new { id = 2 })">
+                                                <h3>Trạm Jean</h3>
+                                            </a>
+                                            <ul>
+                                                <li><a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 4 })">The Original Jean (Giá tốt)</a></li>
+                                                <li><a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 5 })">Tek Black Jean (Đen bền)</a></li>
+                                                <li><a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 6 })">Multi-Color Jean (Nhiều màu)</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="row">
+                                            <a href="@Url.Action("Nhom", "Gu", new { id = 3 })">
+                                                <h3>Trạm Công Nghệ</h3>
+                                            </a>
+                                            <ul>
+                                                <li><a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 7 })">The Minimalist (Tối giản)</a></li>
+                                                <li><a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 8 })">The CEO (Sang trọng)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!--Gu thiết kế -->
+
+                            <li class="sub-dropdown">
+                                <a href="@Url.Action("Tram","Gu", new { id = 2 })"><img src="/Content/images/Menu/shirt-line_.png">GU THIẾT KẾ ▸</a>
+                                <div class="mega-box">
+                                    <div class="content">
+                                        <div class="row">
+                                            <a href="@Url.Action("Nhom", "Gu", new { id = 4 })">
+                                                <h3>Trạm Dịch Chuyển</h3>
+                                            </a>
+                                            <ul>
+                                                <li><a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 9 })">Áo Khoác Đơn Giản</a></li>
+                                                <li><a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 10 })">Áo Khoác Cá Tính</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="row">
+                                            <a href="@Url.Action("Nhom", "Gu", new { id = 5 })">
+                                                <h3>Trạm Tận Hưởng</h3>
+                                            </a>
+                                            <ul>
+                                                <li><a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 11 })">The No Style (Cá tính riêng)</a></li>
+                                                <li><a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 12 })">The Weekend (Thích chill)</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="row">
+                                            <a href="@Url.Action("Nhom", "Gu", new { id = 6 })">
+                                                <h3>Trạm Collab (Bản quyền)</h3>
+                                            </a>
+                                            <ul>
+                                                <li><a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 13 })">One Piece</a></li>
+                                                <li><a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 14 })">Dragon Ball Z</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!--Gu thể thao-->
+
+                            <li class="sub-dropdown">
+                                <a href="@Url.Action("Tram","Gu", new { id = 3 })"><img src="/Content/images/Menu/ball-football_.png">GU THỂ THAO ▸</a>
+                                <div class="mega-box">
+                                    <div class="content">
+                                        <div class="rowed">
+                                            <ul>
+                                                <li><a href="@Url.Action("Nhom", "Gu", new { id = 7 })">The Beginner (Mới bắt đầu)</a></li>
+                                                <li><a href="@Url.Action("Nhom", "Gu", new { id = 8 })">The Trainer (Tập chuyên nghiệp)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!--Áo-->
+                    <li class="dropdown">
+                        <a href="@Url.Action("AoMenu", "Ao")">ÁO ▾</a>
+                        <div class="ao-mega">
+                            <div class="content">
+                                <div class="row">
+                                    <a href="@Url.Action("DanhMuc", "Ao", new { id = 1 })">
+                                        <img src="/Content/images/Menu/shirt_.png">
+                                        <h3>ÁO THUN</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPham", "Ao", new { id = 1 })">Áo Thun Cổ Tròn</a></li>
+                                        <li><a href="@Url.Action("SanPham", "Ao", new { id = 2 })">Áo Polo</a></li>
+                                        <li><a href="@Url.Action("SanPham", "Ao", new { id = 3 })">Áo Thun Tay Dài</a></li>
+                                        <li><a href="@Url.Action("SanPham", "Ao", new { id = 4 })">Áo Tank Top (Áo Ba Lỗ)</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="row">
+                                    <a href="@Url.Action("DanhMuc", "Ao", new { id = 2 })">
+                                        <img src="/Content/images/Menu/shirt-long-sleeve_.png">
+                                        <h3>ÁO SƠ MI</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPham", "Ao", new { id = 5 })">Áo Sơ Mi Tay Ngắn</a></li>
+                                        <li><a href="@Url.Action("SanPham", "Ao", new { id = 6 })">Áo Sơ Mi Tay Dài</a></li>
+                                        <li><a href="@Url.Action("SanPham", "Ao", new { id = 7 })">Áo Sơ Mi Khoác</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="row">
+                                    <a href="@Url.Action("DanhMuc", "Ao", new { id = 3 })">
+                                        <img src="/Content/images/Menu/jacket.png">
+                                        <h3>ÁO KHOÁC</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPham", "Ao", new { id = 8 })">Áo Khoác Parka</a></li>
+                                        <li><a href="@Url.Action("SanPham", "Ao", new { id = 9 })">Áo Khoác Jean</a></li>
+                                        <li><a href="@Url.Action("SanPham", "Ao", new { id = 10 })">Áo Khoác Kaki</a></li>
+                                        <li><a href="@Url.Action("SanPham", "Ao", new { id = 11 })">Áo Khoác Dù</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!------Menu Quần------->
+                    <li class="dropdown">
+                        <a href="@Url.Action("QuanMenu", "Quan")">QUẦN ▾</a>
+                        <div class="quan-mega">
+                            <div class="content">
+                                <div class="row">
+                                    <a href="@Url.Action("DanhMucQuan", "Quan", new { id = 1 })">
+                                        <img src="/Content/images/Menu/short-pants-pockets_.png">
+                                        <h3>QUẦN SHORT</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 1 })">Quần Short Thun</a></li>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 2 })">Quần Short Dù</a></li>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 3 })">Quần Short Kaki</a></li>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 4 })">Quần Short Cargo</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="row">
+                                    <a href="@Url.Action("DanhMucQuan", "Quan", new { id = 2 })">
+                                        <img src="/Content/images/Menu/pants_.png">
+                                        <h3>QUẦN DÀI</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 5 })">Quần Tây</a></li>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 6 })">Quần Jogger</a></li>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 7 })">Quần Kaki</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="row">
+                                    <a href="@Url.Action("DanhMucQuan", "Quan", new { id = 3 })">
+                                        <img src="/Content/images/Menu/jeans_.png">
+                                        <h3>QUẦN JEANS</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 8 })">Quần Jeans Slim Fit</a></li>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 9 })">Quần Jeans Losse Fit</a></li>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 10 })">Quần Jeans Jogger</a></li>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 11 })">Quần Jeans Short</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="row">
+                                    <a href="@Url.Action("DanhMucQuan", "Quan", new { id = 4 })">
+                                        <img src="/Content/images/Menu/panties_.png">
+                                        <h3>QUẦN LÓT</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 11 })">Quần Lót Sợi Tự Nhiên</a></li>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 12 })">Quần Lót Seamless</a></li>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 13 })">Quần Lót Lụa Băng</a></li>
+                                        <li><a href="@Url.Action("SanPhamQuan", "Quan", new { id = 14 })">Quần Lót Thể Thao</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!------Menu Phụ Kiện------->
+                    <li class="dropdown">
+                        <a href="@Url.Action("PhuKienMenu", "PhuKien")">PHỤ KIỆN ▾</a>
+                        <div class="mega-menu">
+                            <div class="mega-content">
+
+                                <div class="column">
+                                    <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 1 })">
+                                        <i class="fa-solid fa-hat-cowboy-side"></i>
+                                        <h3>NÓN</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 1 })">Nón Dad Hat</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 2 })">Nón Baseball Cap</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 3 })">Nón Trucker Cap</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 4 })">Nón Snapback</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="column">
+                                    <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 2 })">
+                                        <i class="fa-solid fa-bag-shopping"></i>
+                                        <h3 style="white-space: nowrap;">TÚI ĐEO CHÉO & TÚI XÁCH</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 5 })">Túi Đeo Chéo</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 6 })">Túi Bao Tử</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 7 })">Túi Đeo Ngực</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 8 })">Túi Tote</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="column">
+                                    <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 3 })">
+                                        <img src="/Content/images/Menu/backpack_.png">
+                                        <h3>BALO</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 9 })">Balo Essential</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 10 })">Balo Smart</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 11 })">Balo Campus</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 12 })">Balo Camping</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="column">
+                                    <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 4 })">
+                                        <i class="fa-solid fa-wallet"></i>
+                                        <h3>VÍ</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 13 })">Ví Ngang Công Sở</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 14 })">Ví Đứng Công Sở</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 15 })">Ví Canvas</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 16 })">Ví Cầm Tay</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="column">
+                                    <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 5 })">
+                                        <img src="/Content/images/Menu/belt_.png">
+                                        <h3>DÂY NỊT</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 17 })">Dây Nịt Da Bò</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 18 })">Dây Nịt Da Bò Ý</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 19 })">Dây Nịt Da Trâu</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="column">
+                                    <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 6 })">
+                                        <i class="fa-solid fa-socks"></i>
+                                        <h3>VỚ</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 20 })">Vớ Basic</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 21 })">Vớ Công Thái Học</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 22 })">Vớ Thể Thao</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="column">
+                                    <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 7 })">
+                                        <i class="fa-solid fa-dumbbell"></i>
+                                        <h3>PHỤ KIỆN THỂ THAO</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 23 })">Băng Trán</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 24 })">Băng Đeo Cổ Tay</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 25 })">Băng Bảo Vệ Cổ Chân</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 26 })">Bó Gối</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="column">
+                                    <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 8 })">
+                                        <i class="fa-solid fa-hand-sparkles"></i>
+                                        <h3>PHỤ KIỆN CÁ NHÂN</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 27 })">Găng Tay</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 28 })">Lót Giày</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="column">
+                                    <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 9 })">
+                                        <i class="fa-solid fa-shoe-prints"></i>
+                                        <h3>GIÀY</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 29 })">Giày Oxford</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 30 })">Giày Loafer</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 31 })">Giày Boots</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="column">
+                                    <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 10 })">
+                                        <img src="/Content/images/Menu/thong-sandal_.png">
+                                        <h3>DÉP</h3>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 32 })">Dép Đế Trấu</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 33 })">Dép Đế Thấp</a></li>
+                                        <li><a href="@Url.Action("SanPhamPhuKien", "PhuKien", new { id = 34 })">Dép Đế Cao</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="#">Mới</a></li>
+                    <li><a href="#">Cửa hàng</a></li>
+                    <li><a href="#">Vip</a></li>
+                </ul>
+            </nav>
+
+            <div class="icons">
+                <div class="search-container">
+                    <i class="fas fa-search" id="search-icon"></i>
+
+                    <form action="@Url.Action("TimKiem", "SanPham")" method="get"
+                          class="search-box" id="search-box">
+                        <input type="text" name="keyword" placeholder="Tìm kiếm sản phẩm..." required />
+                        <button type="submit" style="display:none;"></button>
+                        <i class="fas fa-times" id="close-icon"></i>
+                    </form>
+                </div>
+                
+
+
+
+                
+                
+                 
+                
+                
+                
+                    <a href="@Url.Action("Index", "Order")"><i class="fa fa-user"></i></a>
+                
+
+
+                
+                
+                    <a href="@Url.Action("Index", "GioHang")">
+                        <i class="fa fa-shopping-bag"></i>
+                    </a>
+                
+                
+
+
+        </div>
+
+    </header>
+
+    <script src="/Scripts/AURA/menu.js"></script>
+
+    @RenderBody()
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-item">
+                <i class="fa-solid fa-box"></i>
+                <div>
+                    <h4>MIỄN PHÍ SHIP</h4>
+                    <p>Toàn quốc</p>
+                </div>
+            </div>
+            <div class="footer-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <h4>BẢO HÀNH</h4>
+                    <p>365 ngày</p>
+                </div>
+            </div>
+            <div class="footer-item">
+                <i class="fa-solid fa-store"></i>
+                <div>
+                    <h4>ĐỊA CHỈ</h4>
+                    <p>Cửa hàng YaMe VN</p>
+                </div>
+            </div>
+            <div class="footer-item">
+                <i class="fa-solid fa-book-open"></i>
+                <div>
+                    <h4>TẠP CHÍ</h4>
+                    <p>Thông tin thời trang</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Quần Áo</h3>
+                <ul>
+                    <li><a href="@Url.Action("DanhMuc", "Ao", new { id = 1 })">Áo Thun</a></li>
+                    <li><a href="@Url.Action("DanhMuc", "Ao", new { id = 3 })">Áo Khoác</a></li>
+                    <li><a href="@Url.Action("DanhMuc", "Ao", new { id = 2 })">Áo Sơ Mi</a></li>
+                    <li><a href="@Url.Action("DanhMucQuan", "Quan", new { id = 1 })">Quần Dài</a></li>
+                    <li><a href="@Url.Action("DanhMucQuan", "Quan", new { id = 2 })">Quần Short</a></li>
+                    <li><a href="@Url.Action("DanhMucQuan", "Quan", new { id = 3 })">Quần Jeans</a></li>
+                    <li><a href="@Url.Action("DanhMucQuan", "Quan", new { id = 4 })">Quần Lót</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Phụ Kiện</h3>
+                <ul>
+                    <li><a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 3 })">Balo</a></li>
+                    <li><a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 2 })">Túi Đeo</a></li>
+                    <li><a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 1 })">Nón</a></li>
+                    <li><a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 5 })">Ví</a></li>
+                    <li><a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 4 })">Dây Nịt</a></li>
+                    <li><a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 6 })">Vớ</a></li>
+                    <li><a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 9 })">Giày</a></li>
+                    <li><a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 10 })">Dép</a></li>
+                    <li><a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 7 })">Phụ Kiện Cá Nhân</a></li>
+                    <li><a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 8 })">Phụ Kiện Thể Thao</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>GU của ARUA</h3>
+                <ul>
+                    <li>
+                        <a href="@Url.Action("Tram","Gu", new { id = 1 })">
+                            <h5>GU Đơn Giản<h5>
+                        </a>
+                    </li>
+                    <li><a href="@Url.Action("Nhom", "Gu", new { id = 1 })">Trạm Thiết Yếu</a></li>
+                    <li><a href="@Url.Action("Nhom", "Gu", new { id = 2 })">Trạm Công Nghệ</a></li>
+                    <li><a href="@Url.Action("Nhom", "Gu", new { id = 3 })">Trạm Jean</a></li>
+                    <li>
+                        <a href="@Url.Action("Tram","Gu", new { id = 2 })">
+                            <h5>GU Thiết Kế</h5>
+                        </a>
+                    </li>
+                    <li><a href="@Url.Action("Nhom", "Gu", new { id = 4 })">Trạm Tận Hưởng</a></li>
+                    <li><a href="@Url.Action("Nhom", "Gu", new { id = 5 })">Trạm Dịch Chuyển</a></li>
+                    <li><a href="@Url.Action("Nhom", "Gu", new { id = 6 })">Trạm Collab</a></li>
+                    <li>
+                        <a href="@Url.Action("Tram","Gu", new { id = 3 })">
+                            <h5>GU Thể Thao</h5>
+                        </a>
+                    </li>
+                    <li><a href="@Url.Action("Nhom", "Gu", new { id = 7 })">The Beginner</a></li>
+                    <li><a href="@Url.Action("Nhom", "Gu", new { id = 8 })">The Trainer</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Về AURA</h3>
+                <ul>
+                    <li><a href="#">Giới Thiệu</a></li>
+                    <li><a href="#">Cửa Hàng</a></li>
+                    <li><a href="#">Bảo Hành</a></li>
+                    <li><a href="#">Đổi Trả</a></li>
+                    <li><a href="#">Đăng Sách VIP</a></li>
+                    <li><a href="#">Chính Sách VIP</a></li>
+                    <li><a href="#">Blog Gu Đơn Giản</a></li>
+                    <li><a href="#">Blog Gu Thiết kế</a></li>
+                    <li><a href="#">Blog Gu Thể Thao</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Gia nhập Cộng đồng YaMer</h3>
+                <form class="subscribe">
+                    <input type="email" placeholder="Nhập email" />
+                    <button>Đăng ký</button>
+                </form>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+    </footer>

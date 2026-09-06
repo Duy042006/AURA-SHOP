@@ -1,0 +1,128 @@
+[
+  {
+    "nhomID": 1,
+    "tramID": 1,
+    "tenNhom": "Non Branded",
+    "moTa": "Bền, đơn giản",
+    "hinhAnhBanner": null,
+    "tieuDe": "Non Branded",
+    "noiDung": "Bền, đơn giản"
+  },
+  {
+    "nhomID": 2,
+    "tramID": 1,
+    "tenNhom": "Seventy Seven",
+    "moTa": "Không lỗi mốt",
+    "hinhAnhBanner": null,
+    "tieuDe": "Seventy Seven",
+    "noiDung": "Không lỗi mốt"
+  },
+  {
+    "nhomID": 3,
+    "tramID": 1,
+    "tenNhom": "The Worker",
+    "moTa": "Nhiều túi",
+    "hinhAnhBanner": null,
+    "tieuDe": "The Worker",
+    "noiDung": "Nhiều túi"
+  },
+  {
+    "nhomID": 4,
+    "tramID": 2,
+    "tenNhom": "The Original Jean",
+    "moTa": "Giá tốt",
+    "hinhAnhBanner": null,
+    "tieuDe": "The Original Jean",
+    "noiDung": "Giá tốt"
+  },
+  {
+    "nhomID": 5,
+    "tramID": 2,
+    "tenNhom": "Tek Black Jean",
+    "moTa": "Đen bền",
+    "hinhAnhBanner": null,
+    "tieuDe": "Tek Black Jean",
+    "noiDung": "Đen bền"
+  },
+  {
+    "nhomID": 6,
+    "tramID": 2,
+    "tenNhom": "Multi-Color Jean",
+    "moTa": "Nhiều màu",
+    "hinhAnhBanner": null,
+    "tieuDe": "Multi-Color Jean",
+    "noiDung": "Nhiều màu"
+  },
+  {
+    "nhomID": 7,
+    "tramID": 3,
+    "tenNhom": "The Minimalist",
+    "moTa": "Tối giản",
+    "hinhAnhBanner": null,
+    "tieuDe": "The Minimalist",
+    "noiDung": "Tối giản"
+  },
+  {
+    "nhomID": 8,
+    "tramID": 3,
+    "tenNhom": "The CEO",
+    "moTa": "Sang trọng",
+    "hinhAnhBanner": null,
+    "tieuDe": "The CEO",
+    "noiDung": "Sang trọng"
+  },
+  {
+    "nhomID": 9,
+    "tramID": 4,
+    "tenNhom": "Áo Khoác Đơn Giản",
+    "moTa": "Bền, đơn giản",
+    "hinhAnhBanner": null,
+    "tieuDe": "Đơn Giản",
+    "noiDung": ""
+  },
+  {
+    "nhomID": 10,
+    "tramID": 4,
+    "tenNhom": "Áo Khoác Cá Tính",
+    "moTa": "Trẻ trung",
+    "hinhAnhBanner": null,
+    "tieuDe": "Cá Tính",
+    "noiDung": ""
+  },
+  {
+    "nhomID": 11,
+    "tramID": 5,
+    "tenNhom": "The No Style",
+    "moTa": "Streetwear",
+    "hinhAnhBanner": null,
+    "tieuDe": "The No Style",
+    "noiDung": ""
+  },
+  {
+    "nhomID": 12,
+    "tramID": 5,
+    "tenNhom": "The Weekend",
+    "moTa": "Thư giãn",
+    "hinhAnhBanner": null,
+    "tieuDe": "The Weekend",
+    "noiDung": ""
+  },
+  {
+    "nhomID": 13,
+    "tramID": 6,
+    "tenNhom": "One Piece",
+    "moTa": "Collab",
+    "hinhAnhBanner": null,
+    "tieuDe": "One Piece",
+    "noiDung": ""
+  },
+  {
+    "nhomID": 14,
+    "tramID": 6,
+    "tenNhom": "Dragon Ball Z",
+    "moTa": "Collab",
+    "hinhAnhBanner": null,
+    "tieuDe": "Dragon Ball Z",
+    "noiDung": ""
+  }
+]

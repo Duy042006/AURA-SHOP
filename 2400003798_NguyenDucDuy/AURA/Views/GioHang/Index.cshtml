@@ -1,0 +1,161 @@
+﻿@model List<AURA.Models.GioHangItem>
+
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_AURALayout.cshtml";
+
+    bool daDangNhap = Session["User"] != null;
+    decimal tongTien = Model != null ? Model.Sum(x => x.ThanhTien) : 0;
+    decimal giamGia = daDangNhap ? tongTien * 0.1m : 0;
+    decimal thanhTien = tongTien - giamGia;
+}
+
+<link rel="stylesheet" href="~/Content/Màu_GioHang/GioHang.css" />
+
+<div class="cart-container">
+
+    <div class="cart-title">🛒 Giỏ hàng của bạn</div>
+
+    @if (Model == null || !Model.Any())
+    {
+        <div class="cart-empty">
+            <h4>Giỏ hàng trống</h4>
+            <a href="@Url.Action("Index", "TrangChu")">← Tiếp tục mua</a>
+        </div>
+    }
+    else
+    {
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Ảnh</th>
+                    <th>Tên</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    string controllerChiTiet = "ChiTietSanPhamTrangChu";
+
+                    switch (item.LoaiSP)
+                    {
+                        case "Ao":
+                            controllerChiTiet = "ChiTietSanPhamAo";
+                            break;
+                        case "Quan":
+                            controllerChiTiet = "ChiTietSanPhamQuan";
+                            break;
+                        case "PhuKien":
+                            controllerChiTiet = "ChiTietSanPhamPhuKien";
+                            break;
+                        case "GU":
+                            controllerChiTiet = "ChiTietSanPhamGU";
+                            break;
+                    }
+
+                    <tr>
+                        <!-- ✅ ẢNH CLICK -->
+                        <td>
+                            <a href="@Url.Action("Index", controllerChiTiet, new { id = item.MaSP })">
+                                <img src="@item.HinhAnh" class="cart-img" />
+                            </a>
+                        </td>
+
+                        <!-- ✅ TÊN CLICK -->
+                        <td class="cart-name">
+                            <a href="@Url.Action("Index", controllerChiTiet, new { id = item.MaSP })"
+                               style="color:black; text-decoration:none;">
+                                @item.TenSP
+                            </a>
+                        </td>
+
+                        <td class="cart-price">
+                            @String.Format("{0:N0} đ", item.Gia)
+                        </td>
+
+                        <!-- ✅ CẬP NHẬT SỐ LƯỢNG -->
+                        <td>
+                            <form action="@Url.Action("CapNhat", "GioHang")" method="post"
+                                  style="display:flex; gap:8px;">
+                                @Html.AntiForgeryToken()
+
+                                <input type="hidden" name="maSP" value="@item.MaSP" />
+                                <input type="hidden" name="loaiSP" value="@item.LoaiSP" />
+
+                                <input type="number"
+                                       name="soLuong"
+                                       value="@item.SoLuong"
+                                       min="1"
+                                       style="width:60px; text-align:center;"
+                                       onkeydown="if(event.key === 'Enter'){ this.form.submit(); }" />
+                            </form>
+
+                        </td>
+
+                        <td class="cart-price">
+                            @String.Format("{0:N0} đ", item.ThanhTien)
+                        </td>
+
+                        <!-- ✅ XÓA -->
+                        <td>
+                            <a class="cart-remove"
+                               href="@Url.Action("Xoa", "GioHang",
+                               new { maSP = item.MaSP, loaiSP = item.LoaiSP })">
+                                ❌
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <!-- ✅ TỔNG TIỀN -->
+<div class="cart-total">
+
+    <p><b>Tạm tính:</b> @String.Format("{0:N0} đ", tongTien)</p>
+
+    @if (daDangNhap)
+    {
+        <p style="color:green;">
+            🎉 Ưu đãi thành viên (−10%):
+            −@String.Format("{0:N0} đ", giamGia)
+        </p>
+    }
+    else
+    {
+        <p style="color:#888;">
+            👉 Đăng nhập để nhận ưu đãi thành viên
+        </p>
+    }
+
+    <hr />
+
+    <p class="final-price">
+        <b>Tổng thanh toán:</b>
+        <span>
+            @String.Format("{0:N0} đ", thanhTien)
+        </span>
+    </p>
+</div>
+
+        <!-- ✅ NÚT HÀNH ĐỘNG -->
+        <div class="cart-actions">
+            <a class="btn-continue" href="@Url.Action("Index", "TrangChu")">
+                ← Mua tiếp
+            </a>
+
+            <form action="@Url.Action("ThanhToan", "GioHang")" method="get">
+                <button type="submit" class="btn-checkout">
+                    ✅ Thanh toán
+                </button>
+            </form>
+
+        </div>
+    }
+
+</div>

@@ -1,0 +1,170 @@
+﻿
+@model AURA.Models.ViewModelPhuKien
+
+
+@{
+    ViewBag.Title = "PhuKienMenu";
+    Layout = "~/Views/Shared/_AURALayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Màu_GU/Gu.css" />
+
+<div class="ao-page">
+    <div class="container">
+
+        <h1 class="page-title">
+            Khám Phá Quần Thời Trang Của Bạn
+        </h1>
+
+        <!-- 3 LOẠI QUẦN CẤP 1 -->
+        <div class="brand-container">
+
+            <div class="brand-box">
+                <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 1 })">
+                    <img src="/Content/images/_MENU/PhuKien/38_fad44d8e-34a7-439b-9065-b562d952f509 (1).webp" />
+                </a>
+            </div>
+
+            <div class="brand-box">
+                <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 2 })">
+                    <img src="/Content/images/_MENU/PhuKien/44_db0f8808-0433-4efb-8281-4f42f0064dfd (1).webp" />
+                </a>
+            </div>
+
+            <div class="brand-box">
+                <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 3 })">
+                    <img src="~/Content/images/_MENU/PhuKien/49_13744073-cd16-4020-8dbf-bbb2f4586679 (1).webp" />
+                </a>
+            </div>
+
+            <div class="brand-box">
+                <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 4 })">
+                    <img src="~/Content/images/_MENU/PhuKien/54_ac21f212-cc96-4698-9a26-619602711cea (1).webp" />
+                </a>
+            </div>
+
+            <div class="brand-box">
+                <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 5 })">
+                    <img src="~/Content/images/_MENU/PhuKien/57_054fed51-7b39-4ad5-81c5-f6520a01fb33 (1).webp" />
+                </a>
+            </div>
+
+            <div class="brand-box">
+                <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 6 })">
+                    <img src="~/Content/images/_MENU/PhuKien/62_472ab6a6-39ea-4dbd-b57d-fbdbe8028ab1 (1).webp" />
+                </a>
+            </div>
+
+            <div class="brand-box">
+                <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 7 })">
+                    <img src="~/Content/images/_MENU/PhuKien/66_221461e4-acf5-4756-9b3f-4e6f8a41cb4d (1).webp" />
+                </a>
+            </div>
+
+            <div class="brand-box">
+                <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 8 })">
+                    <img src="~/Content/images/_MENU/PhuKien/69_1df2d7aa-3a21-4af3-b4b8-c425e459e19b (1).webp" />
+                </a>
+            </div>
+
+            <div class="brand-box">
+                <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 9 })">
+                    <img src="~/Content/images/_MENU/PhuKien/80_0428710f-371d-439e-b071-82e2c9a52ac4 (1).webp" />
+                </a>
+            </div>
+
+            <div class="brand-box">
+                <a href="@Url.Action("DanhMucPhuKien", "PhuKien", new { id = 10 })">
+                    <img src="~/Content/images/_MENU/PhuKien/75_e15b3987-b9da-486d-a3fd-fce0242b495a (1).webp" />
+                </a>
+            </div>
+        </div>
+
+        <!-- BỘ LỌC -->
+        <div class="filter-container">
+            <span class="label">Bộ lọc:</span>
+
+            <!-- LỌC GIÁ -->
+            <div class="filter-box">
+                <button class="filter-trigger">Giá ▾</button>
+                <ul class="filter-menu price-filter">
+                    <li data-price="100">Dưới 100K</li>
+                    <li data-price="200">100K - 200K</li>
+                    <li data-price="300">200K - 300K</li>
+                    <li data-price="400">Trên 300K</li>
+                </ul>
+            </div>
+
+            <!-- LỌC MÀU -->
+            <div class="filter-box">
+                <button class="filter-trigger">Màu ▾</button>
+                <ul class="filter-menu color-filter">
+                    <li data-color="đen"><span class="color-dot black"></span> Đen</li>
+                    <li data-color="trắng"><span class="color-dot white"></span> Trắng</li>
+                    <li data-color="xám"><span class="color-dot gray"></span> Xám</li>
+                    <li data-color="xanh"><span class="color-dot blue"></span> Xanh</li>
+                    <li data-color="nâu"><span class="color-dot" style="background:brown"></span> Nâu</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- DANH SÁCH -->
+        <div class="product-list">
+            @foreach (var sp in Model.DSSanPham)
+            {
+                <div class="product"
+                     data-color="@sp.MauSac.ToLower()"
+                     data-gia="@sp.Gia">
+
+                    <div class="img-box">
+                        <a href="@Url.Action("Index", "ChiTietSanPhamPhuKien", new { id = sp.MaSP })">
+                            <img src="@sp.HinhAnh" alt="@sp.TenSP" />
+                            <p class="name">@sp.TenSP</p>
+                            <p class="old-price">@String.Format("{0:N0}", sp.GiaGoc) VND</p>
+                            <p class="price">@String.Format("{0:N0}", sp.Gia) VND</p>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+
+<div class="pagination">
+    <ul>
+        @if (Model.CurrentPage > 1)
+        {
+            <li><a href="@Url.Action("QuanMenu", new { page = Model.CurrentPage - 1 })">‹ Prev</a></li>
+        }
+        else
+        {
+            <li class="disabled">‹ Prev</li>
+        }
+
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            if (i == Model.CurrentPage)
+            {
+                <li class="active">@i</li>
+            }
+            else
+            {
+                <li><a href="@Url.Action("PhuKienMenu", new { page = i })">@i</a></li>
+            }
+        }
+
+        @if (Model.CurrentPage < Model.TotalPages)
+        {
+            <li><a href="@Url.Action("PhuKienMenu", new { page = Model.CurrentPage + 1 })">Next ›</a></li>
+        }
+        else
+        {
+            <li class="disabled">Next ›</li>
+        }
+    </ul>
+</div>
+
+
+<script src="~/Scripts/Menu-Gu/Gu.js"></script>

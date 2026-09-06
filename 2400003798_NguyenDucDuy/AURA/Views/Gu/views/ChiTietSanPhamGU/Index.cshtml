@@ -1,0 +1,96 @@
+﻿@model AURA.Models.ChiTietSanPhamGU
+
+@{
+    var sp = ViewBag.SanPham as AURA.Models.View_SanPhamTong;
+    ViewBag.Title = sp != null ? sp.TenSP : "Chi tiết GU";
+    Layout = "~/Views/Shared/_AURALayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Màu-SanPham/SanPham.css" />
+<link rel="stylesheet" href="~/Content/css/ChiTietSanPhamTrangChu.css" />
+
+@if (sp == null)
+{
+    <h2 style="text-align:center; color:red;">Không tìm thấy sản phẩm GU</h2>
+    return;
+}
+
+<div class="product-detail-page">
+
+    <h2 class="product-title">@sp.TenSP</h2>
+
+    <div class="product-detail">
+
+        <!-- HÌNH ẢNH -->
+        <div class="product-image">
+            <img src="@Url.Content(sp.HinhAnh)" alt="@sp.TenSP" />
+        </div>
+
+        <!-- THÔNG TIN -->
+        <div class="product-info">
+
+            <p class="price">
+                <span class="price-label">Giá:</span>
+                <span class="price-value">@String.Format("{0:N0} đ", sp.Gia)</span>
+            </p>
+
+            <p class="old-price">
+                <span class="price-label">Giá gốc:</span>
+                <span class="old-price-value">@String.Format("{0:N0} đ", sp.GiaGoc)</span>
+            </p>
+
+            <p class="text-row"><b>Màu sắc:</b> @sp.MauSac</p>
+            <p class="text-row"><b>Mô tả:</b> @sp.MoTa</p>
+
+            <!-- ✅ KIỂM TRA ĐĂNG NHẬP -->
+            
+                    <!-- ✅ THÊM VÀO GIỎ -->
+                    <form action="@Url.Action("ThemGioHang", "GioHang")" method="post">
+                        <input type="hidden" name="maSP" value="@sp.MaSP" />
+
+                        <input type="hidden" name="loaiSP" value="TrangChu" />
+
+                        <button type="submit" class="btn btn-cart">
+                            🛒 Thêm vào giỏ
+                        </button>
+                    </form>
+
+                    <!-- ✅ MUA NGAY -->
+                    <form action="@Url.Action("MuaNgay", "GioHang")" method="post">
+                        <input type="hidden" name="maSP" value="@sp.MaSP" />
+                        <input type="hidden" name="loaiSP" value="TrangChu" />
+
+                        <button type="submit" class="btn btn-buy-now">
+                            ⚡ Mua ngay
+                        </button>
+                    </form>
+                
+
+            </div>
+
+            <hr class="divider" />
+
+            <!-- ✅ CHI TIẾT GU -->
+            @if (Model != null)
+            {
+                <div class="detail-block">
+                    <h3>Thông tin chi tiết</h3>
+
+                    <p><b>Chất liệu:</b> @Model.ChatLieu</p>
+                    <p><b>Form dáng:</b> @Model.FormDang</p>
+                    <p><b>Kiểu dáng:</b> @Model.KieuDang</p>
+                    <p><b>Xuất xứ:</b> @Model.XuatXu</p>
+                    <p><b>Phù hợp:</b> @Model.PhuHop</p>
+                    <p><b>Hướng dẫn giặt:</b> @Model.HuongDanGiat</p>
+                    <p><b>Bảo hành:</b> @Model.BaoHanh</p>
+                </div>
+            }
+            else
+            {
+                <p><i>Chưa có thông tin chi tiết sản phẩm GU.</i></p>
+            }
+
+        </div>
+
+    </div>
+</div>

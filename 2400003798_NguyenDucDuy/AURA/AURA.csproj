@@ -1,0 +1,1088 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45C16883-B19E-48AF-B61B-10869F5E0AC0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AURA</RootNamespace>
+    <AssemblyName>AURA</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\SanPhamController.cs" />
+    <Compile Include="Controllers\Thông Tin Chi Tiết Sản Phẩm\ChiTietSanPhamPhuKienController.cs" />
+    <Compile Include="Controllers\Thông Tin Chi Tiết Sản Phẩm\ChiTietSanPhamQuanController.cs" />
+    <Compile Include="Controllers\Thông Tin Chi Tiết Sản Phẩm\ChiTietSanPhamGUController.cs" />
+    <Compile Include="Controllers\Thông Tin Chi Tiết Sản Phẩm\ChiTietSanPhamAoController.cs" />
+    <Compile Include="Controllers\Thông Tin Chi Tiết Sản Phẩm\ChiTietSanPhamTrangChuController.cs" />
+    <Compile Include="Controllers\Giỏ Hàng\GioHangController.cs" />
+    <Compile Include="Controllers\MENU\PhuKienController.cs" />
+    <Compile Include="Controllers\MENU\QuanController.cs" />
+    <Compile Include="Controllers\USER\ProductAdminController.cs" />
+    <Compile Include="Controllers\USER\OrderController.cs" />
+    <Compile Include="Controllers\MENU\AoController.cs" />
+    <Compile Include="Controllers\MENU\GuController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\USER\LoginController.cs" />
+    <Compile Include="Controllers\USER\Sign_upController.cs" />
+    <Compile Include="Controllers\TrangchuController.cs" />
+    <Compile Include="Controllers\USER\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ao.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietSanPhamAo.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietSanPhamGU.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietSanPhamPhuKien.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietSanPhamQuan.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietSanPhamTrangChu.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DanhMuc.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DanhMucAo.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DanhMucPhuKien.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DanhMucQuan.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Giỏ Hàng\DonHangViewModel.cs" />
+    <Compile Include="Models\Giỏ Hàng\GioHangItem.cs" />
+    <Compile Include="Models\Gu.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HinhAnhSanPham.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Menu-Gu\ViewModelGuIndex.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\NhomSanPham.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderDetail.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhuKien.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Quan.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SanPham.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SanPhamAo.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SanPhamPhuKien.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SanPhamQuan.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sign_up.cs" />
+    <Compile Include="Models\Tram.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Trang_chủ.cs" />
+    <Compile Include="Models\Menu-Gu\ViewModelChiTietGu.cs" />
+    <Compile Include="Models\Menu-Gu\ViewModelSanPhamTheoNhom.cs" />
+    <Compile Include="Models\Menu-Gu\ViewModelTramChiTiet.cs" />
+    <Compile Include="Models\Menu-Ao\ViewModelAo.cs" />
+    <Compile Include="Models\Menu-Ao\ViewModelSanPhamTheoDanhMucAo.cs" />
+    <Compile Include="Models\Menu-Quan\ViewModelQuan.cs" />
+    <Compile Include="Models\Menu-Quan\ViewModelSanPhamTheoDanhMucQuan.cs" />
+    <Compile Include="Models\Menu-PhuKien\ViewModelPhuKien.cs" />
+    <Compile Include="Models\Menu-PhuKien\ViewModelSanPhamTheoDanhMucPhuKien.cs" />
+    <Compile Include="Models\User.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_SanPhamTong.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\v_SanPhamDanhMuc.cs">
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\_AURADataModel1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AURADataModel1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\_AURADataModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AURADataModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\_AURADataModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AURADataModel1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\images\_MENU\Gu\0024264Thumb1.jpg" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-c-polo-tay-ng-n-the-weekend-032-kem-1187130574.jpg" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-c-polo-tay-ng-n-the-weekend-032-xam-1187130586.jpg" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-c-polo-tay-ng-n-the-weekend-032-xam-d-m-1187130572.jpg" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-jean-short-loose-fit-nhi-u-tui-multi-color-jean-013-xam-1194484043.jpg" />
+    <Content Include="Content\images\_MENU\PhuKien\bang-deo-c-tay-th-thao-beginner-93-1174879877.jpg" />
+    <Content Include="Content\images\_MENU\PhuKien\non-no-style-m142-den-1174879512.jpg" />
+    <Content Include="Content\images\_MENU\PhuKien\non-y2010-02-xam-nh-t-1184461406.jpg" />
+    <Content Include="Content\images\_MENU\PhuKien\v-c-th-p-y2010-tab001-den-1180972214.jpg" />
+    <Content Include="Content\images\_MENU\PhuKien\v-c-th-p-y2010-tab001-xam-1180972209.jpg" />
+    <Content Include="Content\images\_MENU\PhuKien\v-c-th-p-y2010-tab004-xam-1180972147.jpg" />
+    <Content Include="Content\images\_MENU\PhuKien\vi-y2010-m4-den-1174880319.jpg" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-non-branded-05-h-ng-1174882155.jpg" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-non-branded-05-nau-reu-1174882113.jpg" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-seventy-seven-29-xanh-nh-t-1174882189.jpg" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-the-original-m84-den-1174881860.jpg" />
+    <Content Include="Content\Màu-SanPham\SanPham.css" />
+    <Content Include="Content\Màu_AURA\Style_chung.css" />
+    <Content Include="Content\Màu_GioHang\GioHang.css" />
+    <Content Include="Content\Màu_GioHang\Mua.css" />
+    <Content Include="Content\Màu_GioHang\ThanhToan.css" />
+    <Content Include="Content\Màu_GU\Gu.css" />
+    <Content Include="Content\Màu_GU\_Gu.css" />
+    <Content Include="Content\Màu_Login\Login.css" />
+    <Content Include="Content\Mau_Trang_Chu\Trang_chu.css" />
+    <Content Include="Content\images\Login\Login.jpg" />
+    <Content Include="Content\images\Menu\backpack_.png" />
+    <Content Include="Content\images\Menu\ball-football_.png" />
+    <Content Include="Content\images\Menu\belt_.png" />
+    <Content Include="Content\images\Menu\jacket.png" />
+    <Content Include="Content\images\Menu\jeans_.png" />
+    <Content Include="Content\images\Menu\Logo.png" />
+    <Content Include="Content\images\Menu\panties_.png" />
+    <Content Include="Content\images\Menu\pants_.png" />
+    <Content Include="Content\images\Menu\shirt-line_.png" />
+    <Content Include="Content\images\Menu\shirt-long-sleeve_.png" />
+    <Content Include="Content\images\Menu\shirt_ %281%29.png" />
+    <Content Include="Content\images\Menu\shirt_.png" />
+    <Content Include="Content\images\Menu\short-pants-pockets_.png" />
+    <Content Include="Content\images\Menu\thong-sandal_.png" />
+    <Content Include="Content\Màu_Sign_up\Sign_up.css" />
+    <Content Include="Content\Màu_UpadteProfile\UpdateProfile.css" />
+    <Content Include="Content\Màu_User\OrderDetail.css" />
+    <Content Include="Content\Màu_User\Order.css" />
+    <Content Include="Content\Màu_User\ProductAdmin.css" />
+    <Content Include="Content\Màu_User\Thêm-Xóa.css" />
+    <Content Include="Content\Màu_User\User.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\_AURADataModel1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>_AURADataModel1.edmx</DependentUpon>
+      <LastGenOutput>_AURADataModel1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\_AURADataModel1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>_AURADataModel1.edmx</DependentUpon>
+      <LastGenOutput>_AURADataModel1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\AURA\menu.js" />
+    <Content Include="Scripts\AURA\Trang_chủ.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\images\Images\ao-thun-non-branded-01-den-1174882387.webp" />
+    <Content Include="Content\images\Images\ao-thun-seventy-seven-04-h-ng-1174883171.webp" />
+    <Content Include="Content\images\Images\ao-thun-seventy-seven-13-den-1174883530.webp" />
+    <Content Include="Content\images\Images\ao-thun-seventy-seven-13-tr-ng-1174883539.webp" />
+    <Content Include="Content\images\Images\1O4A1378_500x.webp" />
+    <Content Include="Content\images\Images\1O4A1435_500x.webp" />
+    <Content Include="Content\images\Images\1O4A9191_500x.webp" />
+    <Content Include="Content\images\Images\23710_thum_5_500x.webp" />
+    <Content Include="Content\images\Images\24033_thum_5_500x.webp" />
+    <Content Include="Content\images\Images\IMG_0050_500x.webp" />
+    <Content Include="Content\images\Images\IMG_2806_500x.webp" />
+    <Content Include="Content\images\Images\IMG_2908_500x.webp" />
+    <Content Include="Content\images\Images\IMG_3113_500x.webp" />
+    <Content Include="Content\images\Images\IMG_3571_1_500x.webp" />
+    <Content Include="Content\images\Images\IMG_3778_500x.webp" />
+    <Content Include="Content\images\Images\IMG_4013_500x.webp" />
+    <Content Include="Content\images\Images\ao-khoac-cool-touch-02-den-1174884952.webp" />
+    <Content Include="Content\images\Images\qu-n-dai-cool-touch-03-den-1174881341.webp" />
+    <Content Include="Content\images\Images\qu-n-tay-no-style-m116-den-1174881533.webp" />
+    <Content Include="Content\images\Images\qu-n-tay-non-iron-19-den-1174881694.webp" />
+    <Content Include="Content\images\Images\ao-khoac-jean-the-original-m039-xanh-d-ng-1184461421.webp" />
+    <Content Include="Content\images\Images\qu-n-jean-the-original-28-den-1174882647.webp" />
+    <Content Include="Content\images\Images\qu-n-jean-the-original-28-xanh-d-m-1-1174882642.webp" />
+    <Content Include="Content\images\Images\qu-n-jean-the-original-28-xanh-d-ng-1174882630.webp" />
+    <Content Include="Content\images\Images\13-8_ym0801_500x.webp" />
+    <Content Include="Content\images\Images\29_13e4f784-6adc-4e44-b6d2-be6ac2d7da48_500x.webp" />
+    <Content Include="Content\images\Images\30_1c744b61-a7ad-4920-bea6-e9415701ff0f_500x.webp" />
+    <Content Include="Content\images\Images\31_6ff2f48a-004b-4958-bcdb-cc8433004be3_500x.webp" />
+    <Content Include="Content\images\Images\33_148f8f8f-5d57-4afe-88cf-e35a8dea7f1c.webp" />
+    <Content Include="Content\images\Images\34_681cb217-749e-4056-9029-216bc8bc78a2.webp" />
+    <Content Include="Content\images\Images\37_a401824e-aef8-40b0-b802-20666bdb3aa1_500x.webp" />
+    <Content Include="Content\images\Images\38_d74d3ebb-70b7-49b2-8ab5-24327665813f_500x.webp" />
+    <Content Include="Content\images\Images\Hinh_nh_garally_aa3bebac-aeb4-492d-b9ae-34f6f2ad7756_500x.webp" />
+    <Content Include="Content\images\Images\27_31af3b34-6abf-43a2-86f6-04a9a5b63e2d_500x.webp" />
+    <Content Include="Content\images\Images\28_83f6d509-8ea4-4eee-a8c8-52c0984e1582_500x.webp" />
+    <Content Include="Content\images\Images\32_cce3803d-1298-4a10-9f9b-d00f74cf0a01_500x.webp" />
+    <Content Include="Content\images\Images\35_753d1399-fdfe-4eed-8e76-abc22198558e_500x.webp" />
+    <Content Include="Content\images\Images\36_91750504-47b3-4c1b-a60b-fd200f5ef8ef_500x.webp" />
+    <Content Include="Content\images\Images\39_e98cd9fd-ee8d-482d-a7a4-6f6c38ed0506_500x.webp" />
+    <Content Include="Content\images\Images\24032_thumb_1.webp" />
+    <Content Include="Content\images\Images\ao-khoac-no-style-m45-xam-ghi-1174885194.webp" />
+    <Content Include="Content\images\Images\ao-polo-no-style-78-den-1174885461.webp" />
+    <Content Include="Content\images\Images\ao-thun-no-style-m14-xam-1174883787.webp" />
+    <Content Include="Content\images\Images\346A7644_500x.webp" />
+    <Content Include="Content\images\Images\346A7660_500x.webp" />
+    <Content Include="Content\images\Images\346A7698_500x.webp" />
+    <Content Include="Content\images\Images\346A7727_500x.webp" />
+    <Content Include="Content\images\Images\346A7782_9fe4d221-ed68-42bf-a861-2e065a849021_500x.webp" />
+    <Content Include="Content\images\Images\346A7794_500x.webp" />
+    <Content Include="Content\images\Images\346A7845_d82b0d28-f8df-47e0-ab08-c4ada725366c_500x.webp" />
+    <Content Include="Content\images\Images\346A7851_71023e72-24b9-4dfd-aac9-233033ff6793_500x.webp" />
+    <Content Include="Content\images\Images\Screen_Shot_2025-09-12_at_11.15.58_500x.webp" />
+    <Content Include="Content\images\Images\Screen_Shot_2025-09-12_at_11.16.12_500x.webp" />
+    <Content Include="Content\images\Images\0024626_thumb_1.webp" />
+    <Content Include="Content\images\Images\0024627_thumb_1.webp" />
+    <Content Include="Content\images\Images\0024628_thumb_1.webp" />
+    <Content Include="Content\images\Images\0024629_thumb_1.webp" />
+    <Content Include="Content\images\Images\0023167_Thumb_1.webp" />
+    <Content Include="Content\images\Images\0023174thumb1.webp" />
+    <Content Include="Content\images\Images\0024158_thumb_1.webp" />
+    <Content Include="Content\images\Images\0023172_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-seventy-seven-13-be-1174883511.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-seventy-seven-13-den-1174883530.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-seventy-seven-13-tr-ng-1174883539.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-seventy-seven-13-xam-1174883483.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023197thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023198_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023199_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023200_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023283thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023284_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023286_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023287_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-seventy-seven-05-be-1174884632.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-seventy-seven-05-den-1174884607.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-seventy-seven-05-tr-ng-1174884652.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-seventy-seven-05-xam-tr-ng-1174884624.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-s-mi-seventy-seven-24-be-1174883242.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-s-mi-seventy-seven-24-den-1174883121.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-s-mi-seventy-seven-24-tr-ng-1174883160.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-s-mi-seventy-seven-24-xam-1174881235.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-non-branded-01-den-1174882387.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-non-branded-01-kem-1174882413.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-non-branded-01-tr-ng-1174882372.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-non-branded-01-xam-tr-ng-1174882211.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-seventy-seven-04-den-1174883133.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-seventy-seven-04-h-ng-1174883171.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-seventy-seven-04-nau-d-m-1174883091.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-seventy-seven-04-tr-ng-1174883207.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-tay-non-branded-30-be-1174881555.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-tay-non-branded-30-den-1174881265.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-tay-non-branded-30-kem-1174881571.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-tay-non-branded-30-xam-1174881562.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024562thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024563_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024564_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024565_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024644_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024645_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024646_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024668thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024669_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024670_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024688_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024689_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024690_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024691_Thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024749_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024800thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024801_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024802_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024803_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\105_82bb3bd1-c46c-40d6-b209-7f4c7af828a1.webp" />
+    <Content Include="Content\images\_MENU\Gu\108_57e6b3fd-491d-42c1-9506-246ea644cea0.webp" />
+    <Content Include="Content\images\_MENU\Gu\125_51e406c0-a0a6-4021-a9e4-04382e136b07.webp" />
+    <Content Include="Content\images\_MENU\Gu\128_e3f4b9de-4a23-4c6d-8b25-83e8b9da3292.webp" />
+    <Content Include="Content\images\_MENU\Gu\61_dbf61f14-fe1b-4d14-b77c-de3db07c899a.webp" />
+    <Content Include="Content\images\_MENU\Gu\62_550ef10b-a089-4269-bfd1-88e81729ba19.webp" />
+    <Content Include="Content\images\_MENU\Gu\63_ef3f71c1-f0e5-4c7d-a73d-3501a6ac7bd2.webp" />
+    <Content Include="Content\images\_MENU\Gu\71_75014a1a-b32e-40ee-ab09-b33b79690e4f.webp" />
+    <Content Include="Content\images\_MENU\Gu\72_32094fcd-ef4c-40ce-8180-814e89f7473b.webp" />
+    <Content Include="Content\images\_MENU\Gu\87_f9e548ce-cde4-4625-adfd-2e4a703c8a51.webp" />
+    <Content Include="Content\images\_MENU\Gu\88_131f981d-717b-4e9d-8bcb-00442ee02e19.webp" />
+    <Content Include="Content\images\_MENU\Gu\89_f1b5cb2e-1787-41a1-8a8c-93dab4813bf0.webp" />
+    <Content Include="Content\images\_MENU\Gu\90_24fa6662-0d78-4ba1-b9b8-1f38c7ce92e1.webp" />
+    <Content Include="Content\images\_MENU\Gu\91_3c4f6b2e-a91a-45fb-a7ec-516abf73dc7d.webp" />
+    <Content Include="Content\images\_MENU\Gu\92_be6946cc-7db7-4025-a5f5-3360e6c4e353.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-jean-the-original-m039-xanh-d-m-1184461428.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-jean-the-original-m039-xanh-d-ng-1184461421.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-jean-the-original-m039-xanh-nh-t-1184461411.webp" />
+    <Content Include="Content\images\_MENU\Gu\Multi_Color_Jean.webp" />
+    <Content Include="Content\images\_MENU\Gu\Non_Branded.webp" />
+    <Content Include="Content\images\_MENU\Gu\No_style.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-jean-short-loose-fit-nhi-u-tui-multi-color-jean-013-den-1194484000.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-jean-short-loose-fit-nhi-u-tui-multi-color-jean-013-nau-d-m-1194484022.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-jean-short-loose-fit-nhi-u-tui-multi-color-jean-013-xanh-reu-1194483990.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-jean-the-original-28-den-1174882647 %281%29.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-jean-the-original-28-xam-1174882665.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-jean-the-original-28-xanh-d-m-1-1174882642.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-jean-the-original-28-xanh-d-ng-1174882630.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-jeans-jogger-tek-black-jean-020-1184461437.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-jeans-loose-fit-b-n-b-multi-color-jean-011-xam-1194483958.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-jeans-slim-fit-the-original-m009-den-1176074117.webp" />
+    <Content Include="Content\images\_MENU\Gu\qu-n-short-the-original-m021-den-1176074122.webp" />
+    <Content Include="Content\images\_MENU\Gu\Senventy_seven.webp" />
+    <Content Include="Content\images\_MENU\Gu\Tek_Black_Jean.webp" />
+    <Content Include="Content\images\_MENU\Gu\TheCEO012Den0024748Thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\The_CEO.webp" />
+    <Content Include="Content\images\_MENU\Gu\The_CEO_017_Den_0024699_Thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\The_Minimalist.webp" />
+    <Content Include="Content\images\_MENU\Gu\The_Original_Jean.webp" />
+    <Content Include="Content\images\_MENU\Gu\The_Weekend.webp" />
+    <Content Include="Content\images\_MENU\Gu\The_worker.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023143_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023144_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023145_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023146_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023174thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023175_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023176_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0023177_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024254_Thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024258Thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024259Thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024263Thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024404_Thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024405_Thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024406_Thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024415_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024421_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024422_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024423_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024424_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024556thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024558thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024559thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024582thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024583_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024584_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024625thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024626_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024627_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024629_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\0024631_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\24092_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Gu\24093thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\24094thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\24095thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-gio-dang-v-a-non-branded-04-tr-ng-1194490216.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-no-style-m42-den-1174885239.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-no-style-m42-xanh-den-1174885244.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-no-style-m44-xanh-d-ng-1174885229.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-no-style-m44-xanh-reu-1174885212.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-no-style-m53-be-1174884746.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-no-style-m58-nau-d-1174884778.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-no-style-m58-xanh-den-1174884785.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-no-style-m58-xanh-reu-1174884768.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-non-branded-04-be-1174884678.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-non-branded-04-xam-nh-t-1174881217.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-khoac-non-branded-04-xanh-reu-1174884672.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-c-polo-tay-ng-n-the-weekend-032-tr-ng-1187130580.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-the-trainer-003-den-1177426182.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-the-trainer-003-tr-ng-1177437119.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-the-trainer-003-xam-1177437097.webp" />
+    <Content Include="Content\images\_MENU\Gu\ao-thun-the-trainer-003-xanh-bich-1177437098.webp" />
+    <Content Include="Content\images\_MENU\Gu\TheNoStyle240NauBe0024835Thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\TheNoStyle240Tr_ngDen0024836Thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\TheNoStyle240XanhD_ngXam0024831Thumb1.webp" />
+    <Content Include="Content\images\_MENU\Gu\TheNoStyle240XanhLaTr_ng0024830Thumb1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0023232thumb1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0023234_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0023235_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0023236_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0023273thumb1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0023274_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0023275_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0023276_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0024562thumb1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0024563_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0024564_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0024565_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0024625thumb1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0024626_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0024628_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\0024629_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\23222_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\23223_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\23224_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\23226_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\23714_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\23716_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\23718_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\23719_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-no-style-m52-nau-1174884812.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-no-style-m52-xanh-den-1174884802.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-no-style-m52-xanh-reu-1174884821.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-no-style-m53-xam-nh-t-1174884738.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-non-branded-04-d-cam-1174884662.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-non-branded-04-den-1174884707.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-non-branded-04-h-ng-1174884689.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-non-branded-04-xam-d-m-1174884510.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-premium-73-den-1174884829.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-premium-73-nau-1174883998.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-premium-73-nau-d-m-1174884523.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-premium-73-xanh-reu-1174884854.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-05-be-1174884632.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-05-den-1174884607.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-05-tr-ng-1174884652.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-05-xam-tr-ng-1174884624 %281%29.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-05-xam-tr-ng-1174884624.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-05-xanh-bich-1174884611.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-05-xanh-den-1174884642.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-05-xanh-reu-1174884592.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-07-den-1174885167.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-07-kem-1174885146.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-07-xam-1174885156.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-07-xam-reu-1174885178.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-08-den-1174885103.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-08-vang-1174885118.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-08-xam-1174885083.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-khoac-seventy-seven-08-xanh-reu-1174885045.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-polo-non-branded-03-den-1174885437.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-polo-non-branded-03-xam-ghi-1174885358.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-polo-non-branded-03-xanh-reu-1174885362.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-polo-non-branded-03-xanh-xam-1174885406.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-polo-seventy-seven-19-den-tr-ng-1174885293.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-polo-seventy-seven-19-den-xam-1174885285.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-polo-seventy-seven-19-tr-ng-d-1174885306.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-polo-seventy-seven-19-tr-ng-xam-1174885302.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-no-style-m65-nau-1174882875.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-no-style-m65-nau-d-m-1174878764.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-no-style-m65-xam-1174882898.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-no-style-m65-xanh-reu-1174882884.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-non-branded-19-d-do-1174884404.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-non-branded-19-den-1174884397.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-non-branded-19-tr-ng-1174884380.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-non-branded-19-xam-tr-ng-1174884375.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-non-branded-33-d-do-1174884131.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-non-branded-33-den-1174884163.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-non-branded-33-xam-tr-ng-1174884148.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-non-branded-33-xanh-d-ng-1174884119.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-seventy-seven-22-be-1174882837.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-seventy-seven-22-den-1174882869.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-seventy-seven-22-nau-1174882858.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-s-mi-seventy-seven-22-xanh-reu-1174882830.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-thun-cool-touch-05-be-1174883646.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-thun-cool-touch-05-den-1174883616.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-thun-cool-touch-05-tr-ng-1174883631.webp" />
+    <Content Include="Content\images\_MENU\Áo\ao-thun-cool-touch-05-xam-1174883656.webp" />
+    <Content Include="Content\images\_MENU\Quan\0020968thumb1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0023730_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0023731_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0023732_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0023733_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024428_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024430_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024431_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024432_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024644_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024645_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024646_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024647_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024722Thumb1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024723_Thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024724_Thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024741thumb1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024742_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024743_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\0024744_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\18_3355de3e-8e09-480f-bc96-c4b8b14c50cf.webp" />
+    <Content Include="Content\images\_MENU\Quan\19_76862af0-2489-4410-ba14-8c8f25aa2c0f.webp" />
+    <Content Include="Content\images\_MENU\Quan\20_4b2fadf3-f826-4c87-bbb6-f4f7db534a88.webp" />
+    <Content Include="Content\images\_MENU\Quan\21_21b303aa-b346-4912-8f20-7e878f72dc94.webp" />
+    <Content Include="Content\images\_MENU\Quan\22_e5854898-f8a0-496b-9b5e-a7bae1641efd.webp" />
+    <Content Include="Content\images\_MENU\Quan\23649_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\23650_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\23651_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\23_138f47e6-f862-4926-b70d-ee64484972e1.webp" />
+    <Content Include="Content\images\_MENU\Quan\24154thumb1.webp" />
+    <Content Include="Content\images\_MENU\Quan\24344_thumb_2.webp" />
+    <Content Include="Content\images\_MENU\Quan\24618_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\24619_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\24620_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\Quan\24_af2276f6-fe0f-4116-b61e-4b6a26ce754d.webp" />
+    <Content Include="Content\images\_MENU\Quan\25_5619dd94-f194-4f40-b6a5-cac769c0aaea.webp" />
+    <Content Include="Content\images\_MENU\Quan\27_e15a1b35-9f42-4a5c-818f-c93f027d2fc9.webp" />
+    <Content Include="Content\images\_MENU\Quan\28_4c3f8c28-b922-475f-a426-980671ba9744.webp" />
+    <Content Include="Content\images\_MENU\Quan\29_17aeb0b0-e996-4469-8702-c119ae9c26d9.webp" />
+    <Content Include="Content\images\_MENU\Quan\30_60b1056b-0ace-4da2-b184-853c8635fbcd.webp" />
+    <Content Include="Content\images\_MENU\Quan\31_38a628e8-b409-456d-8aab-8e4c2bf1495f.webp" />
+    <Content Include="Content\images\_MENU\Quan\32_dd7eb571-d7b8-4b0a-abeb-3e6ddb8c2fd9.webp" />
+    <Content Include="Content\images\_MENU\Quan\33_14a6bcd5-4409-43a5-b7e0-b8b12b885bf0.webp" />
+    <Content Include="Content\images\_MENU\Quan\34_f53381b0-046f-4000-b693-2275ebafe635.webp" />
+    <Content Include="Content\images\_MENU\Quan\35_2f99bc06-33f4-48f6-9914-185dc06465e3.webp" />
+    <Content Include="Content\images\_MENU\Quan\36_709c3c0d-363c-43b3-8247-26001822f07b.webp" />
+    <Content Include="Content\images\_MENU\Quan\37_3e6faf7d-c854-4815-8141-03052148fe5d.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-dai-no-style-m115-den-1174881201.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-dai-non-branded-32-den-1174882743.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-dai-non-branded-32-nau-1174882751.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-dai-non-branded-32-xam-1174882765.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-dai-non-branded-32-xanh-reu-1174882779.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-dai-seventy-seven-33-den-1174881658.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-dai-seventy-seven-33-nau-1174881719.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-dai-seventy-seven-33-xam-nau-1174881728.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-dai-seventy-seven-33-xanh-reu-1174881683.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-dai-the-original-m102-den-1174882684.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-dai-the-original-m102-xanh-xam-1174882693.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-jean-the-original-02-den-1174882607.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-jean-the-original-02-xanh-d-m-1174882592.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-jean-the-original-02-xanh-den-1174882618.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-jean-the-original-02-xanh-nh-t-1174882602.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-jean-the-original-28-den-1174882647.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-jean-the-original-28-xam-1174882665.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-jean-the-original-28-xanh-d-m-1-1174882642.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-jean-the-original-28-xanh-d-m-1174882636.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-jean-the-original-m101-xanh-d-ng-1174882525.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-jean-the-original-m101-xanh-tr-ng-1174882532.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-jeans-loose-fit-b-n-b-multi-color-jean-011-xam-1194483958.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-lot-boxer-brief-dai-beginner-boxer-brief-13-xam-den-1174879212.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-lot-boxer-ng-n-y2010-a02-xam-1174879414.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-lot-boxer-ng-n-y2010-a02-xam-tr-ng-1174879403.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-lot-boxer-ng-n-y2010-l02-den-1174879305.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-lot-boxer-ng-n-y2010-l02-xam-1174879339.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-lot-boxer-ng-n-y2010-l02-xanh-den-1174879318.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-lot-boxer-ng-n-y2010-l02-xanh-xam-1174879325.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-lot-boxer-ng-n-y2010-m3-combo-3-den-1174879426.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-lot-boxer-ng-n-y2010-m3-combo-3-xam-1174879433.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-lot-tam-giac-y2010-m6-xam-1174879240.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-lot-tam-giac-y2010-m6-xam-tr-ng-1174879234.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-lot-tam-giac-y2010-m9-combo-3-den-1174879248.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-lot-tam-giac-y2010-m9-combo-3-xam-1174879250.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-cargo-no-style-033-nau-1189868626.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-kaki-the-weekend-022-den-1184461461.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-kaki-the-weekend-022-nau-1184461445.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-kaki-the-weekend-022-xam-1184461457.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-kaki-the-weekend-022-xanh-reu-1184461451.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-no-style-m92-den-1174881840.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-no-style-m92-xam-den-1174881807.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-no-style-m92-xam-tr-ng-1174881816.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-no-style-m92-xanh-reu-1174881831.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-non-branded-05-xanh-d-ng-1174882141.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-non-branded-05-xanh-den-1174882061.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-non-branded-06-den-1174882337.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-non-branded-06-xam-1174882417.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-non-branded-06-xam-nh-t-1174882366.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-non-branded-06-xanh-bich-1174878726.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-seventy-seven-29-xanh-d-m-1174882198.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-seventy-seven-29-xanh-d-ng-1174882221.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-seventy-seven-31-den-1174881881.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-seventy-seven-31-nau-1174881874.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-seventy-seven-31-xanh-den-1174881867.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-seventy-seven-31-xanh-reu-1174881888.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-the-original-m84-xanh-d-ng-1174881854.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-short-the-original-m84-xanh-nh-t-1174881846.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-tay-no-style-m116-nau-1174881484.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-tay-no-style-m116-xam-tr-ng-1174881502.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-tay-non-iron-07-den-1174881621.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-tay-non-iron-07-nau-1174881598.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-tay-non-iron-07-xam-nh-t-1174881608.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-tay-non-iron-19-den-1174881694.webp" />
+    <Content Include="Content\images\_MENU\Quan\qu-n-tay-non-iron-19-xam-1174881704.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0023607thumb1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0023608_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0023609_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0023684thumb1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0023943thumb1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0023944_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0023945_thumb_1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0023946thumb1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0024214thumb1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0024215thumb1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0024417thumb1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0024418thumb1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0024435thumb1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0024436thumb1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0024437thumb1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0024899_thumb_2.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0024900_thumb_2.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\0024902_thumb_4.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\111_8b577c4f-6d1a-4b94-8ffa-026c49a04aba.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\113_45a8f28d-5775-487a-a889-75e1c3e7a61a.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\126_81bc8762-51b6-442e-9c13-ddb81a32a6a7.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\23667thum1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\23668_thum_1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\23793_Thumb_1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\23796Thumb1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\24238_thum_1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\38_fad44d8e-34a7-439b-9065-b562d952f509 %281%29.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\39_ac58df8d-66d8-489c-914a-82b3b9beb74d.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\40_177b64ec-5cca-42d4-ac8c-377bd3b7141c.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\41_535017fb-9827-472f-882a-699750e7be00.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\42_3d115f06-b74e-491e-95a4-ecd49175efcb.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\44_db0f8808-0433-4efb-8281-4f42f0064dfd.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\45_c8fbb102-f469-4069-b11e-6b40eb3c2e63.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\47_b5941a17-d6cc-46c8-b42e-bc2c2a235f0d.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\48_50e3ec1f-b689-4d76-82d2-16cffda80fa5.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\49_13744073-cd16-4020-8dbf-bbb2f4586679.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\50_c9472b46-0000-41e8-8ce0-88e6f7e2fdc9.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\51_a58bee9a-6f8c-4383-873c-a16838b4d8e7.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\52_215c5566-1cbd-4883-b9af-2aff88039302.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\53_2f0d3b83-8f56-4ea2-b400-3e8a2843235e.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\54_ac21f212-cc96-4698-9a26-619602711cea.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\55_c24bea88-b45e-4fe7-bb5a-7005c67b2f24.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\56_1106f28b-0805-457d-aa1e-e78203c50961.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\57_054fed51-7b39-4ad5-81c5-f6520a01fb33.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\58_e925f4f3-df23-4335-81ec-f75b51b811dc.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\60_867e5e07-0590-4ddf-9a1f-4faf118b9e19.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\61_2545beca-6650-4dea-bf63-befa143cd68d.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\62_472ab6a6-39ea-4dbd-b57d-fbdbe8028ab1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\63_4104d53d-b40e-4a49-84d8-469e1596b84c.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\64_7af890e9-6604-4c09-bf18-cca6faf96d23.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\65_545b2009-fcc1-4e6e-8d0a-add2a363db07.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\66_221461e4-acf5-4756-9b3f-4e6f8a41cb4d.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\67_39af78a7-8ac0-4b93-bdbd-b5db4080695e.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\68_da0fd7b9-43ed-4c7f-8943-204218840e29.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\69_1df2d7aa-3a21-4af3-b4b8-c425e459e19b.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\70_bbef51d5-4a9b-43e3-88fd-02fdcf67c06e.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\71_d1403b1b-516c-4342-b1d1-cb8fd2e2e2ac.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\72_5f669280-d280-428e-bd5f-638d359dff7a.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\73_2c8b621f-5317-4ebd-b9c0-7f981be072e5.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\75_e15b3987-b9da-486d-a3fd-fce0242b495a.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\76_9c28ba98-97e1-40f8-b549-49b8a3bc550f.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\77_836756d5-accf-46f6-8192-9212972a0bde.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\80_0428710f-371d-439e-b071-82e2c9a52ac4.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\81_6b9a0237-7579-4850-a2a3-b82f8b75d847.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\82_4102be5e-45a2-4ab0-9707-288a147404cd.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\83_b550bee1-71e7-4e3d-950d-24b8527294e1.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\balo-doanh-nhan-first-class-02-den-1174881106.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\balo-doanh-nhan-first-class-04-den-1174881117.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\balo-doanh-nhan-first-class-06-den-1174881097.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\balo-kh-i-nguyen-1-den-1174881078.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\balo-kh-i-nguyen-12-den-1174881071.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\balo-kh-i-nguyen-13-den-1174881028.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\balo-kh-i-nguyen-14-den-1174881007.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\balo-y2010-01-xam-1174881181.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\balo-y2010-m01-den-1174881163.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\balo-y2010-m01-nau-1174881151.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\balo-y2010-m01-xanh-d-ng-1174881145.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\bang-b-o-v-c-chan-ph-i-th-thao-beginner-90-den-1174879910.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\bang-b-o-v-c-chan-trai-th-thao-beginner-89-den-1174879901.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\bang-deo-c-tay-th-thao-beginner-93-1174879865.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\bang-deo-c-tay-th-thao-beginner-93-1174879891.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\bang-tran-th-thao-beginner-95-1174879818.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\bang-tran-th-thao-beginner-95-1174879826.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\bang-tran-th-thao-beginner-95-1174879835.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\bo-g-i-th-thao-beginner-87-1174879762.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\day-n-t-kim-b-o-04-den-1174880717.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\day-n-t-y2010-d04-den-1174880630.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\day-n-t-y2010-d14-den-1174880622.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\day-n-t-y2010-d15-den-1174880703.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\day-n-t-y2010-d16-den-1174880650.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\day_nit_da_trau_cf1100cd-5cc6-48f5-963a-1e4ca1843168.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\dep-y2010-07-den-1174880210.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\dep-y2010-08-den-1174880238.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\dep-y2010-11-den-1174880202.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\dep-y2010-13-den-1174880215.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\dep-y2010-17-den-1174880163.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\dep-y2010-a002-den-1180969045.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\dep-y2010-a002-nau-1180969037.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\dep-y2010-a003-den-1180969029.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\dep-y2010-a003-nau-1180969019.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\gang-tay-beginner-91-den-d-1174879938.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\gang-tay-y2010-05-den-1174879949.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\gang-tay-y2010-05-xam-1174879959.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\giay-real-leather-01-den-1174880079.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\giay-real-leather-02-den-1174880066.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\giay-real-leather-03-den-1174880100.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\giay-real-leather-04-den-1174880091.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\giay-real-leather-05-den-1174880046.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\lot-giay-m1-1174879923.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-no-style-m140-nau-1174879594.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-no-style-m142-d-do-1174879506.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-no-style-m142-xanh-den-1174879518.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-no-style-m142-xanh-reu-1174879521.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-no-style-m152-nau-1174879172.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-no-style-m152-xanh-reu-1174879161.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-non-branded-11-cam-1174879042.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-non-branded-11-xanh-den-1174879032.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-y2010-02-den-1174879791.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-y2010-02-xam-d-m-1184461358.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-y2010-02-xanh-da-1184461393.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-y2010-04-tr-ng-1174878964.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-y2010-04-xam-tr-ng-1174878953.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-y2010-05-nau-xam-1174878932.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-y2010-05-xanh-den-1174878944.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\non-y2010-06-den-1174879723.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\tui-deo-doanh-nhan-first-class-03-den-1174880911.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\tui-deo-kh-i-nguyen-4-den-1174880768.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\tui-deo-kh-i-nguyen-8-den-1174880766.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\tui-deo-non-branded-23-den-1174880903.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\tui-deo-non-branded-27-d-1174880965.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\tui-deo-non-branded-27-vang-1174880972.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\tui-deo-non-branded-27-xanh-d-ng-1174880952.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\tui-deo-non-branded-37-den-1174880871.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\tui-deo-y2010-b001-den-1184384591.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\tui-v-i-khong-d-t-y2010-m1-xam-1174879926.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\v-c-th-p-y2010-tab001-tr-ng-1180968951.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\v-non-branded-08-den-1174879711.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\v-non-branded-08-kem-1174879693.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\v-non-branded-08-nau-1174879626.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\vi-non-branded-15-den-1174880602.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\vi-y2010-01-den-1174880527.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\vi-y2010-02-den-1174880616.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\vi-y2010-05-den-1174880343.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\vi-y2010-db001-nau-1180968965.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\vi-y2010-db001-xam-1180968983.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\vi-y2010-db001-xanh-den-1180968980.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\vi-y2010-db002-den-1180969017.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\vi-y2010-db002-nau-1180969001.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\vi-y2010-db002-xam-1180969004.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\vi-y2010-db002-xanh-den-1180968991.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\vi-y2010-m1-den-1174880327.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\38_fad44d8e-34a7-439b-9065-b562d952f509.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\44_db0f8808-0433-4efb-8281-4f42f0064dfd %281%29.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\49_13744073-cd16-4020-8dbf-bbb2f4586679 %281%29.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\54_ac21f212-cc96-4698-9a26-619602711cea %281%29.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\57_054fed51-7b39-4ad5-81c5-f6520a01fb33 %281%29.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\62_472ab6a6-39ea-4dbd-b57d-fbdbe8028ab1 %281%29.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\66_221461e4-acf5-4756-9b3f-4e6f8a41cb4d %281%29.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\69_1df2d7aa-3a21-4af3-b4b8-c425e459e19b %281%29.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\75_e15b3987-b9da-486d-a3fd-fce0242b495a %281%29.webp" />
+    <Content Include="Content\images\_MENU\PhuKien\80_0428710f-371d-439e-b071-82e2c9a52ac4 %281%29.webp" />
+    <EntityDeploy Include="Models\_AURADataModel1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>_AURADataModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\_AURADataModel1.edmx.diagram">
+      <DependentUpon>_AURADataModel1.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.0.js" />
+    <Content Include="Scripts\jquery-3.7.0.min.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Menu-Gu\Gu.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Login\index.cshtml" />
+    <Content Include="Views\Shared\_AURALayout.cshtml" />
+    <Content Include="Views\Trangchu\Index.cshtml" />
+    <Content Include="Views\Sign_up\index.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Gu\Index.cshtml" />
+    <Content Include="Views\Gu\Tram.cshtml" />
+    <Content Include="Views\Gu\Nhom.cshtml" />
+    <Content Include="Views\Gu\SanPhamTheoNhom.cshtml" />
+    <Content Include="Views\Ao\AoMenu.cshtml" />
+    <Content Include="Views\Ao\DanhMuc.cshtml" />
+    <Content Include="Views\Ao\SanPham.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\ProductAdmin\Index.cshtml" />
+    <Content Include="Views\Quan\QuanMenu.cshtml" />
+    <Content Include="Views\Quan\DanhMucQuan.cshtml" />
+    <Content Include="Views\Quan\SanPhamQuan.cshtml" />
+    <Content Include="Views\PhuKien\PhuKienMenu.cshtml" />
+    <Content Include="Views\PhuKien\DanhMucPhuKien.cshtml" />
+    <Content Include="Views\PhuKien\SanPhamPhuKien.cshtml" />
+    <Content Include="Views\ChiTietSanPhamTrangChu\Index.cshtml" />
+    <Content Include="Views\GioHang\Index.cshtml" />
+    <Content Include="Views\GioHang\HoanTat.cshtml" />
+    <Content Include="Views\GioHang\ThanhToan.cshtml" />
+    <Content Include="Views\ChiTietSanPhamAo\Index.cshtml" />
+    <Content Include="Views\ChiTietSanPhamGU\Index.cshtml" />
+    <Content Include="Views\ChiTietSanPhamQuan\Index.cshtml" />
+    <Content Include="Views\ChiTietSanPhamPhuKien\Index.cshtml" />
+    <Content Include="Views\SanPham\TimKiem.cshtml" />
+    <Content Include="Views\Order\Detail.cshtml" />
+    <Content Include="Views\ProductAdmin\Create.cshtml" />
+    <Content Include="Views\Gu\views\Ao\AoMenu.cshtml" />
+    <Content Include="Views\Gu\views\Ao\DanhMuc.cshtml" />
+    <Content Include="Views\Gu\views\Ao\SanPham.cshtml" />
+    <Content Include="Views\Gu\views\ChiTietSanPhamAo\Index.cshtml" />
+    <Content Include="Views\Gu\views\ChiTietSanPhamGU\Index.cshtml" />
+    <Content Include="Views\Gu\views\ChiTietSanPhamPhuKien\Index.cshtml" />
+    <Content Include="Views\Gu\views\ChiTietSanPhamQuan\Index.cshtml" />
+    <Content Include="Views\Gu\views\ChiTietSanPhamTrangChu\Index.cshtml" />
+    <Content Include="Views\Gu\views\GioHang\HoanTat.cshtml" />
+    <Content Include="Views\Gu\views\GioHang\Index.cshtml" />
+    <Content Include="Views\Gu\views\GioHang\ThanhToan.cshtml" />
+    <Content Include="Views\Gu\views\Gu\Index.cshtml" />
+    <Content Include="Views\Gu\views\Gu\Nhom.cshtml" />
+    <Content Include="Views\Gu\views\Gu\SanPhamTheoNhom.cshtml" />
+    <Content Include="Views\Gu\views\Gu\Tram.cshtml" />
+    <Content Include="Views\Gu\views\Home\About.cshtml" />
+    <Content Include="Views\Gu\views\Home\Contact.cshtml" />
+    <Content Include="Views\Gu\views\Login\index.cshtml" />
+    <Content Include="Views\Gu\views\Order\Detail.cshtml" />
+    <Content Include="Views\Gu\views\Order\Index.cshtml" />
+    <Content Include="Views\Gu\views\PhuKien\DanhMucPhuKien.cshtml" />
+    <Content Include="Views\Gu\views\PhuKien\PhuKienMenu.cshtml" />
+    <Content Include="Views\Gu\views\PhuKien\SanPhamPhuKien.cshtml" />
+    <Content Include="Views\Gu\views\ProductAdmin\Create.cshtml" />
+    <Content Include="Views\Gu\views\ProductAdmin\Index.cshtml" />
+    <Content Include="Views\Gu\views\Quan\DanhMucQuan.cshtml" />
+    <Content Include="Views\Gu\views\Quan\QuanMenu.cshtml" />
+    <Content Include="Views\Gu\views\Quan\SanPhamQuan.cshtml" />
+    <Content Include="Views\Gu\views\SanPham\TimKiem.cshtml" />
+    <Content Include="Views\Gu\views\Shared\Error.cshtml" />
+    <Content Include="Views\Gu\views\Shared\_AURALayout.cshtml" />
+    <Content Include="Views\Gu\views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Gu\views\Sign_up\index.cshtml" />
+    <Content Include="Views\Gu\views\Trangchu\Index.cshtml" />
+    <Content Include="Views\Gu\views\User\Index.cshtml" />
+    <Content Include="Views\Gu\views\Web.config" />
+    <Content Include="Views\Gu\views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49273</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49273/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

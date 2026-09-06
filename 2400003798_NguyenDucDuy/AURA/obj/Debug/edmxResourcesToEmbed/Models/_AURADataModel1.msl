@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AURA_DBModelStoreContainer" CdmEntityContainer="AURA_DBContext">
+    <EntitySetMapping Name="Aos">
+      <EntityTypeMapping TypeName="AURA_DBModel.Ao">
+        <MappingFragment StoreEntitySet="Ao">
+          <ScalarProperty Name="MaDMCha" ColumnName="MaDMCha" />
+          <ScalarProperty Name="TenDMCha" ColumnName="TenDMCha" />
+          <ScalarProperty Name="Banner" ColumnName="Banner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietSanPhamAos">
+      <EntityTypeMapping TypeName="AURA_DBModel.ChiTietSanPhamAo">
+        <MappingFragment StoreEntitySet="ChiTietSanPhamAo">
+          <ScalarProperty Name="MaCT" ColumnName="MaCT" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="ChatLieu" ColumnName="ChatLieu" />
+          <ScalarProperty Name="FormDang" ColumnName="FormDang" />
+          <ScalarProperty Name="XuatXu" ColumnName="XuatXu" />
+          <ScalarProperty Name="KieuDang" ColumnName="KieuDang" />
+          <ScalarProperty Name="PhuHop" ColumnName="PhuHop" />
+          <ScalarProperty Name="HuongDanGiat" ColumnName="HuongDanGiat" />
+          <ScalarProperty Name="BaoHanh" ColumnName="BaoHanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietSanPhamGUs">
+      <EntityTypeMapping TypeName="AURA_DBModel.ChiTietSanPhamGU">
+        <MappingFragment StoreEntitySet="ChiTietSanPhamGU">
+          <ScalarProperty Name="MaCT" ColumnName="MaCT" />
+          <ScalarProperty Name="NhomID" ColumnName="NhomID" />
+          <ScalarProperty Name="ChatLieu" ColumnName="ChatLieu" />
+          <ScalarProperty Name="FormDang" ColumnName="FormDang" />
+          <ScalarProperty Name="XuatXu" ColumnName="XuatXu" />
+          <ScalarProperty Name="KieuDang" ColumnName="KieuDang" />
+          <ScalarProperty Name="PhuHop" ColumnName="PhuHop" />
+          <ScalarProperty Name="HuongDanGiat" ColumnName="HuongDanGiat" />
+          <ScalarProperty Name="BaoHanh" ColumnName="BaoHanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietSanPhamPhuKiens">
+      <EntityTypeMapping TypeName="AURA_DBModel.ChiTietSanPhamPhuKien">
+        <MappingFragment StoreEntitySet="ChiTietSanPhamPhuKien">
+          <ScalarProperty Name="MaCT" ColumnName="MaCT" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="ChatLieu" ColumnName="ChatLieu" />
+          <ScalarProperty Name="XuatXu" ColumnName="XuatXu" />
+          <ScalarProperty Name="PhuHop" ColumnName="PhuHop" />
+          <ScalarProperty Name="BaoHanh" ColumnName="BaoHanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietSanPhamQuans">
+      <EntityTypeMapping TypeName="AURA_DBModel.ChiTietSanPhamQuan">
+        <MappingFragment StoreEntitySet="ChiTietSanPhamQuan">
+          <ScalarProperty Name="MaCT" ColumnName="MaCT" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="ChatLieu" ColumnName="ChatLieu" />
+          <ScalarProperty Name="FormDang" ColumnName="FormDang" />
+          <ScalarProperty Name="XuatXu" ColumnName="XuatXu" />
+          <ScalarProperty Name="KieuDang" ColumnName="KieuDang" />
+          <ScalarProperty Name="PhuHop" ColumnName="PhuHop" />
+          <ScalarProperty Name="HuongDanGiat" ColumnName="HuongDanGiat" />
+          <ScalarProperty Name="BaoHanh" ColumnName="BaoHanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietSanPhamTrangChus">
+      <EntityTypeMapping TypeName="AURA_DBModel.ChiTietSanPhamTrangChu">
+        <MappingFragment StoreEntitySet="ChiTietSanPhamTrangChu">
+          <ScalarProperty Name="MaCT" ColumnName="MaCT" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="ChatLieu" ColumnName="ChatLieu" />
+          <ScalarProperty Name="FormDang" ColumnName="FormDang" />
+          <ScalarProperty Name="XuatXu" ColumnName="XuatXu" />
+          <ScalarProperty Name="KieuDang" ColumnName="KieuDang" />
+          <ScalarProperty Name="PhuHop" ColumnName="PhuHop" />
+          <ScalarProperty Name="HuongDanGiat" ColumnName="HuongDanGiat" />
+          <ScalarProperty Name="BaoHanh" ColumnName="BaoHanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucs">
+      <EntityTypeMapping TypeName="AURA_DBModel.DanhMuc">
+        <MappingFragment StoreEntitySet="DanhMuc">
+          <ScalarProperty Name="MaDM" ColumnName="MaDM" />
+          <ScalarProperty Name="TenDM" ColumnName="TenDM" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucAos">
+      <EntityTypeMapping TypeName="AURA_DBModel.DanhMucAo">
+        <MappingFragment StoreEntitySet="DanhMucAo">
+          <ScalarProperty Name="MaDM" ColumnName="MaDM" />
+          <ScalarProperty Name="MaDMCha" ColumnName="MaDMCha" />
+          <ScalarProperty Name="TenDM" ColumnName="TenDM" />
+          <ScalarProperty Name="Banner" ColumnName="Banner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucPhuKiens">
+      <EntityTypeMapping TypeName="AURA_DBModel.DanhMucPhuKien">
+        <MappingFragment StoreEntitySet="DanhMucPhuKien">
+          <ScalarProperty Name="MaDM" ColumnName="MaDM" />
+          <ScalarProperty Name="MaDMCha" ColumnName="MaDMCha" />
+          <ScalarProperty Name="TenDM" ColumnName="TenDM" />
+          <ScalarProperty Name="Banner" ColumnName="Banner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucQuans">
+      <EntityTypeMapping TypeName="AURA_DBModel.DanhMucQuan">
+        <MappingFragment StoreEntitySet="DanhMucQuan">
+          <ScalarProperty Name="MaDM" ColumnName="MaDM" />
+          <ScalarProperty Name="MaDMCha" ColumnName="MaDMCha" />
+          <ScalarProperty Name="TenDM" ColumnName="TenDM" />
+          <ScalarProperty Name="Banner" ColumnName="Banner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gus">
+      <EntityTypeMapping TypeName="AURA_DBModel.Gu">
+        <MappingFragment StoreEntitySet="Gu">
+          <ScalarProperty Name="GuID" ColumnName="GuID" />
+          <ScalarProperty Name="TenGu" ColumnName="TenGu" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HinhAnhSanPhams">
+      <EntityTypeMapping TypeName="AURA_DBModel.HinhAnhSanPham">
+        <MappingFragment StoreEntitySet="HinhAnhSanPham">
+          <ScalarProperty Name="MaHA" ColumnName="MaHA" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="LinkAnh" ColumnName="LinkAnh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhomSanPhams">
+      <EntityTypeMapping TypeName="AURA_DBModel.NhomSanPham">
+        <MappingFragment StoreEntitySet="NhomSanPham">
+          <ScalarProperty Name="NhomID" ColumnName="NhomID" />
+          <ScalarProperty Name="TramID" ColumnName="TramID" />
+          <ScalarProperty Name="TenNhom" ColumnName="TenNhom" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="HinhAnhBanner" ColumnName="HinhAnhBanner" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="AURA_DBModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetail">
+          <ScalarProperty Name="DetailID" ColumnName="DetailID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="AURA_DBModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="AURA_DBModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhuKiens">
+      <EntityTypeMapping TypeName="AURA_DBModel.PhuKien">
+        <MappingFragment StoreEntitySet="PhuKien">
+          <ScalarProperty Name="MaDMCha" ColumnName="MaDMCha" />
+          <ScalarProperty Name="TenDMCha" ColumnName="TenDMCha" />
+          <ScalarProperty Name="Banner" ColumnName="Banner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quans">
+      <EntityTypeMapping TypeName="AURA_DBModel.Quan">
+        <MappingFragment StoreEntitySet="Quan">
+          <ScalarProperty Name="MaDMCha" ColumnName="MaDMCha" />
+          <ScalarProperty Name="TenDMCha" ColumnName="TenDMCha" />
+          <ScalarProperty Name="Banner" ColumnName="Banner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhams">
+      <EntityTypeMapping TypeName="AURA_DBModel.SanPham">
+        <MappingFragment StoreEntitySet="SanPham">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="GiaGoc" ColumnName="GiaGoc" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="MauSac" ColumnName="MauSac" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="MaDM" ColumnName="MaDM" />
+          <ScalarProperty Name="NhomID" ColumnName="NhomID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhamAos">
+      <EntityTypeMapping TypeName="AURA_DBModel.SanPhamAo">
+        <MappingFragment StoreEntitySet="SanPhamAo">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="GiaGoc" ColumnName="GiaGoc" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="MauSac" ColumnName="MauSac" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="MaDM" ColumnName="MaDM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhamPhuKiens">
+      <EntityTypeMapping TypeName="AURA_DBModel.SanPhamPhuKien">
+        <MappingFragment StoreEntitySet="SanPhamPhuKien">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="GiaGoc" ColumnName="GiaGoc" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="MauSac" ColumnName="MauSac" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="MaDM" ColumnName="MaDM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhamQuans">
+      <EntityTypeMapping TypeName="AURA_DBModel.SanPhamQuan">
+        <MappingFragment StoreEntitySet="SanPhamQuan">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="GiaGoc" ColumnName="GiaGoc" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="MauSac" ColumnName="MauSac" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="MaDM" ColumnName="MaDM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trams">
+      <EntityTypeMapping TypeName="AURA_DBModel.Tram">
+        <MappingFragment StoreEntitySet="Tram">
+          <ScalarProperty Name="TramID" ColumnName="TramID" />
+          <ScalarProperty Name="GuID" ColumnName="GuID" />
+          <ScalarProperty Name="TenTram" ColumnName="TenTram" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="AURA_DBModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_SanPhamDanhMuc">
+      <EntityTypeMapping TypeName="AURA_DBModel.v_SanPhamDanhMuc">
+        <MappingFragment StoreEntitySet="v_SanPhamDanhMuc">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="MauSac" ColumnName="MauSac" />
+          <ScalarProperty Name="MoTaSP" ColumnName="MoTaSP" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="DanhMuc" ColumnName="DanhMuc" />
+          <ScalarProperty Name="MoTaDM" ColumnName="MoTaDM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_SanPhamTong">
+      <EntityTypeMapping TypeName="AURA_DBModel.View_SanPhamTong">
+        <MappingFragment StoreEntitySet="View_SanPhamTong">
+          <ScalarProperty Name="SanPhamID" ColumnName="SanPhamID" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="GiaGoc" ColumnName="GiaGoc" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="MauSac" ColumnName="MauSac" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="MaDM" ColumnName="MaDM" />
+          <ScalarProperty Name="NhomID" ColumnName="NhomID" />
+          <ScalarProperty Name="LoaiSP" ColumnName="LoaiSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,32 @@
+[
+  {
+    "orderID": 1,
+    "userId": 2,
+    "orderDate": "2026-07-20T18:25:40.736Z",
+    "totalAmount": 108585,
+    "status": "Hoàn thành",
+    "hoTen": "Duy",
+    "dienThoai": "0363858406",
+    "diaChi": "Tp HCM"
+  },
+  {
+    "orderID": 2,
+    "userId": 3,
+    "orderDate": "2026-07-20T18:34:46.970Z",
+    "totalAmount": 626940,
+    "status": "Đang giao",
+    "hoTen": "ndd",
+    "dienThoai": "0123456789",
+    "diaChi": "Tp HCM"
+  },
+  {
+    "orderID": 3,
+    "userId": 2,
+    "orderDate": "2026-08-14T02:20:46.181Z",
+    "totalAmount": 253800,
+    "status": "Đang xử lý",
+    "hoTen": "Duy",
+    "dienThoai": "0123456789",
+    "diaChi": "TP HCM"
+  }
+]

@@ -1,0 +1,198 @@
+﻿/* Trang chi tiết sản phẩm - Trang chủ */
+
+/* Toàn trang */
+.product-detail-page {
+    max-width: 1100px;
+    margin: 30px auto 60px;
+    padding: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #111827;
+}
+
+/* Tên sản phẩm */
+.product-title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* Khung chính trái phải */
+.product-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* Cột ảnh */
+.product-image {
+    flex: 1;
+    max-width: 420px;
+}
+
+    .product-image img {
+        width: 100%;
+        border-radius: 14px;
+        display: block;
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.25);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+        .product-image img:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.30);
+        }
+
+/* Cột thông tin */
+.product-info {
+    flex: 1.2;
+    padding: 20px 24px;
+    border-radius: 18px;
+    background: radial-gradient(circle at top left, #f9fafb, #e5e7eb);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+}
+
+/* Giá */
+.price,
+.old-price {
+    margin: 4px 0;
+}
+
+.price-label {
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.price-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #b91c1c;
+}
+
+.old-price-value {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+/* Dòng mô tả chung */
+.text-row {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+/* Nút hành động */
+.action-buttons {
+    display: flex;
+    gap: 14px;
+    margin: 18px 0 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 22px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+/* Thêm vào giỏ */
+.btn-cart {
+    background: #457b9d;
+    color: #f9fafb;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.4);
+}
+
+    .btn-cart:hover {
+        background: #0f172a;
+        transform: translateY(-1px);
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.55);
+    }
+
+/* Mua ngay */
+.btn-buy-now {
+    background: linear-gradient(135deg, #dc2626, #ea580c);
+    color: #fef2f2;
+    box-shadow: 0 10px 25px rgba(220, 38, 38, 0.5);
+}
+
+    .btn-buy-now:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 16px 40px rgba(220, 38, 38, 0.65);
+    }
+
+/* Đường kẻ ngăn */
+.divider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 18px 0;
+}
+
+/* Khối thông tin chi tiết */
+.detail-block h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.detail-block p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #374151;
+}
+
+/* Link quay lại */
+.back-link {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #111827;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+    .back-link:hover {
+        color: #000;
+        border-color: #111827;
+    }
+
+/* Responsive: màn nhỏ (< 768px) */
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .product-info {
+        padding: 16px 18px;
+    }
+
+    .product-title {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .product-image {
+        max-width: 100%;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,347 @@
+﻿@model AURA.ViewModels.TrangChuViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AURALayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Mau_Trang_Chu/Trang_chu.css" />
+
+@{
+    var u = Session["User"];
+}
+
+<section class="model-banner">
+    <img src="https://yame.vn/cdn/shop/files/banner_homepage_0111_pc.jpg?v=1761993005&width=2000"
+         alt="Ảnh người mẫu" />
+</section>
+
+<main>
+    <!-- Thanh chạy MIỄN PHÍ SHIP -->
+    <div class="marquee">
+        <div class="marquee-content">
+            @for (int i = 0; i < 16; i++)
+            {
+                <span>MIỄN PHÍ SHIP</span>
+            }
+        </div>
+    </div>
+
+    <!-- Khu vực sản phẩm -->
+    <!-- Trạm 1 -->
+    <section class="station">
+        <h2>Trạm 1 | Thời Trang Thiết Yếu</h2>
+        <p>"Nền Tảng Phong Cách, Chất Lượng Vượt Thời Gian"</p>
+
+        <div class="product-list">
+            @foreach (var sp in Model.SanPhams.Take(4))
+            {
+                <div class="product">
+                    <div class="img-box">
+                        <a href="@Url.Action("Index", "ChiTietSanPhamTrangChu", new { id = sp.Id })">
+                            <img src="@Url.Content(sp.HinhAnh)" alt="@sp.TenSanPham" width="200" />
+
+                            <div class="overlay"></div>
+                            <span class="tag">Miễn Phí Ship</span>
+                            <p class="name">@sp.TenSanPham</p>
+                            <p class="old-price">@String.Format("{0:N0}", sp.GiaGoc) VND</p>
+                            <p class="price">@String.Format("{0:N0}", sp.Gia) VND</p>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <a href="@Url.Action("Nhom", "Gu", new { id = 1 })"><button class="see-all">Xem tất cả</button></a>
+    </section>
+
+    <!-- Khu vực hiển thị 12 ảnh -->
+    <div class="gallery">
+
+        <div class="image-group">
+            @foreach (var img in Model.Gallery.Take(7))
+            {
+                <a href="#" class="img-item"><img src="@img.HinhAnh" /></a>
+            }
+
+            @foreach (var img in Model.Gallery.Skip(7).Take(7))
+            {
+                <a href="#" class="img-item hidden"><img src="@img.HinhAnh" /></a>
+            }
+        </div>
+
+        <a href="#" class="see-more">Xem thêm</a>
+
+    </div>
+
+    <!--Trạm 2-->
+    <section class="station">
+        <h2>Trạm 2 | Thời Trang Công Nghệ</h2>
+        <p>"Mặc Công Nghệ, Sống Thảnh Thơi"</p>
+
+        <div class="product-list">
+            @foreach (var sp in Model.SanPhams.Skip(4).Take(4))
+            {
+                <div class="product">
+                    <div class="img-box">
+                        <a href="@Url.Action("Index", "ChiTietSanPhamTrangChu", new { id = sp.Id })">
+                            <img src="@Url.Content(sp.HinhAnh)" alt="@sp.TenSanPham" width="200" />
+
+                            <div class="overlay"></div>
+                            <span class="tag">Miễn Phí Ship</span>
+                            <p class="name">@sp.TenSanPham</p>
+                            <p class="old-price">@String.Format("{0:N0}", sp.GiaGoc) VND</p>
+                            <p class="price">@String.Format("{0:N0}", sp.Gia) VND</p>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <a href="@Url.Action("Nhom", "Gu", new { id = 3 })"><button class="see-all">Xem tất cả</button></a> 
+    </section>
+
+    <!--Trạm 3-->
+    <section class="station">
+        <h2>Trạm 3 | Thời Trang Jean</h2>
+        <p>"Jean Mềm Cho Mọi Dáng Hình"</p>
+
+        <div class="product-list">
+            @foreach (var sp in Model.SanPhams.Skip(8).Take(4))
+            {
+                <div class="product">
+                    <div class="img-box">
+                        <a href="@Url.Action("Index", "ChiTietSanPhamTrangChu", new { id = sp.Id })">
+                            <img src="@Url.Content(sp.HinhAnh)" alt="@sp.TenSanPham" width="200" />
+
+                            <div class="overlay"></div>
+                            <span class="tag">Miễn Phí Ship</span>
+                            <p class="name">@sp.TenSanPham</p>
+                            <p class="old-price">@String.Format("{0:N0}", sp.GiaGoc) VND</p>
+                            <p class="price">@String.Format("{0:N0}", sp.Gia) VND</p>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <a href="@Url.Action("Nhom", "Gu", new { id = 2 })"><button class="see-all">Xem tất cả</button></a>
+    </section>
+    <!-- Khu vực hiển thị 12 ảnh -->
+    <div class="gallery">
+
+        <div class="image-group">
+            @foreach (var img in Model.Gallery.Skip(12).Take(7))
+            {
+                <a href="#" class="img-item"><img src="@img.HinhAnh" /></a>
+            }
+
+            @foreach (var img in Model.Gallery.Skip(19).Take(5))
+            {
+                <a href="#" class="img-item hidden"><img src="@img.HinhAnh" /></a>
+            }
+        </div>
+
+        <a href="#" class="see-more">Xem thêm</a>
+
+    </div>
+
+    <!--Trạm 4-->
+    <section class="station">
+        <h2>Trạm 3 | Thời Trang Tận Hưởng</h2>
+        <p>"Gu Của Bạn, AURA Có Hết"</p>
+
+        <div class="product-list">
+            @foreach (var sp in Model.SanPhams.Skip(12).Take(4))
+            {
+                <div class="product">
+                    <div class="img-box">
+                        <a href="@Url.Action("Index", "ChiTietSanPhamTrangChu", new { id = sp.Id })">
+                            <img src="@Url.Content(sp.HinhAnh)" alt="@sp.TenSanPham" width="200" />
+
+                            <div class="overlay"></div>
+                            <span class="tag">Miễn Phí Ship</span>
+                            <p class="name">@sp.TenSanPham</p>
+                            <p class="old-price">@String.Format("{0:N0}", sp.GiaGoc) VND</p>
+                            <p class="price">@String.Format("{0:N0}", sp.Gia) VND</p>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <a href="@Url.Action("Nhom", "Gu", new { id = 5 })"><button class="see-all">Xem tất cả</button></a>
+    </section>
+    <!-- Khu vực hiển thị 12 ảnh -->
+    <div class="gallery">
+
+        <div class="image-group">
+            @foreach (var img in Model.Gallery.Skip(24).Take(3))
+            {
+                <a href="#" class="img-item"><img src="@img.HinhAnh" /></a>
+            }
+
+            @foreach (var img in Model.Gallery.Skip(27).Take(7))
+            {
+                <a href="#" class="img-item hidden"><img src="@img.HinhAnh" /></a>
+            }
+        </div>
+
+        <a href="#" class="see-more">Xem thêm</a>
+
+    </div>
+
+    <!--Trạm 5-->
+    <section class="station">
+        <h2>Trạm 5 | Thời Trang Dịch Chuyển</h2>
+        <p>"Một Lớp Khoác, Vạn Hành Trình"</p>
+
+        <div class="product-list">
+            @foreach (var sp in Model.SanPhams.Skip(16).Take(4))
+            {
+                <div class="product">
+                    <div class="img-box">
+                        <a href="@Url.Action("Index", "ChiTietSanPhamTrangChu", new { id = sp.Id })">
+                            <img src="@Url.Content(sp.HinhAnh)" alt="@sp.TenSanPham" width="200" />
+
+                            <div class="overlay"></div>
+                            <span class="tag">Miễn Phí Ship</span>
+                            <p class="name">@sp.TenSanPham</p>
+                            <p class="old-price">@String.Format("{0:N0}", sp.GiaGoc) VND</p>
+                            <p class="price">@String.Format("{0:N0}", sp.Gia) VND</p>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <a href="@Url.Action("Nhom", "Gu", new { id = 4 })"><button class="see-all">Xem tất cả</button></a>
+    </section>
+    <!-- Khu vực hiển thị 12 ảnh -->
+    <div class="gallery">
+
+        <div class="image-group">
+            @foreach (var img in Model.Gallery.Skip(34).Take(4))
+            {
+                <a href="#" class="img-item"><img src="@img.HinhAnh" /></a>
+            }
+
+            @foreach (var img in Model.Gallery.Skip(38).Take(7))
+            {
+                <a href="#" class="img-item hidden"><img src="@img.HinhAnh" /></a>
+            }
+        </div>
+
+        <a href="#" class="see-more">Xem thêm</a>
+
+    </div>
+
+    <!--Trạm Bộ Sưu Tập The Beginner-->
+    <section class="station">
+        <h2>Bộ Sưu Tập The Beginner</h2>
+        <p>"Trang phục thể thao cho người mới bắt đầu"</p>
+
+        <div class="product-list">
+            @foreach (var sp in Model.SanPhams.Skip(20).Take(4))
+            {
+                <div class="product">
+                    <div class="img-box">
+                        <a href="@Url.Action("Index", "ChiTietSanPhamTrangChu", new { id = sp.Id })">
+                            <img src="@Url.Content(sp.HinhAnh)" alt="@sp.TenSanPham" width="200" />
+
+                            <div class="overlay"></div>
+                            <span class="tag">Miễn Phí Ship</span>
+                            <p class="name">@sp.TenSanPham</p>
+                            <p class="old-price">@String.Format("{0:N0}", sp.GiaGoc) VND</p>
+                            <p class="price">@String.Format("{0:N0}", sp.Gia) VND</p>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <a href="@Url.Action("Nhom", "Gu", new { id = 7 })"><button class="see-all">Xem tất cả</button></a>
+    </section>
+
+    <!--Trạm Bộ Sưu Tập The Trainer-->
+    <section class="station">
+        <h2>Bộ Sưu Tập The Trainer</h2>
+        <p>"Trang phục thể thao công nghệ cao và tối ưu hiệu suất"</p>
+
+        <div class="product-list">
+            @foreach (var sp in Model.SanPhams.Skip(24).Take(4))
+            {
+                <div class="product">
+                    <div class="img-box">
+                        <a href="@Url.Action("Index", "ChiTietSanPhamTrangChu", new { id = sp.Id })">
+                            <img src="@Url.Content(sp.HinhAnh)" alt="@sp.TenSanPham" width="200" />
+
+                            <div class="overlay"></div>
+                            <span class="tag">Miễn Phí Ship</span>
+                            <p class="name">@sp.TenSanPham</p>
+                            <p class="old-price">@String.Format("{0:N0}", sp.GiaGoc) VND</p>
+                            <p class="price">@String.Format("{0:N0}", sp.Gia) VND</p>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <a href="@Url.Action("Nhom", "Gu", new { id = 8 })"><button class="see-all">Xem tất cả</button></a>
+    </section>
+
+    <!--Trạm Bộ Sưu Tập Dragon Balls Z-->
+    <section class="station">
+        <h2>Bộ Sưu Tập Dragon Balls Z</h2>
+        <p>"Bộ sưu tập có bản quyền chính hãng"</p>
+
+        <div class="product-list">
+            @foreach (var sp in Model.SanPhams.Skip(28).Take(4))
+            {
+                <div class="product">
+                    <div class="img-box">
+                        <a href="@Url.Action("Index", "ChiTietSanPhamTrangChu", new { id = sp.Id })">
+                            <img src="@Url.Content(sp.HinhAnh)" alt="@sp.TenSanPham" width="200" />
+
+                            <div class="overlay"></div>
+                            <span class="tag">Miễn Phí Ship</span>
+                            <p class="name">@sp.TenSanPham</p>
+                            <p class="old-price">@String.Format("{0:N0}", sp.GiaGoc) VND</p>
+                            <p class="price">@String.Format("{0:N0}", sp.Gia) VND</p>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 14 })"><button class="see-all">Xem tất cả</button></a>
+    </section>
+
+    <!--Trạm Bộ Sưu Tập One Piece-->
+     <section class="station">
+        <h2>Bộ Sưu Tập One Piece</h2>
+        <p>"Bộ sưu tập có bản quyền chính hãng"</p>
+
+        <div class="product-list">
+            @foreach (var sp in Model.SanPhams.Skip(32).Take(4))
+            {
+                <div class="product">
+                    <div class="img-box">
+                        <a href="@Url.Action("Index", "ChiTietSanPhamTrangChu", new { id = sp.Id })">
+                            <img src="@Url.Content(sp.HinhAnh)" alt="@sp.TenSanPham" width="200" />
+
+                            <div class="overlay"></div>
+                            <span class="tag">Miễn Phí Ship</span>
+                            <p class="name">@sp.TenSanPham</p>
+                            <p class="old-price">@String.Format("{0:N0}", sp.GiaGoc) VND</p>
+                            <p class="price">@String.Format("{0:N0}", sp.Gia) VND</p>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <a href="@Url.Action("SanPhamTheoNhom","Gu", new { id = 13 })"><button class="see-all">Xem tất cả</button></a>
+    </section>
+</main>
+<script src="~/Scripts/AURA/Trang_chủ.js"></script>

@@ -1,0 +1,50 @@
+[
+  {
+    "maDM": 1,
+    "maDMCha": 1,
+    "tenDM": "Áo Thun Cổ Tròn",
+    "banner": null
+  },
+  {
+    "maDM": 2,
+    "maDMCha": 1,
+    "tenDM": "Áo Polo",
+    "banner": null
+  },
+  {
+    "maDM": 3,
+    "maDMCha": 1,
+    "tenDM": "Áo Thun Tay Dài",
+    "banner": null
+  },
+  {
+    "maDM": 4,
+    "maDMCha": 1,
+    "tenDM": "Áo Tank Top (Áo Ba Lỗ)",
+    "banner": null
+  },
+  {
+    "maDM": 5,
+    "maDMCha": 2,
+    "tenDM": "Áo Sơ Mi Ngắn Tay",
+    "banner": null
+  },
+  {
+    "maDM": 6,
+    "maDMCha": 2,
+    "tenDM": "Áo Sơ Mi Dài Tay",
+    "banner": null
+  },
+  {
+    "maDM": 7,
+    "maDMCha": 3,
+    "tenDM": "Áo Khoác Gió",
+    "banner": null
+  },
+  {
+    "maDM": 8,
+    "maDMCha": 3,
+    "tenDM": "Áo Khoác Jean",
+    "banner": null
+  }
+]

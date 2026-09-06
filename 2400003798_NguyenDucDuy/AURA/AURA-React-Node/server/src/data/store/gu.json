@@ -1,0 +1,20 @@
+[
+  {
+    "guID": 1,
+    "tenGu": "Gu Đơn Giản",
+    "moTa": "Phong cách tối giản, dễ mặc",
+    "hinhAnh": null
+  },
+  {
+    "guID": 2,
+    "tenGu": "Gu Thiết Kế",
+    "moTa": "Phong cách độc đáo, sáng tạo",
+    "hinhAnh": null
+  },
+  {
+    "guID": 3,
+    "tenGu": "Gu Thể Thao",
+    "moTa": "Phong cách năng động, thoải mái",
+    "hinhAnh": null
+  }
+]

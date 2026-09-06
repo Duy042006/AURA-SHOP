@@ -1,0 +1,50 @@
+[
+  {
+    "tramID": 1,
+    "guID": 1,
+    "tenTram": "Áo Thun Cơ Bản",
+    "moTa": "Non Branded, Seventy Seven, The Worker"
+  },
+  {
+    "tramID": 2,
+    "guID": 1,
+    "tenTram": "Bộ Sưu Tập Jean",
+    "moTa": "The Original, Tek Black, Multi-Color"
+  },
+  {
+    "tramID": 3,
+    "guID": 1,
+    "tenTram": "Công Sở Tối Giản",
+    "moTa": "The Minimalist, The CEO"
+  },
+  {
+    "tramID": 4,
+    "guID": 2,
+    "tenTram": "Áo Khoác",
+    "moTa": "Áo khoác đơn giản & cá tính"
+  },
+  {
+    "tramID": 5,
+    "guID": 2,
+    "tenTram": "Streetwear & Casual",
+    "moTa": "The No Style, The Weekend"
+  },
+  {
+    "tramID": 6,
+    "guID": 2,
+    "tenTram": "Collab",
+    "moTa": "One Piece, Dragon Ball Z"
+  },
+  {
+    "tramID": 7,
+    "guID": 3,
+    "tenTram": "The Beginner",
+    "moTa": null
+  },
+  {
+    "tramID": 8,
+    "guID": 3,
+    "tenTram": "The Trainer",
+    "moTa": null
+  }
+]

@@ -1,0 +1,56 @@
+﻿@model List<AURA.Models.GioHangItem>
+
+@{
+    ViewBag.Title = "HoanTat";
+    Layout = "~/Views/Shared/_AURALayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Màu_GioHang/Mua.css" />
+
+<div class="order-success-wrapper">
+
+    <h2 class="order-title">✅ ĐẶT HÀNG THÀNH CÔNG</h2>
+
+    @if (TempData["ThanhCong"] != null)
+    {
+        <h3 class="order-success-text">@TempData["ThanhCong"]</h3>
+    }
+
+    @if (Model != null && Model.Any())
+    {
+        var tongTien = Model.Sum(x => x.ThanhTien);
+
+        <div class="total-money">
+            💰 Tổng tiền: @String.Format("{0:N0} đ", tongTien)
+        </div>
+
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.TenSP</td>
+                        <td>@item.SoLuong</td>
+                        <td>@String.Format("{0:N0} đ", item.ThanhTien)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <h3 class="order-empty">❌ Không có dữ liệu đơn hàng</h3>
+    }
+
+    <a href="@Url.Action("Index", "TrangChu")" class="back-home-btn">
+        ⬅️ Về trang chủ
+    </a>
+
+</div>

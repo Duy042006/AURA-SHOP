@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "orderID": 1,
+    "maSP": 2,
+    "loaiSP": "TrangChu",
+    "tenSP": "Áo Thun Waffle Thoáng Mát Non Branded 01 Đen",
+    "hinhAnh": "/Content/images/Images/ao-thun-non-branded-01-den-1174882387.webp",
+    "quantity": 1,
+    "price": 120650
+  },
+  {
+    "id": 2,
+    "orderID": 2,
+    "maSP": 11,
+    "loaiSP": "TrangChu",
+    "tenSP": "Quần Jeans Slimfit Co Giãn The Original 028 Xanh Dương",
+    "hinhAnh": "/Content/images/Images/qu-n-jean-the-original-28-xanh-d-ng-1174882630.webp",
+    "quantity": 1,
+    "price": 294300
+  },
+  {
+    "id": 3,
+    "orderID": 2,
+    "maSP": 12,
+    "loaiSP": "TrangChu",
+    "tenSP": "Áo Khoác Jean Phối Nón The Original 039 Xanh Dương Đậm",
+    "hinhAnh": "/Content/images/Images/ao-khoac-jean-the-original-m039-xanh-d-ng-1184461421.webp",
+    "quantity": 1,
+    "price": 402300
+  },
+  {
+    "id": 4,
+    "orderID": 3,
+    "maSP": 17,
+    "loaiSP": "TrangChu",
+    "tenSP": "Áo Khoác Sơ Mi OXFORD Thoáng Khí Ít Nhăn The No Style 223 Xám",
+    "hinhAnh": "/Content/images/Images/0024629_thumb_1.webp",
+    "quantity": 1,
+    "price": 282000
+  }
+]

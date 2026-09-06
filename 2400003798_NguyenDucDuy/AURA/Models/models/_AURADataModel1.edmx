@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DanhMuc">
+          <Key>
+            <PropertyRef Name="MaDM" />
+          </Key>
+          <Property Name="MaDM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenDM" Type="nvarchar" MaxLength="100" />
+          <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Gu">
+          <Key>
+            <PropertyRef Name="GuID" />
+          </Key>
+          <Property Name="GuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenGu" Type="nvarchar" MaxLength="100" />
+          <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+          <Property Name="HinhAnh" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="HinhAnhSanPham">
+          <Key>
+            <PropertyRef Name="MaHA" />
+          </Key>
+          <Property Name="MaHA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaSP" Type="int" />
+          <Property Name="LinkAnh" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="NhomSanPham">
+          <Key>
+            <PropertyRef Name="NhomID" />
+          </Key>
+          <Property Name="NhomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TramID" Type="int" />
+          <Property Name="TenNhom" Type="nvarchar" MaxLength="100" />
+          <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+          <Property Name="HinhAnhBanner" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="SanPham">
+          <Key>
+            <PropertyRef Name="MaSP" />
+          </Key>
+          <Property Name="MaSP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenSP" Type="nvarchar" MaxLength="150" />
+          <Property Name="GiaGoc" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Gia" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="MauSac" Type="nvarchar" MaxLength="50" />
+          <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+          <Property Name="HinhAnh" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaDM" Type="int" />
+          <Property Name="NhomID" Type="int" />
+        </EntityType>
+        <EntityType Name="Tram">
+          <Key>
+            <PropertyRef Name="TramID" />
+          </Key>
+          <Property Name="TramID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GuID" Type="int" />
+          <Property Name="TenTram" Type="nvarchar" MaxLength="100" />
+          <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+          <Property Name="HinhAnh" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AURA_DB.dbo.v_SanPhamDanhMuc' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_SanPhamDanhMuc">
+          <Key>
+            <PropertyRef Name="MaSP" />
+          </Key>
+          <Property Name="MaSP" Type="int" Nullable="false" />
+          <Property Name="TenSP" Type="nvarchar" MaxLength="150" />
+          <Property Name="Gia" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="MauSac" Type="nvarchar" MaxLength="50" />
+          <Property Name="MoTaSP" Type="nvarchar" MaxLength="255" />
+          <Property Name="HinhAnh" Type="nvarchar" MaxLength="500" />
+          <Property Name="DanhMuc" Type="nvarchar" MaxLength="100" />
+          <Property Name="MoTaDM" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__HinhAnhSan__MaSP__44FF419A">
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
+          <End Role="HinhAnhSanPham" Type="Self.HinhAnhSanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPham">
+              <PropertyRef Name="MaSP" />
+            </Principal>
+            <Dependent Role="HinhAnhSanPham">
+              <PropertyRef Name="MaSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__NhomSanPh__TramI__3C69FB99">
+          <End Role="Tram" Type="Self.Tram" Multiplicity="0..1" />
+          <End Role="NhomSanPham" Type="Self.NhomSanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tram">
+              <PropertyRef Name="TramID" />
+            </Principal>
+            <Dependent Role="NhomSanPham">
+              <PropertyRef Name="TramID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SanPham__MaDM__412EB0B6">
+          <End Role="DanhMuc" Type="Self.DanhMuc" Multiplicity="0..1" />
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DanhMuc">
+              <PropertyRef Name="MaDM" />
+            </Principal>
+            <Dependent Role="SanPham">
+              <PropertyRef Name="MaDM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SanPham__NhomID__4222D4EF">
+          <End Role="NhomSanPham" Type="Self.NhomSanPham" Multiplicity="0..1" />
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhomSanPham">
+              <PropertyRef Name="NhomID" />
+            </Principal>
+            <Dependent Role="SanPham">
+              <PropertyRef Name="NhomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tram__GuID__398D8EEE">
+          <End Role="Gu" Type="Self.Gu" Multiplicity="0..1" />
+          <End Role="Tram" Type="Self.Tram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gu">
+              <PropertyRef Name="GuID" />
+            </Principal>
+            <Dependent Role="Tram">
+              <PropertyRef Name="GuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelsStoreContainer">
+          <EntitySet Name="DanhMuc" EntityType="Self.DanhMuc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gu" EntityType="Self.Gu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HinhAnhSanPham" EntityType="Self.HinhAnhSanPham" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NhomSanPham" EntityType="Self.NhomSanPham" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tram" EntityType="Self.Tram" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="v_SanPhamDanhMuc" EntityType="Self.v_SanPhamDanhMuc" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_SanPhamDanhMuc].[MaSP] AS [MaSP], 
+    [v_SanPhamDanhMuc].[TenSP] AS [TenSP], 
+    [v_SanPhamDanhMuc].[Gia] AS [Gia], 
+    [v_SanPhamDanhMuc].[MauSac] AS [MauSac], 
+    [v_SanPhamDanhMuc].[MoTaSP] AS [MoTaSP], 
+    [v_SanPhamDanhMuc].[HinhAnh] AS [HinhAnh], 
+    [v_SanPhamDanhMuc].[DanhMuc] AS [DanhMuc], 
+    [v_SanPhamDanhMuc].[MoTaDM] AS [MoTaDM]
+    FROM [dbo].[v_SanPhamDanhMuc] AS [v_SanPhamDanhMuc]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__HinhAnhSan__MaSP__44FF419A" Association="Self.FK__HinhAnhSan__MaSP__44FF419A">
+            <End Role="SanPham" EntitySet="SanPham" />
+            <End Role="HinhAnhSanPham" EntitySet="HinhAnhSanPham" />
+          </AssociationSet>
+          <AssociationSet Name="FK__NhomSanPh__TramI__3C69FB99" Association="Self.FK__NhomSanPh__TramI__3C69FB99">
+            <End Role="Tram" EntitySet="Tram" />
+            <End Role="NhomSanPham" EntitySet="NhomSanPham" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SanPham__MaDM__412EB0B6" Association="Self.FK__SanPham__MaDM__412EB0B6">
+            <End Role="DanhMuc" EntitySet="DanhMuc" />
+            <End Role="SanPham" EntitySet="SanPham" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SanPham__NhomID__4222D4EF" Association="Self.FK__SanPham__NhomID__4222D4EF">
+            <End Role="NhomSanPham" EntitySet="NhomSanPham" />
+            <End Role="SanPham" EntitySet="SanPham" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tram__GuID__398D8EEE" Association="Self.FK__Tram__GuID__398D8EEE">
+            <End Role="Gu" EntitySet="Gu" />
+            <End Role="Tram" EntitySet="Tram" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DanhMuc">
+          <Key>
+            <PropertyRef Name="MaDM" />
+          </Key>
+          <Property Name="MaDM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenDM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__MaDM__412EB0B6" FromRole="DanhMuc" ToRole="SanPham" />
+        </EntityType>
+        <EntityType Name="Gu">
+          <Key>
+            <PropertyRef Name="GuID" />
+          </Key>
+          <Property Name="GuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenGu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="HinhAnh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Trams" Relationship="Self.FK__Tram__GuID__398D8EEE" FromRole="Gu" ToRole="Tram" />
+        </EntityType>
+        <EntityType Name="HinhAnhSanPham">
+          <Key>
+            <PropertyRef Name="MaHA" />
+          </Key>
+          <Property Name="MaHA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaSP" Type="Int32" />
+          <Property Name="LinkAnh" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SanPham" Relationship="Self.FK__HinhAnhSan__MaSP__44FF419A" FromRole="HinhAnhSanPham" ToRole="SanPham" />
+        </EntityType>
+        <EntityType Name="NhomSanPham">
+          <Key>
+            <PropertyRef Name="NhomID" />
+          </Key>
+          <Property Name="NhomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TramID" Type="Int32" />
+          <Property Name="TenNhom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tram" Relationship="Self.FK__NhomSanPh__TramI__3C69FB99" FromRole="NhomSanPham" ToRole="Tram" />
+          <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__NhomID__4222D4EF" FromRole="NhomSanPham" ToRole="SanPham" />
+          <Property Name="HinhAnhBanner" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SanPham">
+          <Key>
+            <PropertyRef Name="MaSP" />
+          </Key>
+          <Property Name="MaSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenSP" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="GiaGoc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Gia" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="MauSac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="HinhAnh" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaDM" Type="Int32" />
+          <Property Name="NhomID" Type="Int32" />
+          <NavigationProperty Name="DanhMuc" Relationship="Self.FK__SanPham__MaDM__412EB0B6" FromRole="SanPham" ToRole="DanhMuc" />
+          <NavigationProperty Name="HinhAnhSanPhams" Relationship="Self.FK__HinhAnhSan__MaSP__44FF419A" FromRole="SanPham" ToRole="HinhAnhSanPham" />
+          <NavigationProperty Name="NhomSanPham" Relationship="Self.FK__SanPham__NhomID__4222D4EF" FromRole="SanPham" ToRole="NhomSanPham" />
+        </EntityType>
+        <EntityType Name="Tram">
+          <Key>
+            <PropertyRef Name="TramID" />
+          </Key>
+          <Property Name="TramID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GuID" Type="Int32" />
+          <Property Name="TenTram" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Gu" Relationship="Self.FK__Tram__GuID__398D8EEE" FromRole="Tram" ToRole="Gu" />
+          <NavigationProperty Name="NhomSanPhams" Relationship="Self.FK__NhomSanPh__TramI__3C69FB99" FromRole="Tram" ToRole="NhomSanPham" />
+          <Property Name="HinhAnh" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="v_SanPhamDanhMuc">
+          <Key>
+            <PropertyRef Name="MaSP" />
+          </Key>
+          <Property Name="MaSP" Type="Int32" Nullable="false" />
+          <Property Name="TenSP" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Gia" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="MauSac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MoTaSP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="HinhAnh" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DanhMuc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MoTaDM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__SanPham__MaDM__412EB0B6">
+          <End Role="DanhMuc" Type="Self.DanhMuc" Multiplicity="0..1" />
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DanhMuc">
+              <PropertyRef Name="MaDM" />
+            </Principal>
+            <Dependent Role="SanPham">
+              <PropertyRef Name="MaDM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tram__GuID__398D8EEE">
+          <End Role="Gu" Type="Self.Gu" Multiplicity="0..1" />
+          <End Role="Tram" Type="Self.Tram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gu">
+              <PropertyRef Name="GuID" />
+            </Principal>
+            <Dependent Role="Tram">
+              <PropertyRef Name="GuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HinhAnhSan__MaSP__44FF419A">
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
+          <End Role="HinhAnhSanPham" Type="Self.HinhAnhSanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPham">
+              <PropertyRef Name="MaSP" />
+            </Principal>
+            <Dependent Role="HinhAnhSanPham">
+              <PropertyRef Name="MaSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__NhomSanPh__TramI__3C69FB99">
+          <End Role="Tram" Type="Self.Tram" Multiplicity="0..1" />
+          <End Role="NhomSanPham" Type="Self.NhomSanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tram">
+              <PropertyRef Name="TramID" />
+            </Principal>
+            <Dependent Role="NhomSanPham">
+              <PropertyRef Name="TramID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SanPham__NhomID__4222D4EF">
+          <End Role="NhomSanPham" Type="Self.NhomSanPham" Multiplicity="0..1" />
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhomSanPham">
+              <PropertyRef Name="NhomID" />
+            </Principal>
+            <Dependent Role="SanPham">
+              <PropertyRef Name="NhomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AURA_DBContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DanhMucs" EntityType="Self.DanhMuc" />
+          <EntitySet Name="Gus" EntityType="Self.Gu" />
+          <EntitySet Name="HinhAnhSanPhams" EntityType="Self.HinhAnhSanPham" />
+          <EntitySet Name="NhomSanPhams" EntityType="Self.NhomSanPham" />
+          <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
+          <EntitySet Name="Trams" EntityType="Self.Tram" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="v_SanPhamDanhMuc" EntityType="Self.v_SanPhamDanhMuc" />
+          <AssociationSet Name="FK__SanPham__MaDM__412EB0B6" Association="Self.FK__SanPham__MaDM__412EB0B6">
+            <End Role="DanhMuc" EntitySet="DanhMucs" />
+            <End Role="SanPham" EntitySet="SanPhams" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tram__GuID__398D8EEE" Association="Self.FK__Tram__GuID__398D8EEE">
+            <End Role="Gu" EntitySet="Gus" />
+            <End Role="Tram" EntitySet="Trams" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HinhAnhSan__MaSP__44FF419A" Association="Self.FK__HinhAnhSan__MaSP__44FF419A">
+            <End Role="SanPham" EntitySet="SanPhams" />
+            <End Role="HinhAnhSanPham" EntitySet="HinhAnhSanPhams" />
+          </AssociationSet>
+          <AssociationSet Name="FK__NhomSanPh__TramI__3C69FB99" Association="Self.FK__NhomSanPh__TramI__3C69FB99">
+            <End Role="Tram" EntitySet="Trams" />
+            <End Role="NhomSanPham" EntitySet="NhomSanPhams" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SanPham__NhomID__4222D4EF" Association="Self.FK__SanPham__NhomID__4222D4EF">
+            <End Role="NhomSanPham" EntitySet="NhomSanPhams" />
+            <End Role="SanPham" EntitySet="SanPhams" />
+          </AssociationSet>
+          <FunctionImport Name="sp_GetAllSanPham" ReturnType="Collection(Models.sp_GetAllSanPham_Result)" />
+        </EntityContainer>
+        <ComplexType Name="sp_GetAllSanPham_Result">
+          <Property Type="Int32" Name="MaSP" Nullable="false" />
+          <Property Type="String" Name="TenSP" Nullable="true" MaxLength="150" />
+          <Property Type="Decimal" Name="GiaGoc" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Gia" Nullable="true" Precision="10" Scale="0" />
+          <Property Type="String" Name="MauSac" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MoTa" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="HinhAnh" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="MaDM" Nullable="true" />
+          <Property Type="Int32" Name="NhomID" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="AURA_DBContext">
+          <EntitySetMapping Name="DanhMucs">
+            <EntityTypeMapping TypeName="Models.DanhMuc">
+              <MappingFragment StoreEntitySet="DanhMuc">
+                <ScalarProperty Name="MaDM" ColumnName="MaDM" />
+                <ScalarProperty Name="TenDM" ColumnName="TenDM" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gus">
+            <EntityTypeMapping TypeName="Models.Gu">
+              <MappingFragment StoreEntitySet="Gu">
+                <ScalarProperty Name="GuID" ColumnName="GuID" />
+                <ScalarProperty Name="TenGu" ColumnName="TenGu" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HinhAnhSanPhams">
+            <EntityTypeMapping TypeName="Models.HinhAnhSanPham">
+              <MappingFragment StoreEntitySet="HinhAnhSanPham">
+                <ScalarProperty Name="MaHA" ColumnName="MaHA" />
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="LinkAnh" ColumnName="LinkAnh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NhomSanPhams">
+            <EntityTypeMapping TypeName="Models.NhomSanPham">
+              <MappingFragment StoreEntitySet="NhomSanPham">
+                <ScalarProperty Name="HinhAnhBanner" ColumnName="HinhAnhBanner" />
+                <ScalarProperty Name="NhomID" ColumnName="NhomID" />
+                <ScalarProperty Name="TramID" ColumnName="TramID" />
+                <ScalarProperty Name="TenNhom" ColumnName="TenNhom" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SanPhams">
+            <EntityTypeMapping TypeName="Models.SanPham">
+              <MappingFragment StoreEntitySet="SanPham">
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+                <ScalarProperty Name="GiaGoc" ColumnName="GiaGoc" />
+                <ScalarProperty Name="Gia" ColumnName="Gia" />
+                <ScalarProperty Name="MauSac" ColumnName="MauSac" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+                <ScalarProperty Name="MaDM" ColumnName="MaDM" />
+                <ScalarProperty Name="NhomID" ColumnName="NhomID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trams">
+            <EntityTypeMapping TypeName="Models.Tram">
+              <MappingFragment StoreEntitySet="Tram">
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+                <ScalarProperty Name="TramID" ColumnName="TramID" />
+                <ScalarProperty Name="GuID" ColumnName="GuID" />
+                <ScalarProperty Name="TenTram" ColumnName="TenTram" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Models.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_SanPhamDanhMuc">
+            <EntityTypeMapping TypeName="Models.v_SanPhamDanhMuc">
+              <MappingFragment StoreEntitySet="v_SanPhamDanhMuc">
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+                <ScalarProperty Name="Gia" ColumnName="Gia" />
+                <ScalarProperty Name="MauSac" ColumnName="MauSac" />
+                <ScalarProperty Name="MoTaSP" ColumnName="MoTaSP" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+                <ScalarProperty Name="DanhMuc" ColumnName="DanhMuc" />
+                <ScalarProperty Name="MoTaDM" ColumnName="MoTaDM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
