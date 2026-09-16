@@ -38,5 +38,65 @@
     "hinhAnh": "/Content/images/Images/0024629_thumb_1.webp",
     "quantity": 1,
     "price": 282000
+  },
+  {
+    "id": 5,
+    "orderID": 4,
+    "maSP": 1,
+    "loaiSP": "TrangChu",
+    "tenSP": "Áo Thun Pique Thoáng Mát Seventy Seven 13 Đen",
+    "hinhAnh": "/Content/images/Images/ao-thun-seventy-seven-13-den-1174883530.webp",
+    "quantity": 1,
+    "price": 149000
+  },
+  {
+    "id": 6,
+    "orderID": 5,
+    "maSP": 1,
+    "loaiSP": "TrangChu",
+    "tenSP": "Áo Thun Pique Thoáng Mát Seventy Seven 13 Đen",
+    "hinhAnh": "/Content/images/Images/ao-thun-seventy-seven-13-den-1174883530.webp",
+    "quantity": 1,
+    "price": 149000
+  },
+  {
+    "id": 7,
+    "orderID": 6,
+    "maSP": 5,
+    "loaiSP": "TrangChu",
+    "tenSP": "Quần Tây Nam Co Giãn Ít Nhăn Non Iron 019 Đen",
+    "hinhAnh": "/Content/images/Images/qu-n-tay-non-iron-19-den-1174881694.webp",
+    "quantity": 1,
+    "price": 329000
+  },
+  {
+    "id": 8,
+    "orderID": 7,
+    "maSP": 3,
+    "loaiSP": "TrangChu",
+    "tenSP": "Áo Thun Pique Thoáng Mát Seventy Seven 13 Trắng",
+    "hinhAnh": "/Content/images/Images/ao-thun-seventy-seven-13-tr-ng-1174883539.webp",
+    "quantity": 1,
+    "price": 149000
+  },
+  {
+    "id": 9,
+    "orderID": 8,
+    "maSP": 2,
+    "loaiSP": "TrangChu",
+    "tenSP": "Áo Thun Waffle Thoáng Mát Non Branded 01 Đen",
+    "hinhAnh": "/Content/images/Images/ao-thun-non-branded-01-den-1174882387.webp",
+    "quantity": 51,
+    "price": 120000
+  },
+  {
+    "id": 10,
+    "orderID": 9,
+    "maSP": 2,
+    "loaiSP": "TrangChu",
+    "tenSP": "Áo Thun Waffle Thoáng Mát Non Branded 01 Đen",
+    "hinhAnh": "/Content/images/Images/ao-thun-non-branded-01-den-1174882387.webp",
+    "quantity": 1,
+    "price": 120000
   }
 ]
