@@ -6,7 +6,7 @@ const router = Router();
 
 // POST /api/orders — đặt hàng
 router.post('/', optionalAuth, (req, res) => {
-  const { items, hoTen, dienThoai, diaChi } = req.body || {};
+  const { items, hoTen, dienThoai, diaChi, voucherCode, voucherDiscount } = req.body || {};
 
   if (!items?.length) {
     return res.status(400).json({ message: 'Giỏ hàng trống' });
@@ -15,10 +15,41 @@ router.post('/', optionalAuth, (req, res) => {
     return res.status(400).json({ message: 'Vui lòng nhập đầy đủ thông tin giao hàng' });
   }
 
+  const products = readCollection('products');
+
+  // Kiểm tra tồn kho trước khi tạo đơn
+  for (const item of items) {
+    const p = products.find((x) => x.maSP === item.maSP && x.loaiSP === item.loaiSP)
+      || products.find((x) => x.maSP === item.maSP);
+    if (p) {
+      const stock = p.soLuongTon !== undefined ? Number(p.soLuongTon) : 50;
+      const qty = Number(item.soLuong) || 1;
+      if (stock < qty) {
+        return res.status(400).json({
+          message: `Sản phẩm "${p.tenSP}" chỉ còn ${stock} sản phẩm trong kho (bạn đặt ${qty}). Vui lòng giảm số lượng!`
+        });
+      }
+    }
+  }
+
+  // Trừ số lượng tồn kho
+  for (const item of items) {
+    const p = products.find((x) => x.maSP === item.maSP && x.loaiSP === item.loaiSP)
+      || products.find((x) => x.maSP === item.maSP);
+    if (p) {
+      const currentStock = p.soLuongTon !== undefined ? Number(p.soLuongTon) : 50;
+      const qty = Number(item.soLuong) || 1;
+      p.soLuongTon = Math.max(0, currentStock - qty);
+    }
+  }
+  writeCollection('products', products);
+
   let tongTien = items.reduce((sum, i) => sum + Number(i.gia) * Number(i.soLuong), 0);
 
-  // Đã đăng nhập → giảm 10%
-  if (req.user) {
+  // Áp dụng giảm giá: voucher hoặc giảm 10% thành viên
+  if (voucherDiscount && Number(voucherDiscount) > 0) {
+    tongTien = Math.max(0, tongTien - Number(voucherDiscount));
+  } else if (req.user) {
     tongTien = Math.round(tongTien * 0.9);
   }
 
@@ -30,6 +61,7 @@ router.post('/', optionalAuth, (req, res) => {
     userId: req.user?.id ?? null,
     orderDate: new Date().toISOString(),
     totalAmount: tongTien,
+    voucherCode: voucherCode || null,
     status: 'Đang xử lý',
     hoTen,
     dienThoai,
@@ -96,8 +128,23 @@ router.post('/:id/cancel', authRequired, (req, res) => {
     return res.status(403).json({ message: 'Không có quyền' });
   }
 
-  orders[idx].status = 'Canceled';
-  writeCollection('orders', orders);
+  if (orders[idx].status !== 'Canceled') {
+    orders[idx].status = 'Canceled';
+    writeCollection('orders', orders);
+
+    // Hoàn lại số lượng tồn kho
+    const orderDetails = readCollection('orderDetails').filter((d) => d.orderID === id);
+    const products = readCollection('products');
+    for (const d of orderDetails) {
+      const p = products.find((x) => x.maSP === d.maSP && x.loaiSP === d.loaiSP)
+        || products.find((x) => x.maSP === d.maSP);
+      if (p) {
+        p.soLuongTon = (Number(p.soLuongTon) || 0) + (Number(d.quantity) || 1);
+      }
+    }
+    writeCollection('products', products);
+  }
+
   res.json(orders[idx]);
 });
 

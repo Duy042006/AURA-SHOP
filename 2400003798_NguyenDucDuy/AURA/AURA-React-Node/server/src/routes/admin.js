@@ -21,6 +21,14 @@ const upload = multer({ storage });
 
 const router = Router();
 
+function toDateKey(dateInput) {
+  const d = new Date(dateInput);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
 // GET /api/admin/dashboard
 router.get('/dashboard', adminRequired, (_req, res) => {
   const products = readCollection('products').filter((p) => p.loaiSP === 'TrangChu');
@@ -35,16 +43,15 @@ router.get('/dashboard', adminRequired, (_req, res) => {
   const revenue = activeOrders.reduce((s, o) => s + Number(o.totalAmount || 0), 0);
   const customers = users.filter((u) => u.role !== 'Admin');
 
-  // Doanh thu 7 ngày
+  // Doanh thu 7 ngày (tính theo ngày địa phương chính xác)
   const days = [];
   for (let i = 6; i >= 0; i--) {
     const d = new Date();
-    d.setHours(0, 0, 0, 0);
     d.setDate(d.getDate() - i);
-    const key = d.toISOString().slice(0, 10);
+    const key = toDateKey(d);
     const label = `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}`;
     const dayRevenue = activeOrders
-      .filter((o) => String(o.orderDate).slice(0, 10) === key)
+      .filter((o) => toDateKey(o.orderDate) === key)
       .reduce((s, o) => s + Number(o.totalAmount || 0), 0);
     days.push({ date: key, label, revenue: dayRevenue });
   }
@@ -144,21 +151,24 @@ router.delete('/categories/:id', adminRequired, (req, res) => {
 });
 
 // GET /api/admin/products
-router.get('/products', adminRequired, (_req, res) => {
-  const products = readCollection('products').filter((p) => p.loaiSP === 'TrangChu');
+router.get('/products', adminRequired, (req, res) => {
+  const { loaiSP, all } = req.query;
+  let products = readCollection('products');
+  if (loaiSP && loaiSP !== 'ALL') {
+    products = products.filter((p) => p.loaiSP === loaiSP);
+  } else if (all !== 'true' && !loaiSP) {
+    products = products.filter((p) => p.loaiSP === 'TrangChu');
+  }
   res.json(products);
 });
 
 // POST /api/admin/products
 router.post('/products', adminRequired, upload.single('fileAnh'), (req, res) => {
   const products = readCollection('products');
-  const { tenSP, giaGoc, gia, mauSac, moTa, maDM, nhomID } = req.body;
+  const { tenSP, giaGoc, gia, mauSac, moTa, maDM, nhomID, loaiSP } = req.body;
 
   const product = {
-    maSP: nextId(
-      products.filter((p) => p.loaiSP === 'TrangChu'),
-      'maSP'
-    ),
+    maSP: nextId(products, 'maSP'),
     tenSP,
     giaGoc: Number(giaGoc) || 0,
     gia: Number(gia) || 0,
@@ -167,8 +177,8 @@ router.post('/products', adminRequired, upload.single('fileAnh'), (req, res) => 
     hinhAnh: req.file ? `/uploads/${req.file.filename}` : req.body.hinhAnh || '',
     maDM: maDM ? Number(maDM) : null,
     nhomID: nhomID ? Number(nhomID) : null,
-    loaiSP: 'TrangChu',
-    soLuongTon: Number(req.body.soLuongTon) || 0,
+    loaiSP: loaiSP || 'TrangChu',
+    soLuongTon: Number(req.body.soLuongTon) || 50,
   };
 
   products.push(product);
@@ -180,9 +190,9 @@ router.post('/products', adminRequired, upload.single('fileAnh'), (req, res) => 
 router.put('/products/:id/stock', adminRequired, (req, res) => {
   const id = Number(req.params.id);
   const products = readCollection('products');
-  const idx = products.findIndex((p) => p.maSP === id && p.loaiSP === 'TrangChu');
+  const idx = products.findIndex((p) => p.maSP === id);
   if (idx < 0) return res.status(404).json({ message: 'Không tìm thấy sản phẩm' });
-  products[idx].soLuongTon = Number(req.body?.soLuongTon) || 0;
+  products[idx].soLuongTon = Math.max(0, Number(req.body?.soLuongTon) || 0);
   writeCollection('products', products);
   res.json(products[idx]);
 });
@@ -192,7 +202,7 @@ router.delete('/products/:id', adminRequired, (req, res) => {
   const id = Number(req.params.id);
   let products = readCollection('products');
   const before = products.length;
-  products = products.filter((p) => !(p.maSP === id && p.loaiSP === 'TrangChu'));
+  products = products.filter((p) => p.maSP !== id);
   if (products.length === before) {
     return res.status(404).json({ message: 'Không tìm thấy sản phẩm' });
   }
@@ -214,9 +224,86 @@ router.put('/orders/:id/status', adminRequired, (req, res) => {
   const orders = readCollection('orders');
   const idx = orders.findIndex((o) => o.orderID === id);
   if (idx < 0) return res.status(404).json({ message: 'Không tìm thấy đơn hàng' });
+
+  const prevStatus = orders[idx].status;
   orders[idx].status = status;
   writeCollection('orders', orders);
+
+  // Nếu chuyển sang Canceled và trước đó chưa Canceled -> hoàn trả tồn kho
+  if (status === 'Canceled' && prevStatus !== 'Canceled') {
+    const orderDetails = readCollection('orderDetails').filter((d) => d.orderID === id);
+    const products = readCollection('products');
+    for (const d of orderDetails) {
+      const p = products.find((x) => x.maSP === d.maSP && x.loaiSP === d.loaiSP)
+        || products.find((x) => x.maSP === d.maSP);
+      if (p) {
+        p.soLuongTon = (Number(p.soLuongTon) || 0) + (Number(d.quantity) || 1);
+      }
+    }
+    writeCollection('products', products);
+  }
+  // Nếu chuyển từ Canceled sang trạng thái khác (phục hồi đơn) -> trừ lại tồn kho
+  else if (prevStatus === 'Canceled' && status !== 'Canceled') {
+    const orderDetails = readCollection('orderDetails').filter((d) => d.orderID === id);
+    const products = readCollection('products');
+    for (const d of orderDetails) {
+      const p = products.find((x) => x.maSP === d.maSP && x.loaiSP === d.loaiSP)
+        || products.find((x) => x.maSP === d.maSP);
+      if (p) {
+        p.soLuongTon = Math.max(0, (Number(p.soLuongTon) || 0) - (Number(d.quantity) || 1));
+      }
+    }
+    writeCollection('products', products);
+  }
+
   res.json(orders[idx]);
+});
+
+// PUT /api/admin/products/:id — cập nhật sản phẩm
+router.put('/products/:id', adminRequired, upload.single('fileAnh'), (req, res) => {
+  const id = Number(req.params.id);
+  const products = readCollection('products');
+  const idx = products.findIndex((p) => p.maSP === id);
+  if (idx < 0) return res.status(404).json({ message: 'Không tìm thấy sản phẩm' });
+
+  const { tenSP, giaGoc, gia, mauSac, moTa, maDM, nhomID, loaiSP, soLuongTon } = req.body;
+
+  if (tenSP !== undefined) products[idx].tenSP = tenSP;
+  if (giaGoc !== undefined) products[idx].giaGoc = Number(giaGoc) || 0;
+  if (gia !== undefined) products[idx].gia = Number(gia) || 0;
+  if (mauSac !== undefined) products[idx].mauSac = mauSac;
+  if (moTa !== undefined) products[idx].moTa = moTa;
+  if (maDM !== undefined) products[idx].maDM = maDM ? Number(maDM) : null;
+  if (nhomID !== undefined) products[idx].nhomID = nhomID ? Number(nhomID) : null;
+  if (loaiSP !== undefined) products[idx].loaiSP = loaiSP;
+  if (soLuongTon !== undefined) products[idx].soLuongTon = Math.max(0, Number(soLuongTon) || 0);
+
+  if (req.file) {
+    products[idx].hinhAnh = `/uploads/${req.file.filename}`;
+  } else if (req.body.hinhAnh) {
+    products[idx].hinhAnh = req.body.hinhAnh;
+  }
+
+  writeCollection('products', products);
+  res.json(products[idx]);
+});
+
+// DELETE /api/admin/orders/:id — xóa đơn hàng
+router.delete('/orders/:id', adminRequired, (req, res) => {
+  const id = Number(req.params.id);
+  let orders = readCollection('orders');
+  const before = orders.length;
+  orders = orders.filter((o) => o.orderID !== id);
+  if (orders.length === before) {
+    return res.status(404).json({ message: 'Không tìm thấy đơn hàng' });
+  }
+
+  let orderDetails = readCollection('orderDetails');
+  orderDetails = orderDetails.filter((d) => d.orderID !== id);
+
+  writeCollection('orders', orders);
+  writeCollection('orderDetails', orderDetails);
+  res.json({ message: 'Đã xóa đơn hàng thành công', orderID: id });
 });
 
 export default router;

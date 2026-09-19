@@ -34,7 +34,17 @@ export default function AdminOrders() {
   return (
     <AccountLayout adminOnly>
       <div className="account-panel">
-        <h2 className="account-panel-title">ĐƠN HÀNG</h2>
+        <div className="account-panel-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <h2 className="account-panel-title" style={{ margin: 0 }}>ĐƠN HÀNG</h2>
+          <button
+            className="btn btn-outline"
+            type="button"
+            onClick={load}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}
+          >
+            <i className="bx bx-refresh" /> Làm mới
+          </button>
+        </div>
         {loading ? (
           <div className="loading">Đang tải...</div>
         ) : !orders.length ? (
@@ -43,7 +53,7 @@ export default function AdminOrders() {
             <p>Chưa có đơn hàng</p>
           </div>
         ) : (
-          <div className="account-orders-table-wrap">
+          <div className="account-orders-table-wrap" style={{ marginTop: 16 }}>
             <table className="admin-table">
               <thead>
                 <tr>
@@ -52,7 +62,7 @@ export default function AdminOrders() {
                   <th>Ngày</th>
                   <th>Tổng</th>
                   <th>Trạng thái</th>
-                  <th />
+                  <th style={{ textAlign: 'center' }}>Thao tác</th>
                 </tr>
               </thead>
               <tbody>
@@ -77,8 +87,12 @@ export default function AdminOrders() {
                         <option value="Canceled">Đã hủy</option>
                       </select>
                     </td>
-                    <td>
-                      <Link to={`/don-hang/${o.orderID}`} className="btn btn-outline">
+                    <td style={{ textAlign: 'center' }}>
+                      <Link
+                        to={`/don-hang/${o.orderID}`}
+                        className="btn btn-outline"
+                        style={{ padding: '5px 12px', fontSize: 13 }}
+                      >
                         Chi tiết
                       </Link>
                     </td>

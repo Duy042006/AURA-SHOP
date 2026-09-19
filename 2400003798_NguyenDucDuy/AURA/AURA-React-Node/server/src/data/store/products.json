@@ -1,5 +1,18 @@
 [
   {
+    "maSP": 1,
+    "tenSP": "Áo Thun Pique Thoáng Mát Seventy Seven 13 Đen",
+    "giaGoc": 157000,
+    "gia": 149000,
+    "mauSac": "Đen",
+    "moTa": "Chất liệu thoáng mát, thoải mái",
+    "hinhAnh": "/Content/images/Images/ao-thun-seventy-seven-13-den-1174883530.webp",
+    "maDM": 1,
+    "nhomID": 1,
+    "loaiSP": "TrangChu",
+    "soLuongTon": 50
+  },
+  {
     "maSP": 2,
     "tenSP": "Áo Thun Waffle Thoáng Mát Non Branded 01 Đen",
     "giaGoc": 127000,
@@ -464,7 +477,8 @@
     "hinhAnh": "/Content/images/Images/ao-thun-seventy-seven-13-den-1174883530.webp",
     "maDM": 1,
     "nhomID": 1,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1002,
@@ -476,7 +490,8 @@
     "hinhAnh": "/Content/images/Images/ao-thun-non-branded-01-den-1174882387.webp",
     "maDM": 1,
     "nhomID": 1,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1003,
@@ -488,7 +503,8 @@
     "hinhAnh": "/Content/images/Images/ao-thun-seventy-seven-13-tr-ng-1174883539.webp",
     "maDM": 1,
     "nhomID": 1,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1004,
@@ -500,7 +516,8 @@
     "hinhAnh": "/Content/images/Images/ao-thun-seventy-seven-04-h-ng-1174883171.webp",
     "maDM": 1,
     "nhomID": 2,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1005,
@@ -512,7 +529,8 @@
     "hinhAnh": "/Content/images/Images/ao-khoac-cool-touch-02-den-1174884952.webp",
     "maDM": 7,
     "nhomID": null,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1006,
@@ -524,7 +542,8 @@
     "hinhAnh": "/Content/images/Images/ao-khoac-jean-the-original-m039-xanh-d-ng-1184461421.webp",
     "maDM": 7,
     "nhomID": 4,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1007,
@@ -536,7 +555,8 @@
     "hinhAnh": "/Content/images/Images/ao-polo-no-style-78-den-1174885461.webp",
     "maDM": 2,
     "nhomID": 11,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1008,
@@ -548,7 +568,8 @@
     "hinhAnh": "/Content/images/Images/ao-khoac-no-style-m45-xam-ghi-1174885194.webp",
     "maDM": 7,
     "nhomID": 11,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1009,
@@ -560,7 +581,8 @@
     "hinhAnh": "/Content/images/Images/ao-thun-no-style-m14-xam-1174883787.webp",
     "maDM": 1,
     "nhomID": 12,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1010,
@@ -572,7 +594,8 @@
     "hinhAnh": "/Content/images/Images/0024629_thumb_1.webp",
     "maDM": 5,
     "nhomID": 9,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1011,
@@ -584,7 +607,8 @@
     "hinhAnh": "/Content/images/Images/0024628_thumb_1.webp",
     "maDM": 5,
     "nhomID": 9,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1012,
@@ -596,7 +620,8 @@
     "hinhAnh": "/Content/images/Images/0024627_thumb_1.webp",
     "maDM": 5,
     "nhomID": 9,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1013,
@@ -608,7 +633,8 @@
     "hinhAnh": "/Content/images/Images/0024626_thumb_1.webp",
     "maDM": 5,
     "nhomID": 10,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1014,
@@ -620,7 +646,8 @@
     "hinhAnh": "/Content/images/Images/0023174thumb1.webp",
     "maDM": 7,
     "nhomID": null,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1015,
@@ -632,7 +659,8 @@
     "hinhAnh": "/Content/images/Images/24056thumb1.webp",
     "maDM": 1,
     "nhomID": null,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1016,
@@ -644,7 +672,8 @@
     "hinhAnh": "/Content/images/Images/ao-thun-the-trainer-006-xam-1178529255.webp",
     "maDM": 1,
     "nhomID": null,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1017,
@@ -656,7 +685,8 @@
     "hinhAnh": "/Content/images/Images/24077_thumb_1.webp",
     "maDM": 4,
     "nhomID": null,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 1018,
@@ -668,7 +698,8 @@
     "hinhAnh": "/Content/images/Images/0024269thumb1.webp",
     "maDM": 5,
     "nhomID": 13,
-    "loaiSP": "Ao"
+    "loaiSP": "Ao",
+    "soLuongTon": 50
   },
   {
     "maSP": 2001,
@@ -680,7 +711,8 @@
     "hinhAnh": "/Content/images/Images/qu-n-tay-non-iron-19-den-1174881694.webp",
     "maDM": 3,
     "nhomID": null,
-    "loaiSP": "Quan"
+    "loaiSP": "Quan",
+    "soLuongTon": 50
   },
   {
     "maSP": 2002,
@@ -692,7 +724,8 @@
     "hinhAnh": "/Content/images/Images/qu-n-tay-no-style-m116-den-1174881533.webp",
     "maDM": 3,
     "nhomID": null,
-    "loaiSP": "Quan"
+    "loaiSP": "Quan",
+    "soLuongTon": 50
   },
   {
     "maSP": 2003,
@@ -704,7 +737,8 @@
     "hinhAnh": "/Content/images/Images/qu-n-dai-cool-touch-03-den-1174881341.webp",
     "maDM": 1,
     "nhomID": 7,
-    "loaiSP": "Quan"
+    "loaiSP": "Quan",
+    "soLuongTon": 50
   },
   {
     "maSP": 2004,
@@ -716,7 +750,8 @@
     "hinhAnh": "/Content/images/Images/qu-n-jean-the-original-28-den-1174882647.webp",
     "maDM": 1,
     "nhomID": 4,
-    "loaiSP": "Quan"
+    "loaiSP": "Quan",
+    "soLuongTon": 50
   },
   {
     "maSP": 2005,
@@ -728,7 +763,8 @@
     "hinhAnh": "/Content/images/Images/qu-n-jean-the-original-28-xanh-d-m-1-1174882642.webp",
     "maDM": 1,
     "nhomID": 4,
-    "loaiSP": "Quan"
+    "loaiSP": "Quan",
+    "soLuongTon": 50
   },
   {
     "maSP": 2006,
@@ -740,7 +776,8 @@
     "hinhAnh": "/Content/images/Images/qu-n-jean-the-original-28-xanh-d-ng-1174882630.webp",
     "maDM": 1,
     "nhomID": 4,
-    "loaiSP": "Quan"
+    "loaiSP": "Quan",
+    "soLuongTon": 50
   },
   {
     "maSP": 2007,
@@ -752,7 +789,8 @@
     "hinhAnh": "/Content/images/Images/24032_thumb_1.webp",
     "maDM": 5,
     "nhomID": 11,
-    "loaiSP": "Quan"
+    "loaiSP": "Quan",
+    "soLuongTon": 50
   },
   {
     "maSP": 2008,
@@ -764,7 +802,8 @@
     "hinhAnh": "/Content/images/Images/0024158_thumb_1.webp",
     "maDM": 5,
     "nhomID": null,
-    "loaiSP": "Quan"
+    "loaiSP": "Quan",
+    "soLuongTon": 50
   },
   {
     "maSP": 2009,
@@ -776,7 +815,8 @@
     "hinhAnh": "/Content/images/Images/0023172_thumb_1.webp",
     "maDM": 1,
     "nhomID": null,
-    "loaiSP": "Quan"
+    "loaiSP": "Quan",
+    "soLuongTon": 50
   },
   {
     "maSP": 2010,
@@ -788,7 +828,8 @@
     "hinhAnh": "/Content/images/Images/0023167_Thumb_1.webp",
     "maDM": 5,
     "nhomID": null,
-    "loaiSP": "Quan"
+    "loaiSP": "Quan",
+    "soLuongTon": 50
   },
   {
     "maSP": 2011,
@@ -800,7 +841,8 @@
     "hinhAnh": "/Content/images/Images/qu-n-short-the-trainer-015-den-1178529190.webp",
     "maDM": 5,
     "nhomID": null,
-    "loaiSP": "Quan"
+    "loaiSP": "Quan",
+    "soLuongTon": 50
   },
   {
     "maSP": 2012,
@@ -812,7 +854,8 @@
     "hinhAnh": "/Content/images/Images/0024276thumb1.webp",
     "maDM": 5,
     "nhomID": 13,
-    "loaiSP": "Quan"
+    "loaiSP": "Quan",
+    "soLuongTon": 50
   },
   {
     "maSP": 3001,
@@ -824,7 +867,8 @@
     "hinhAnh": "/Content/images/Images/ao-khoac-jean-the-original-m039-xanh-d-ng-1184461421.webp",
     "maDM": 1,
     "nhomID": 4,
-    "loaiSP": "PhuKien"
+    "loaiSP": "PhuKien",
+    "soLuongTon": 50
   },
   {
     "maSP": 3002,
@@ -836,7 +880,8 @@
     "hinhAnh": "/Content/images/Images/0024442thumb1.webp",
     "maDM": 1,
     "nhomID": 14,
-    "loaiSP": "PhuKien"
+    "loaiSP": "PhuKien",
+    "soLuongTon": 50
   },
   {
     "maSP": 3003,
@@ -848,7 +893,8 @@
     "hinhAnh": "/Content/images/Images/0024441thumb1.webp",
     "maDM": 1,
     "nhomID": 14,
-    "loaiSP": "PhuKien"
+    "loaiSP": "PhuKien",
+    "soLuongTon": 50
   },
   {
     "maSP": 3004,
@@ -860,7 +906,8 @@
     "hinhAnh": "/Content/images/Images/0024440thumb1.webp",
     "maDM": 1,
     "nhomID": 14,
-    "loaiSP": "PhuKien"
+    "loaiSP": "PhuKien",
+    "soLuongTon": 50
   },
   {
     "maSP": 3005,
@@ -872,7 +919,8 @@
     "hinhAnh": "/Content/images/Images/0024439thumb1.webp",
     "maDM": 4,
     "nhomID": 14,
-    "loaiSP": "PhuKien"
+    "loaiSP": "PhuKien",
+    "soLuongTon": 50
   },
   {
     "maSP": 3006,
@@ -884,7 +932,8 @@
     "hinhAnh": "/Content/images/Images/0024284thumb1.jpg",
     "maDM": 3,
     "nhomID": 13,
-    "loaiSP": "PhuKien"
+    "loaiSP": "PhuKien",
+    "soLuongTon": 50
   },
   {
     "maSP": 3007,
@@ -896,6 +945,7 @@
     "hinhAnh": "/Content/images/Images/0024282thumb1.webp",
     "maDM": 4,
     "nhomID": 13,
-    "loaiSP": "PhuKien"
+    "loaiSP": "PhuKien",
+    "soLuongTon": 50
   }
 ]

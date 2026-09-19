@@ -25,7 +25,10 @@ export default function OrderDetail() {
     <div className="page">
       <div className="page-header">
         <h1>Đơn hàng #{order.orderID}</h1>
-        <Link to="/don-hang" className="btn btn-outline">
+        <Link
+          to={user?.role === 'Admin' ? '/tai-khoan/quan-ly-don' : '/don-hang'}
+          className="btn btn-outline"
+        >
           ← Quay lại
         </Link>
       </div>

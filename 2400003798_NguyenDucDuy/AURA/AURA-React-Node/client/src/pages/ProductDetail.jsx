@@ -24,12 +24,17 @@ export default function ProductDetail() {
   if (error) return <div className="page"><div className="form-error">{error}</div></div>;
   if (!product) return <div className="loading">Đang tải...</div>;
 
+  const stock = product.soLuongTon !== undefined ? Number(product.soLuongTon) : 50;
+  const isOutOfStock = stock <= 0;
+
   const addToCart = () => {
+    if (isOutOfStock) return;
     addItem(product);
     navigate('/gio-hang');
   };
 
   const buyNow = () => {
+    if (isOutOfStock) return;
     addItem(product);
     if (!user) {
       navigate('/dang-nhap', {
@@ -59,12 +64,34 @@ export default function ProductDetail() {
           <div className="price">{formatVnd(product.gia)}</div>
           <p className="meta">Màu: {product.mauSac || '—'}</p>
           <p className="meta">Loại: {product.loaiSP}</p>
+          <p className="meta">
+            Tồn kho:{' '}
+            <strong
+              style={{
+                color: isOutOfStock ? '#ef4444' : stock <= 10 ? '#f59e0b' : '#16a34a',
+              }}
+            >
+              {isOutOfStock ? 'Hết hàng' : `${stock} sản phẩm`}
+            </strong>
+          </p>
           <p style={{ marginTop: 16, lineHeight: 1.6, color: '#444' }}>{product.moTa}</p>
           <div className="detail-actions">
-            <button className="btn btn-primary" type="button" onClick={addToCart}>
-              <i className="bx bx-cart" /> Thêm giỏ hàng
+            <button
+              className="btn btn-primary"
+              type="button"
+              onClick={addToCart}
+              disabled={isOutOfStock}
+              style={{ opacity: isOutOfStock ? 0.6 : 1, cursor: isOutOfStock ? 'not-allowed' : 'pointer' }}
+            >
+              <i className="bx bx-cart" /> {isOutOfStock ? 'Hết hàng' : 'Thêm giỏ hàng'}
             </button>
-            <button className="btn btn-outline" type="button" onClick={buyNow}>
+            <button
+              className="btn btn-outline"
+              type="button"
+              onClick={buyNow}
+              disabled={isOutOfStock}
+              style={{ opacity: isOutOfStock ? 0.6 : 1, cursor: isOutOfStock ? 'not-allowed' : 'pointer' }}
+            >
               Mua ngay
             </button>
           </div>

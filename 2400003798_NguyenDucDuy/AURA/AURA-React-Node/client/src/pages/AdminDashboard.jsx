@@ -16,6 +16,7 @@ function statusLabel(status) {
 }
 
 function RevenueChart({ data }) {
+  if (!data || !data.length) return null;
   const max = Math.max(...data.map((d) => d.revenue), 1);
   const w = 560;
   const h = 200;

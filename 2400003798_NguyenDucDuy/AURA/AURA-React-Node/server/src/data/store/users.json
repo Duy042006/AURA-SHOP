@@ -39,5 +39,19 @@
     "year": null,
     "address": "SaiGon",
     "role": "User"
+  },
+  {
+    "id": 4,
+    "fullName": "Nguyễn Văn A",
+    "email": "user@aura.vn",
+    "username": "user",
+    "password": "$2a$10$wz4vUN.6RoGB0a9u50.BLeJdk7LT1ahyY4rXfZX7ISfoi8/r/wDVK",
+    "phone": "0912345678",
+    "gender": "Nam",
+    "day": 15,
+    "month": 6,
+    "year": 2002,
+    "address": "Hà Nội",
+    "role": "User"
   }
 ]

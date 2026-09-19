@@ -24,7 +24,7 @@
     "userId": 2,
     "orderDate": "2026-08-14T02:20:46.181Z",
     "totalAmount": 253800,
-    "status": "Đang xử lý",
+    "status": "Đang giao",
     "hoTen": "Duy",
     "dienThoai": "0123456789",
     "diaChi": "TP HCM"
@@ -54,39 +54,9 @@
     "userId": 2,
     "orderDate": "2026-09-07T07:15:46.042Z",
     "totalAmount": 296100,
-    "status": "Hoàn thành",
+    "status": "Đang xử lý",
     "hoTen": "Duy",
     "dienThoai": "0123456789",
     "diaChi": "TP HCM"
-  },
-  {
-    "orderID": 7,
-    "userId": 3,
-    "orderDate": "2026-09-16T09:29:50.666Z",
-    "totalAmount": 134100,
-    "status": "Đang xử lý",
-    "hoTen": "ndd",
-    "dienThoai": "0123456789",
-    "diaChi": "SaiGon"
-  },
-  {
-    "orderID": 8,
-    "userId": 3,
-    "orderDate": "2026-09-16T09:32:17.424Z",
-    "totalAmount": 5508000,
-    "status": "Đang xử lý",
-    "hoTen": "ndd",
-    "dienThoai": "0123456789",
-    "diaChi": "SaiGon"
-  },
-  {
-    "orderID": 9,
-    "userId": 3,
-    "orderDate": "2026-09-16T09:35:40.997Z",
-    "totalAmount": 108000,
-    "status": "Đang xử lý",
-    "hoTen": "ndd",
-    "dienThoai": "0123456789",
-    "diaChi": "SaiGon"
   }
 ]
